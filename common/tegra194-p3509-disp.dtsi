@@ -35,9 +35,11 @@
 	nvidia,fb-win = <0>;
 	nvidia,dc-connector = <&sor1>;
 	nvidia,dc-flags = <TEGRA_DC_FLAG_ENABLED>;
-	avdd_hdmi-supply = <&p3668_spmic_sd0>; /* 1v0 */
-	avdd_hdmi_pll-supply = <&p3668_spmic_sd1>; /* 1v8 */
-	vdd_hdmi_5v0-supply = <&p3509_vdd_hdmi_5v0>; /* 5v0 */
+	vdd-dp-pwr-supply = <&p3668_spmic_sd0>;
+	avdd-dp-pll-supply = <&p3668_spmic_sd1>;
+	vdd-edp-sec-mode-supply = <&battery_reg>;
+	vdd-dp-pad-supply = <&battery_reg>;
+	vdd_hdmi_5v0-supply = <&p3509_vdd_hdmi_5v0>;
 };
 
 &head1 {
@@ -68,14 +70,12 @@
 
 &sor1 {
 	status = "okay";
-	nvidia,active-panel = <&sor1_hdmi_display>;
+	nvidia,active-panel = <&sor1_dp_display>;
 };
 
-&sor1_hdmi_display {
+&sor1_dp_display {
 	status = "okay";
-	disp-default-out {
-		nvidia,out-flags = <TEGRA_DC_OUT_HOTPLUG_LOW>;
-	};
+	nvidia,is_ext_dp_panel = <1>;
 };
 
 &dpaux0 {
