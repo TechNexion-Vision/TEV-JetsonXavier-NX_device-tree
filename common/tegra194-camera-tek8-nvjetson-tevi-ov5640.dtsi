@@ -1,0 +1,69 @@
+/*
+ * Copyright (c) 2021, NVIDIA CORPORATION.  All rights reserved.
+ *
+ * This program is free software; you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation; either version 2 of the License, or
+ * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful, but WITHOUT
+ * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or
+ * FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License for
+ * more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ */
+
+#include "tegra194-camera-tek8-tevi-ov5640.dtsi"
+
+//CSI0_RST  -> SOC_GPIO04 (CAM0_PWDN pin on EVK)
+//CSI0_PWDN -> GPIO11
+#define CAM0_RST	TEGRA194_MAIN_GPIO(P, 4)
+#define CAM0_PWDN	TEGRA194_MAIN_GPIO(Q, 6)
+//#define CAM0_PWDN	TEGRA194_MAIN_GPIO(P, 4)
+//#define CAM1_PWDN	TEGRA194_MAIN_GPIO(P, 5)
+//#define CAM_I2C_MUX 	TEGRA194_AON_GPIO(CC, 3)
+//#define CAM0_RST	TEGRA194_MAIN_GPIO(P, 0)
+#define CAM1_RST	TEGRA194_MAIN_GPIO(P, 1)
+
+//#define CAM0_PWDN	TEGRA194_MAIN_GPIO(P, 4)
+#define CAM1_PWDN	TEGRA194_MAIN_GPIO(P, 5)
+#define CAMERA_I2C_MUX_BUS(x) (0x1E + x)
+
+/ {
+	i2c@3180000 { /* cam_i2c */
+		tca9548@70 {
+			compatible = "nxp,pca9548";
+			reg = <0x70>;
+			#address-cells = <1>;
+			#size-cells = <0>;
+			reset-gpios = <&tegra_aon_gpio TEGRA194_AON_GPIO(CC, 3) GPIO_ACTIVE_LOW>;
+			skip_mux_detect = "yes";
+			vcc-supply = <&p3509_vdd_1v8_cvb>;
+			vcc_lp = "vcc";
+			force_bus_start = <CAMERA_I2C_MUX_BUS(0)>;
+
+			i2c@0 {
+				reg = <0>;
+				i2c-mux,deselect-on-exit;
+				#address-cells = <1>;
+				#size-cells = <0>;
+				rbpcv2_ov5640_a@3c {
+					reset-gpios = <&tegra_main_gpio CAM0_RST GPIO_ACTIVE_LOW>;
+					power-gpios = <&tegra_main_gpio CAM0_PWDN GPIO_ACTIVE_LOW>;
+				};
+			};
+		};
+	};
+/*
+	gpio@2200000 {
+		camera-control-output-low {
+			gpio-hog;
+			output-low;
+			gpios = <CAM0_PWDN 0 CAM1_PWDN 0>;
+			label = "cam0-pwdn","cam1-pwdn";
+		};
+	};
+*/
+};
