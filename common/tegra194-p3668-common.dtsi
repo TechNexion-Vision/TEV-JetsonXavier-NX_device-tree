@@ -77,6 +77,124 @@
 		};
 	};
 
+	i2c@c240000 {
+		// Note that i2c address for the fabric will change in rev 0.2 of the board.
+		// In rev 0.1, I2C0 is connected to regular io pins on the fpga, which allows
+		// it to communicate with the EFB secondary I2C interface (not the primary).
+		// In rev 0.2, the I2C pins will be connected to the correct sysConfig pins of
+		// the FPGA, so the address will revert to 0x41.
+		axonfabric: axonfabric@42 {
+			reg = <0x42>;  // 0x42 is temporary only for board rev 0.1
+			pinctrl-names = "default";
+			compatible = "technexion,axon-imx8mm-f03";
+			reset-gpios = <&tegra_main_gpio TEGRA194_MAIN_GPIO(P, 4) 1>;
+			gpio-controller;
+			#gpio-cells = <2>;
+			gpio-line-names =
+				"F_GPIO01", "F_GPIO02", "F_GPIO03", "F_GPIO04", // Bank 0
+				"F_GPIO05", "F_GPIO06", "F_GPIO07", "F_GPIO08", // Bank 0
+				"F_GPIO09", "F_GPIO10", "F_GPIO11", "F_GPIO12", // Bank 1
+				"F_GPIO13", "F_GPIO14", "F_GPIO15", "F_GPIO16", // Bank 1
+				"F_GPIO17", "F_GPIO18", "F_GPIO19", "F_GPIO20", // Bank 2
+				"F_GPIO21", "F_GPIO22", "F_GPIO23", "F_GPIO24", // Bank 2
+				"F_GPIO25", "F_GPIO26", "F_GPIO27", "F_GPIO28", // Bank 3
+				"F_GPIO29", "F_GPIO30", "F_GPIO31", "F_GPIO32", // Bank 3
+				"F_GPIO33", "F_GPIO34", "F_GPIO35", "F_GPIO36", // Bank 4
+				"F_GPIO37", "F_GPIO38", "F_GPIO39", "F_GPIO40", // Bank 4
+				"F_GPIO41", "F_GPIO42", "F_GPIO43", "F_GPIO44", // Bank 5
+				"F_GPIO45", "F_GPIO46", "F_GPIO47", "F_GPIO48", // Bank 5
+				"F_GPIO49", "F_GPIO50", "F_GPIO51", "F_GPIO52", // Bank 6
+				"F_GPIO53", "F_GPIO54", "F_GPIO55", "F_GPIO56", // Bank 6
+				"F_GPIO57", "F_GPIO58", "F_GPIO59", "F_GPIO60", // Bank 7
+				"F_GPIO61", "F_GPIO62", "F_GPIO63", "F_GPIO64", // Bank 7
+				"F_GPIO65", "F_GPIO66", "F_GPIO67", "F_GPIO68", // Bank 8
+				"F_GPIO69", "F_GPIO70", "", "",                 // Bank 8
+				"F_UART_TXD", "F_UART_RXD", "F_UART_CTS", "F_UART_RTS",  // Bank 9
+				"F_GPIO_LED1", "F_GPIO_LED2", "F_GPIO_LED3", "",         // Bank 9
+				"CSI0_RST_N", "CSI0_PWDN", "CSI0_PDB", "CSI0_INT",       // Bank 10
+				"CSI1_RST_N", "CSI1_PWDN", "CSI1_PDB", "CSI1_INT",       // Bank 10
+				"CSI2_RST_N", "CSI2_PWDN", "CSI2_PDB", "CSI2_INT",       // Bank 11
+				"CSI3_RST_N", "CSI3_PWDN", "CSI3_PDB", "CSI3_INT",       // Bank 11
+				"CSI4_RST_N", "CSI4_PWDN", "CSI4_PDB", "CSI4_INT",       // Bank 12
+				"CSI5_RST_N", "CSI5_PWDN", "CSI5_PDB", "CSI5_INT",       // Bank 12
+				"LTE_DISABLE_CTRL", "LTE_WAKE_AP", "M2_RTS_N", "F_SIO_GPO30",  // Bank 13
+				"CASE_OPEN_N", "F_SOC_COREPOWER_OK", "F_IGNITION", "";      // Bank 13
+			status="okay";
+
+			pinmux_axonfabric: pinmux_axonfabric {
+				status = "okay";
+
+				// LEDs
+				pinctrl_af_nxbox_leds: pc_nxbox_leds {
+					pins = "F_GPIO_LED1", "F_GPIO_LED2", "F_GPIO_LED3";
+					function = "gpio";
+					drive-push-pull;
+				};
+
+				// Regular GPIO
+				pinctrl_af_nxbox_gpio: pc_nxbox_gpio {
+					pins =  "F_GPIO01", "F_GPIO02", "F_GPIO03", "F_GPIO04", // Bank 0
+							"F_GPIO05", "F_GPIO06", "F_GPIO07", "F_GPIO08", // Bank 0
+							"F_GPIO09", "F_GPIO10", "F_GPIO11", "F_GPIO12", // Bank 1
+							"F_GPIO13", "F_GPIO14", "F_GPIO15", "F_GPIO16", // Bank 1
+							"F_GPIO17", "F_GPIO18", "F_GPIO19", "F_GPIO20", // Bank 2
+							"F_GPIO21", "F_GPIO22", "F_GPIO23", "F_GPIO24", // Bank 2
+							"F_GPIO25", "F_GPIO26", "F_GPIO27", "F_GPIO28", // Bank 3
+							"F_GPIO29", "F_GPIO30", "F_GPIO31", "F_GPIO32", // Bank 3
+							"F_GPIO33", "F_GPIO34", "F_GPIO35", "F_GPIO36", // Bank 4
+							"F_GPIO37", "F_GPIO38", "F_GPIO39", "F_GPIO40", // Bank 4
+							"F_GPIO41", "F_GPIO42", "F_GPIO43", "F_GPIO44", // Bank 5
+							"F_GPIO45", "F_GPIO46", "F_GPIO47", "F_GPIO48", // Bank 5
+							"F_GPIO49", "F_GPIO50", "F_GPIO51", "F_GPIO52", // Bank 6
+							"F_GPIO53", "F_GPIO54", "F_GPIO55", "F_GPIO56", // Bank 6
+							"F_GPIO57", "F_GPIO58", "F_GPIO59", "F_GPIO60", // Bank 7
+							"F_GPIO61", "F_GPIO62", "F_GPIO63", "F_GPIO64", // Bank 7
+							"F_GPIO65", "F_GPIO66", "F_GPIO67", "F_GPIO68", // Bank 8
+							"F_GPIO69", "F_GPIO70",				// Bank 8
+							"CSI0_RST_N", "CSI0_PWDN", "CSI0_PDB", "CSI0_INT",       // Bank 10
+							"CSI1_RST_N", "CSI1_PWDN", "CSI1_PDB", "CSI1_INT",       // Bank 10
+							"CSI2_RST_N", "CSI2_PWDN", "CSI2_PDB", "CSI2_INT",       // Bank 11
+							"CSI3_RST_N", "CSI3_PWDN", "CSI3_PDB", "CSI3_INT",       // Bank 11
+							"CSI4_RST_N", "CSI4_PWDN", "CSI4_PDB", "CSI4_INT",       // Bank 12
+							"CSI5_RST_N", "CSI5_PWDN", "CSI5_PDB", "CSI5_INT";       // Bank 12;
+					function = "gpio";
+					drive-push-pull;
+				};
+			};
+
+			gpio_axonfabric: gpio_axonfabric {
+				status = "okay";
+				compatible = "technexion,axonfabric-gpio";
+				pinctrl-names = "default";
+				pinctrl-0 = <&pinmux_axonfabric>;
+			};
+		};
+	};
+
+	fpga_leds: fpga_leds {
+		compatible = "gpio-leds";
+		pinctrl-names = "default";
+		status = "okay";
+
+		user_led_1: fpga_user_led_1 {
+			label = "user_led_1";
+			gpios = <&axonfabric 76 GPIO_ACTIVE_HIGH>;
+			linux,default-trigger = "heartbeat";
+		};
+
+		user_led_2: fpga_user_led_2 {
+			label = "user_led_2";
+			gpios = <&axonfabric 77 GPIO_ACTIVE_HIGH>;
+			default-state = "off";
+		};
+
+		user_led_3: fpga_user_led_3 {
+			label = "user_led_3";
+			gpios = <&axonfabric 78 GPIO_ACTIVE_HIGH>;
+			default-state = "off";
+		};
+	};
+
 	external-connection {
 		vbus_id_extcon: extcon@1 {
 			compatible = "extcon-gpio-states";
