@@ -1,0 +1,303 @@
+/*
+ * Copyright (c) 2021, NVIDIA CORPORATION.  All rights reserved.
+ *
+ * This program is free software; you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation; either version 2 of the License, or
+ * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful, but WITHOUT
+ * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or
+ * FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License for
+ * more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ */
+
+#include "tegra194-camera-tek8-vizionlink-tevi-ar0144.dtsi"
+
+//CSI0_RST  -> SOC_GPIO04 (CAM0_PWDN pin on EVK)
+//CSI0_PWDN -> GPIO11
+#define CAM0_RST	TEGRA194_MAIN_GPIO(P, 4)
+#define CAM0_PWDN	TEGRA194_MAIN_GPIO(Q, 6)
+//#define CAM0_PWDN	TEGRA194_MAIN_GPIO(P, 4)
+//#define CAM1_PWDN	TEGRA194_MAIN_GPIO(P, 5)
+//#define CAM_I2C_MUX 	TEGRA194_AON_GPIO(CC, 3)
+//#define CAM0_RST	TEGRA194_MAIN_GPIO(P, 0)
+#define CAM1_RST	TEGRA194_MAIN_GPIO(P, 1)
+
+//#define CAM0_PWDN	TEGRA194_MAIN_GPIO(P, 4)
+#define CAM1_PWDN	TEGRA194_MAIN_GPIO(P, 5)
+#define CAMERA_I2C_MUX_BUS(x) (0x1E + x)
+
+/ {
+	i2c@3180000 { /* cam_i2c */
+		tca9548@70 {
+			compatible = "nxp,pca9548";
+			reg = <0x70>;
+			#address-cells = <1>;
+			#size-cells = <0>;
+			reset-gpios = <&tegra_aon_gpio TEGRA194_AON_GPIO(CC, 3) GPIO_ACTIVE_LOW>;
+			skip_mux_detect = "yes";
+			vcc-supply = <&p3509_vdd_1v8_cvb>;
+			vcc_lp = "vcc";
+			force_bus_start = <CAMERA_I2C_MUX_BUS(0)>;
+
+			i2c@0 {
+				reg = <0>;
+				i2c-mux,deselect-on-exit;
+				#address-cells = <1>;
+				#size-cells = <0>;
+
+				fpdlink_des0: vizionlink@31 {
+					compatible = "tn,vizionlink";
+					reg = <0x31>;
+					phy-reg = <0x30>;
+					port = <0>;
+					//pdb-gpios = <&pca9555_a23 13 GPIO_ACTIVE_HIGH>;
+					ser_alias_id = <0x40>;
+
+					//i2c addr alias map "gpio extender, eeprom addr1, eeprom addr2, sensor"
+					i2c_addr_alias_map_local = <0x26 0x54 0x55 0x3e>;
+					i2c_addr_alias_map_remote = <0x25 0x54 0x55 0x3d>;
+
+					//deserializer output csi lanes 1~4. default 4
+					des_csi_lanes = <2>;
+
+					//1: Enable 0: Disable continuous clock. default 0
+					des_csi_continuous_clock = <0>;
+
+					//serializer input csi lanes 1~4. default 4
+					ser_csi_lanes = <2>;
+
+					//1: Enable 0: Disable continuous clock. default 0
+					ser_csi_continuous_clock = <0>;
+
+					status = "okay";
+
+					i2c_dev_list {
+						#address-cells = <1>;
+						#size-cells = <0>;
+
+						pca9554_a25_0: pca9554@26 {
+							compatible = "nxp,pca9554";
+							reg = <0x26>;
+							gpio-controller;
+							#gpio-cells = <2>;
+							vcc-supply = <&p3509_vdd_1v8_cvb>;
+							vcc_lp = "vcc";
+							status = "okay";
+						};
+					};
+				};
+
+				tevi_ar0144_otp_0: tevi_ar0144_otp@56 {
+					compatible = "at24,24c1024";
+					pagesize = <32>;
+					reg = <0x54>;
+				};
+
+				rbpcv2_ar0144_a@3e {
+					reset-gpios = <&pca9554_a25_0 4 GPIO_ACTIVE_HIGH>;
+					power-gpios = <&pca9554_a25_0 0 GPIO_ACTIVE_HIGH>;
+					standby-gpios = <&pca9554_a25_0 2 GPIO_ACTIVE_HIGH>;
+					nvmem = <&tevi_ar0144_otp_0>;
+					nvmem-names = "calib-data";
+
+					nvidia,fpdlink-dser-device = <&fpdlink_des0>;
+					vc_port = <0>;
+				};
+
+
+
+				fpdlink_des1: vizionlink@32 {
+					compatible = "tn,vizionlink";
+					reg = <0x32>;
+					phy-reg = <0x30>;
+					port = <1>;
+					//pdb-gpios = <&pca9555_a23 13 GPIO_ACTIVE_HIGH>;
+					ser_alias_id = <0x50>;
+
+					//i2c addr alias map "gpio extender, eeprom addr1, eeprom addr2, sensor"
+					i2c_addr_alias_map_local = <0x27 0x54 0x55 0x3f>;
+					i2c_addr_alias_map_remote = <0x25 0x54 0x55 0x3d>;
+
+					//deserializer output csi lanes 1~4. default 4
+					des_csi_lanes = <2>;
+
+					//1: Enable 0: Disable continuous clock. default 0
+					des_csi_continuous_clock = <0>;
+
+					//serializer input csi lanes 1~4. default 4
+					ser_csi_lanes = <2>;
+
+					//1: Enable 0: Disable continuous clock. default 0
+					ser_csi_continuous_clock = <0>;
+
+					status = "okay";
+
+					i2c_dev_list {
+						#address-cells = <1>;
+						#size-cells = <0>;
+
+						pca9554_a25_1: pca9554@27 {
+							compatible = "nxp,pca9554";
+							reg = <0x27>;
+							gpio-controller;
+							#gpio-cells = <2>;
+							vcc-supply = <&p3509_vdd_1v8_cvb>;
+							vcc_lp = "vcc";
+							status = "okay";
+						};
+					};
+				};
+
+				tevi_ar0144_otp_1: tevi_ar0144_otp@57 {
+					compatible = "at24,24c1024";
+					pagesize = <32>;
+					reg = <0x54>;
+				};
+
+				rbpcv2_ar0144_b@3f {
+					reset-gpios = <&pca9554_a25_1 4 GPIO_ACTIVE_HIGH>;
+					power-gpios = <&pca9554_a25_1 0 GPIO_ACTIVE_HIGH>;
+					standby-gpios = <&pca9554_a25_1 2 GPIO_ACTIVE_HIGH>;
+					nvmem = <&tevi_ar0144_otp_1>;
+					nvmem-names = "calib-data";
+
+					nvidia,fpdlink-dser-device = <&fpdlink_des1>;
+					vc_port = <1>;
+				};
+
+				fpdlink_des2: vizionlink@33 {
+					compatible = "tn,vizionlink";
+					reg = <0x33>;
+					phy-reg = <0x30>;
+					port = <2>;
+					//pdb-gpios = <&pca9555_a23 13 GPIO_ACTIVE_HIGH>;
+					ser_alias_id = <0x20>;
+
+					//i2c addr alias map "gpio extender, eeprom addr1, eeprom addr2, sensor"
+					i2c_addr_alias_map_local = <0x28 0x54 0x55 0x41>;
+					i2c_addr_alias_map_remote = <0x25 0x54 0x55 0x3d>;
+
+					//deserializer output csi lanes 1~4. default 4
+					des_csi_lanes = <2>;
+
+					//1: Enable 0: Disable continuous clock. default 0
+					des_csi_continuous_clock = <0>;
+
+					//serializer input csi lanes 1~4. default 4
+					ser_csi_lanes = <2>;
+
+					//1: Enable 0: Disable continuous clock. default 0
+					ser_csi_continuous_clock = <0>;
+
+					status = "okay";
+
+					i2c_dev_list {
+						#address-cells = <1>;
+						#size-cells = <0>;
+
+						pca9554_a25_2: pca9554@28 {
+							compatible = "nxp,pca9554";
+							reg = <0x28>;
+							gpio-controller;
+							#gpio-cells = <2>;
+							vcc-supply = <&p3509_vdd_1v8_cvb>;
+							vcc_lp = "vcc";
+							status = "okay";
+						};
+					};
+				};
+
+				tevi_ar0144_otp_2: tevi_ar0144_otp@58 {
+					compatible = "at24,24c1024";
+					pagesize = <32>;
+					reg = <0x54>;
+				};
+
+				rbpcv2_ar0144_c@41 {
+					reset-gpios = <&pca9554_a25_2 4 GPIO_ACTIVE_HIGH>;
+					power-gpios = <&pca9554_a25_2 0 GPIO_ACTIVE_HIGH>;
+					standby-gpios = <&pca9554_a25_2 2 GPIO_ACTIVE_HIGH>;
+					nvmem = <&tevi_ar0144_otp_2>;
+					nvmem-names = "calib-data";
+
+					nvidia,fpdlink-dser-device = <&fpdlink_des2>;
+					vc_port = <2>;
+				};
+
+				fpdlink_des3: vizionlink@34 {
+					compatible = "tn,vizionlink";
+					reg = <0x34>;
+					phy-reg = <0x30>;
+					port = <3>;
+					//pdb-gpios = <&pca9555_a23 13 GPIO_ACTIVE_HIGH>;
+					ser_alias_id = <0x22>;
+
+					//i2c addr alias map "gpio extender, eeprom addr1, eeprom addr2, sensor"
+					i2c_addr_alias_map_local = <0x29 0x54 0x55 0x42>;
+					i2c_addr_alias_map_remote = <0x25 0x54 0x55 0x3d>;
+
+					//deserializer output csi lanes 1~4. default 4
+					des_csi_lanes = <2>;
+
+					//1: Enable 0: Disable continuous clock. default 0
+					des_csi_continuous_clock = <0>;
+
+					//serializer input csi lanes 1~4. default 4
+					ser_csi_lanes = <2>;
+
+					//1: Enable 0: Disable continuous clock. default 0
+					ser_csi_continuous_clock = <0>;
+
+					status = "okay";
+
+					i2c_dev_list {
+						#address-cells = <1>;
+						#size-cells = <0>;
+
+						pca9554_a25_3: pca9554@29 {
+							compatible = "nxp,pca9554";
+							reg = <0x29>;
+							gpio-controller;
+							#gpio-cells = <2>;
+							vcc-supply = <&p3509_vdd_1v8_cvb>;
+							vcc_lp = "vcc";
+							status = "okay";
+						};
+					};
+				};
+
+				tevi_ar0144_otp_3: tevi_ar0144_otp@59 {
+					compatible = "at24,24c1024";
+					pagesize = <32>;
+					reg = <0x54>;
+				};
+
+				rbpcv2_ar0144_d@42 {
+					reset-gpios = <&pca9554_a25_3 4 GPIO_ACTIVE_HIGH>;
+					power-gpios = <&pca9554_a25_3 0 GPIO_ACTIVE_HIGH>;
+					standby-gpios = <&pca9554_a25_3 2 GPIO_ACTIVE_HIGH>;
+					nvmem = <&tevi_ar0144_otp_3>;
+					nvmem-names = "calib-data";
+
+					nvidia,fpdlink-dser-device = <&fpdlink_des3>;
+					vc_port = <3>;
+				};
+			};
+		};
+	};
+/*
+	gpio@2200000 {
+		camera-control-output-low {
+			gpio-hog;
+			output-low;
+			gpios = <CAM0_PWDN 0 CAM1_PWDN 0>;
+			label = "cam0-pwdn","cam1-pwdn";
+		};
+	};
+*/
+};
