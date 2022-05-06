@@ -19,7 +19,16 @@
 / {
 	host1x {
 		vi@15c10000  {
+			num-channels = <1>;
+#ifdef VIZIONLINK_2_CAMERA
+			num-channels = <2>;
+#endif
+#ifdef VIZIONLINK_3_CAMERA
+			num-channels = <3>;
+#endif
+#ifdef VIZIONLINK_4_CAMERA
 			num-channels = <4>;
+#endif
 			ports {
 				#address-cells = <1>;
 				#size-cells = <0>;
@@ -32,6 +41,7 @@
 						remote-endpoint = <&rbpcv2_ar0144_csi_out0>;
 					};
 				};
+#ifdef VIZIONLINK_2_CAMERA
 				vi_port1: port@1 {
 					reg = <1>;
 					rbpcv2_ar0144_vi_in1: endpoint {
@@ -41,6 +51,7 @@
 						remote-endpoint = <&rbpcv2_ar0144_csi_out1>;
 					};
 				};
+#ifdef VIZIONLINK_3_CAMERA
 				vi_port2: port@2 {
 					reg = <2>;
 					rbpcv2_ar0144_vi_in2: endpoint {
@@ -50,6 +61,7 @@
 						remote-endpoint = <&rbpcv2_ar0144_csi_out2>;
 					};
 				};
+#ifdef VIZIONLINK_4_CAMERA
 				vi_port3: port@3 {
 					reg = <3>;
 					rbpcv2_ar0144_vi_in3: endpoint {
@@ -59,11 +71,23 @@
 						remote-endpoint = <&rbpcv2_ar0144_csi_out3>;
 					};
 				};
+#endif//2_CAMERA
+#endif//3_CAMERA
+#endif//4_CAMERA
 			};
 		};
 
 		nvcsi@15a00000 {
+			num-channels = <1>;
+#ifdef VIZIONLINK_2_CAMERA
+			num-channels = <2>;
+#endif
+#ifdef VIZIONLINK_3_CAMERA
+			num-channels = <3>;
+#endif
+#ifdef VIZIONLINK_4_CAMERA
 			num-channels = <4>;
+#endif
 			#address-cells = <1>;
 			#size-cells = <0>;
 			csi_chan0: channel@0 {
@@ -87,6 +111,7 @@
 					};
 				};
 			};
+#ifdef VIZIONLINK_2_CAMERA
 			csi_chan1: channel@1 {
 				reg = <1>;
 				ports {
@@ -108,6 +133,7 @@
 					};
 				};
 			};
+#ifdef VIZIONLINK_3_CAMERA
 			csi_chan2: channel@2 {
 				reg = <2>;
 				ports {
@@ -129,6 +155,7 @@
 					};
 				};
 			};
+#ifdef VIZIONLINK_4_CAMERA
 			csi_chan3: channel@3 {
 				reg = <3>;
 				ports {
@@ -150,6 +177,9 @@
 					};
 				};
 			};
+#endif//2_CAMERA
+#endif//3_CAMERA
+#endif//4_CAMERA
 		};
 	};
 
@@ -309,8 +339,8 @@
 						};
 					};
 				};
-
-					rbpcv2_ar0144_b@3f {
+#ifdef VIZIONLINK_2_CAMERA
+				rbpcv2_ar0144_b@3f {
 					compatible = "tn,tevi-ar0144";
 					/* I2C device address */
 					reg = <0x3f>;
@@ -463,8 +493,8 @@
 						};
 					};
 				};
-
-					rbpcv2_ar0144_c@41 {
+#ifdef VIZIONLINK_3_CAMERA
+				rbpcv2_ar0144_c@41 {
 					compatible = "tn,tevi-ar0144";
 					/* I2C device address */
 					reg = <0x41>;
@@ -617,8 +647,8 @@
 						};
 					};
 				};
-
-					rbpcv2_ar0144_d@42 {
+#ifdef VIZIONLINK_4_CAMERA
+				rbpcv2_ar0144_d@42 {
 					compatible = "tn,tevi-ar0144";
 					/* I2C device address */
 					reg = <0x42>;
@@ -771,6 +801,9 @@
 						};
 					};
 				};
+#endif//2_CAMERA
+#endif//3_CAMERA
+#endif//4_CAMERA
 			};
 		};
         };
@@ -845,6 +878,7 @@
 					proc-device-tree = "/proc/device-tree/lens_ar0144@RBPCV2/";
 				};
 			};
+#ifdef VIZIONLINK_2_CAMERA
 			cam_module1: module1 {
 				badge = "jakku_front_RBP194";
 				position = "rear";
@@ -859,6 +893,7 @@
 					proc-device-tree = "/proc/device-tree/lens_ar0144@RBPCV2/";
 				};
 			};
+#ifdef VIZIONLINK_3_CAMERA
 			cam_module2: module2 {
 				badge = "jakku_front_RBP194";
 				position = "left";
@@ -873,6 +908,7 @@
 					proc-device-tree = "/proc/device-tree/lens_ar0144@RBPCV2/";
 				};
 			};
+#ifdef VIZIONLINK_4_CAMERA
 			cam_module3: module3 {
 				badge = "jakku_front_RBP194";
 				position = "right";
@@ -887,6 +923,10 @@
 					proc-device-tree = "/proc/device-tree/lens_ar0144@RBPCV2/";
 				};
 			};
+
+#endif//2_CAMERA
+#endif//3_CAMERA
+#endif//4_CAMERA
 		};
 	};
 };

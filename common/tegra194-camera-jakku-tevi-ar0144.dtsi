@@ -15,6 +15,15 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
+/* If your VIZIONLINK didn't plug all(4) camera.
+ * Please markdown the missing one.
+ * ex: 3 cameras, markdown the 'VIZIONLINK_4_CAMERA'
+ *     1 camera, markdown the 'VIZIONLINK_2_CAMERA' 'VIZIONLINK_3_CAMERA' 'VIZIONLINK_4_CAMERA'.
+ */
+#define VIZIONLINK_2_CAMERA 2
+//#define VIZIONLINK_3_CAMERA 3
+//#define VIZIONLINK_4_CAMERA 4
+
 #include "tegra194-camera-tevi-ar0144.dtsi"
 
 //CSI0_RST  -> SOC_GPIO04 (CAM0_PWDN pin on EVK)
@@ -108,9 +117,7 @@
 					nvidia,fpdlink-dser-device = <&fpdlink_des0>;
 					vc_port = <0>;
 				};
-
-
-
+#ifdef VIZIONLINK_2_CAMERA
 				fpdlink_des1: vizionlink@32 {
 					compatible = "tn,vizionlink";
 					reg = <0x32>;
@@ -169,7 +176,7 @@
 					nvidia,fpdlink-dser-device = <&fpdlink_des1>;
 					vc_port = <1>;
 				};
-
+#ifdef VIZIONLINK_3_CAMERA
 				fpdlink_des2: vizionlink@33 {
 					compatible = "tn,vizionlink";
 					reg = <0x33>;
@@ -228,7 +235,7 @@
 					nvidia,fpdlink-dser-device = <&fpdlink_des2>;
 					vc_port = <2>;
 				};
-
+#ifdef VIZIONLINK_4_CAMERA
 				fpdlink_des3: vizionlink@34 {
 					compatible = "tn,vizionlink";
 					reg = <0x34>;
@@ -287,6 +294,9 @@
 					nvidia,fpdlink-dser-device = <&fpdlink_des3>;
 					vc_port = <3>;
 				};
+#endif//2_CAMEAR
+#endif//3_CAMERA
+#endif//4_CAMERA
 			};
 		};
 	};
