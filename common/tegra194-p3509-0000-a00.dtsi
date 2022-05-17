@@ -16,7 +16,7 @@
 #include "tegra194-p3509-disp.dtsi"
 #include "tegra194-audio-p3668.dtsi"
 #include "tegra194-super-module-e2614-p3509.dtsi"
-#include "tegra194-camera-jakku-tevi-ar0144.dtsi"
+#include "tegra194-camera-jakku-tevi-ar0144-6-port.dtsi"
 
 / {
 	gpio-keys {
