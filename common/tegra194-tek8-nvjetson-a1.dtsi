@@ -17,7 +17,8 @@
 #include "tegra194-audio-p3668.dtsi"
 #include "tegra194-super-module-e2614-p3509.dtsi"
 //#include "tegra194-camera-tek8-nvjetson-tevi-ov5640.dtsi"
-#include "tegra194-camera-tek8-nvjetson-vizionlink-tevi-ar0144.dtsi"
+//#include "tegra194-camera-tek8-nvjetson-vizionlink-tevi-ar0144.dtsi"
+#include "tegra194-camera-tek8-nvjetson-tevi-ar0144.dtsi"
 
 / {
 	gpio-keys {
