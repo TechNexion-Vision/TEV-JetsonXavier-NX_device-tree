@@ -17,6 +17,8 @@ dtbo-$(CONFIG_ARCH_TEGRA_19x_SOC) += tegra194-p3668-all-p3509-0000-camera-imx477
 dtbo-$(CONFIG_ARCH_TEGRA_19x_SOC) += tegra194-p3668-all-p3509-0000-camera-imx477-dual.dtbo
 dtbo-$(CONFIG_ARCH_TEGRA_19x_SOC) += tegra194-p3668-all-p3509-0000-camera-imx219-dual.dtbo
 
+dtb-$(CONFIG_ARCH_TEGRA_19x_SOC) += tegra194-p3668-tek8-nvjetson-a1.dtb
+
 ifneq ($(dtb-y),)
 dtb-y := $(addprefix $(makefile-path)/,$(dtb-y))
 endif
