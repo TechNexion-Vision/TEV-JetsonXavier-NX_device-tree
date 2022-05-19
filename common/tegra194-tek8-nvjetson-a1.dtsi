@@ -115,6 +115,30 @@
 		status = "disabled";
 	};
 
+	fixed-regulators {
+		p3668_vdd_sdmmc3_sw: regulator@114 {
+			compatible = "regulator-fixed";
+			reg = <114>;
+			regulator-name = "vdd-sdmmc3-sw";
+			regulator-min-microvolt = <3300000>;
+			regulator-max-microvolt = <3300000>;
+			gpio = <&tegra_main_gpio TEGRA194_MAIN_GPIO(Q, 5) 0>;
+			enable-active-high;
+		};
+	};
+
+	baseboard_sd: sdhci@3440000 { /* sdmmc3 */
+		mmc-ocr-mask = <0x0>;
+		cd-inverted;
+		cd-gpios = <&tegra_main_gpio TEGRA194_MAIN_GPIO(S, 4) 0>;
+		nvidia,cd-wakeup-capable;
+		mmc-ocr-mask = <0>;
+		cd-inverted;
+		vmmc-supply = <&p3668_vdd_sdmmc3_sw>;
+		nvidia,vmmc-always-on;
+		status = "okay";
+	};
+
 	gpio@2200000 {
 		/* gpio-name for 40-pin header, gpio-name given as COL(10) x ROW(24),
 		   Tegra-GPIO starts from 288 */
