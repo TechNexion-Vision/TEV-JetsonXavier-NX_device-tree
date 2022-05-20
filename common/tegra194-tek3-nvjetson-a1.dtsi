@@ -183,6 +183,33 @@
 		};
 	};
 
+	gpio-leds1 {
+		compatible = "gpio-leds";
+		status = "okay";
+		led1 {
+			gpios = <&pca9555_a23 5 GPIO_ACTIVE_HIGH>;
+			default-state = "off";
+		};
+	};
+
+	gpio-leds2 {
+		compatible = "gpio-leds";
+		status = "okay";
+		led2 {
+			gpios = <&pca9555_a23 6 GPIO_ACTIVE_HIGH>;
+			default-state = "off";
+		};
+	};
+
+	gpio-leds3 {
+		compatible = "gpio-leds";
+		status = "okay";
+		led3 {
+			gpios = <&pca9555_a23 7 GPIO_ACTIVE_HIGH>;
+			default-state = "off";
+		};
+	};
+
 	gpio@2200000 {
 		/* gpio-name for 40-pin header, gpio-name given as COL(10) x ROW(24),
 		   Tegra-GPIO starts from 288 */
