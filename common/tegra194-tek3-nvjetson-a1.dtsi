@@ -175,3 +175,19 @@
 		"",     "",     "",     "",     "",     "",     "",     "",     "",     "",     "GPIO12";
 	};
 };
+
+&head0 {
+	status = "disabled";
+};
+
+&sor1 {
+	status = "disabled";
+};
+
+&sor1_hdmi_display {
+	status = "disabled";
+};
+
+&dpaux1 {
+	status = "disabled";
+};
