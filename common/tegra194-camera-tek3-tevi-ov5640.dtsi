@@ -153,7 +153,7 @@
 		tca9548@70 {
 			i2c@0 {
 				rbpcv2_ov5640_a@3c {
-					compatible = "tevi,ov5640";
+					compatible = "nvidia,tevi-ov5640";
 					/* I2C device address */
 					reg = <0x3c>;
 
@@ -164,9 +164,9 @@
 					physical_w = "3.680";
 					physical_h = "2.760";
 
-					sensor_model = "tevi-ov540";
+					sensor_model = "tevi-ov5640";
 
-					use_sensor_mode_id = "true";
+					use_sensor_mode_id = "false";
 
 					/**
 					* ==== Modes ====
@@ -288,12 +288,91 @@
 						embedded_metadata_height = "0";
 					};
 
+					mode1 { /* OV5640_MODE_1920x1080_30FPS */
+						mclk_khz = "27000";
+						num_lanes = "2";
+						tegra_sinterface = "serial_a";
+						phy_mode = "DPHY";
+						discontinuous_clk = "yes";
+						dpcm_enable = "false";
+						cil_settletime = "0";
+						active_w = "1920";
+						active_h = "1080";
+						//pixel_t = "uyvy";
+						pixel_phase = "uyvy";
+						mode_type = "yuv";
+						csi_pixel_bit_depth = "16";
+						readout_orientation = "0";
+						line_length = "2200";
+						inherent_gain = "1";
+						mclk_multiplier = "9.33";
+						pix_clk_hz = "207000000";
+						gain_factor = "100";
+						framerate_factor = "1000000";
+						exposure_factor = "1000000";
+						min_gain_val = "0"; /* 1.00x */
+						max_gain_val = "540"; /* 10.66x */
+						step_gain_val = "6";
+						default_gain = "0"; /* 1.00x */
+						min_hdr_ratio = "1";
+						max_hdr_ratio = "1";
+						min_framerate = "15000000"; /* 2.0 fps */
+						max_framerate = "15000000"; /* 30.0 fps */
+						step_framerate = "1";
+						default_framerate = "30000000"; /* 30.0 fps */
+						min_exp_time = "1070"; /* us */
+						max_exp_time = "33245"; /* us */
+						step_exp_time = "55";
+						default_exp_time = "2495"; /* us */
+						embedded_metadata_height = "0";
+					};
+					
+					mode2 { /* OV5640_MODE_720P_1280x720 */
+						mclk_khz = "27000";
+						num_lanes = "2";
+						tegra_sinterface = "serial_a";
+						phy_mode = "DPHY";
+						discontinuous_clk = "yes";
+						dpcm_enable = "false";
+						cil_settletime = "0";
+						active_w = "1280";
+						active_h = "720";
+						//pixel_t = "uyvy";
+						pixel_phase = "uyvy";
+						mode_type = "yuv";
+						csi_pixel_bit_depth = "16";
+						readout_orientation = "0";
+						line_length = "2200";
+						inherent_gain = "1";
+						mclk_multiplier = "9.33";
+						pix_clk_hz = "207000000";
+						gain_factor = "100";
+						framerate_factor = "1000000";
+						exposure_factor = "1000000";
+						min_gain_val = "0"; /* 1.00x */
+						max_gain_val = "540"; /* 10.66x */
+						step_gain_val = "6";
+						default_gain = "0"; /* 1.00x */
+						min_hdr_ratio = "1";
+						max_hdr_ratio = "1";
+						min_framerate = "15000000"; /* 2.0 fps */
+						max_framerate = "15000000"; /* 30.0 fps */
+						step_framerate = "1";
+						default_framerate = "30000000"; /* 30.0 fps */
+						min_exp_time = "1070"; /* us */
+						max_exp_time = "33245"; /* us */
+						step_exp_time = "55";
+						default_exp_time = "2495"; /* us */
+						embedded_metadata_height = "0";
+					};
+
 					ports {
 						#address-cells = <1>;
 						#size-cells = <0>;
 						port@0 {
 							reg = <0>;
 							rbpcv2_ov5640_out0: endpoint {
+								status = "okay";
 								port-index = <0>;
 								bus-width = <2>;
 								remote-endpoint = <&rbpcv2_ov5640_csi_in0>;
@@ -304,7 +383,7 @@
 			};
 			i2c@1 {
 				rbpcv2_ov5640_a@3c {
-					compatible = "tevi,ov5640";
+					compatible = "nvidia,tevi-ov5640";
 					/* I2C device address */
 					reg = <0x3c>;
 
@@ -315,9 +394,9 @@
 					physical_w = "3.680";
 					physical_h = "2.760";
 
-					sensor_model = "tevi-ov540";
+					sensor_model = "tevi-ov5640";
 
-					use_sensor_mode_id = "true";
+					use_sensor_mode_id = "false";
 
 					/**
 					* ==== Modes ====
@@ -410,6 +489,84 @@
 						cil_settletime = "0";
 						active_w = "1920";
 						active_h = "1080";
+						//pixel_t = "uyvy";
+						pixel_phase = "uyvy";
+						mode_type = "yuv";
+						csi_pixel_bit_depth = "16";
+						readout_orientation = "0";
+						line_length = "2200";
+						inherent_gain = "1";
+						mclk_multiplier = "9.33";
+						pix_clk_hz = "207000000";
+						gain_factor = "100";
+						framerate_factor = "1000000";
+						exposure_factor = "1000000";
+						min_gain_val = "0"; /* 1.00x */
+						max_gain_val = "540"; /* 10.66x */
+						step_gain_val = "6";
+						default_gain = "0"; /* 1.00x */
+						min_hdr_ratio = "1";
+						max_hdr_ratio = "1";
+						min_framerate = "15000000"; /* 2.0 fps */
+						max_framerate = "15000000"; /* 30.0 fps */
+						step_framerate = "1";
+						default_framerate = "30000000"; /* 30.0 fps */
+						min_exp_time = "1070"; /* us */
+						max_exp_time = "33245"; /* us */
+						step_exp_time = "55";
+						default_exp_time = "2495"; /* us */
+						embedded_metadata_height = "0";
+					};
+
+					mode1 { /* OV5640_MODE_1920x1080_30FPS */
+						mclk_khz = "27000";
+						num_lanes = "2";
+						tegra_sinterface = "serial_a";
+						phy_mode = "DPHY";
+						discontinuous_clk = "yes";
+						dpcm_enable = "false";
+						cil_settletime = "0";
+						active_w = "1920";
+						active_h = "1080";
+						//pixel_t = "uyvy";
+						pixel_phase = "uyvy";
+						mode_type = "yuv";
+						csi_pixel_bit_depth = "16";
+						readout_orientation = "0";
+						line_length = "2200";
+						inherent_gain = "1";
+						mclk_multiplier = "9.33";
+						pix_clk_hz = "207000000";
+						gain_factor = "100";
+						framerate_factor = "1000000";
+						exposure_factor = "1000000";
+						min_gain_val = "0"; /* 1.00x */
+						max_gain_val = "540"; /* 10.66x */
+						step_gain_val = "6";
+						default_gain = "0"; /* 1.00x */
+						min_hdr_ratio = "1";
+						max_hdr_ratio = "1";
+						min_framerate = "15000000"; /* 2.0 fps */
+						max_framerate = "15000000"; /* 30.0 fps */
+						step_framerate = "1";
+						default_framerate = "30000000"; /* 30.0 fps */
+						min_exp_time = "1070"; /* us */
+						max_exp_time = "33245"; /* us */
+						step_exp_time = "55";
+						default_exp_time = "2495"; /* us */
+						embedded_metadata_height = "0";
+					};
+					
+					mode2 { /* OV5640_MODE_720P_1280x720 */
+						mclk_khz = "27000";
+						num_lanes = "2";
+						tegra_sinterface = "serial_a";
+						phy_mode = "DPHY";
+						discontinuous_clk = "yes";
+						dpcm_enable = "false";
+						cil_settletime = "0";
+						active_w = "1280";
+						active_h = "720";
 						//pixel_t = "uyvy";
 						pixel_phase = "uyvy";
 						mode_type = "yuv";
@@ -456,7 +613,7 @@
 			};
 			i2c@2 {
 				rbpcv2_ov5640_a@3c {
-					compatible = "tevi,ov5640";
+					compatible = "nvidia,tevi-ov5640";
 					/* I2C device address */
 					reg = <0x3c>;
 
@@ -467,9 +624,9 @@
 					physical_w = "3.680";
 					physical_h = "2.760";
 
-					sensor_model = "tevi-ov540";
+					sensor_model = "tevi-ov5640";
 
-					use_sensor_mode_id = "true";
+					use_sensor_mode_id = "false";
 
 					/**
 					* ==== Modes ====
@@ -590,6 +747,84 @@
 						default_exp_time = "2495"; /* us */
 						embedded_metadata_height = "0";
 					};
+					
+					mode1 { /* OV5640_MODE_1920x1080_30FPS */
+						mclk_khz = "27000";
+						num_lanes = "2";
+						tegra_sinterface = "serial_a";
+						phy_mode = "DPHY";
+						discontinuous_clk = "yes";
+						dpcm_enable = "false";
+						cil_settletime = "0";
+						active_w = "1920";
+						active_h = "1080";
+						//pixel_t = "uyvy";
+						pixel_phase = "uyvy";
+						mode_type = "yuv";
+						csi_pixel_bit_depth = "16";
+						readout_orientation = "0";
+						line_length = "2200";
+						inherent_gain = "1";
+						mclk_multiplier = "9.33";
+						pix_clk_hz = "207000000";
+						gain_factor = "100";
+						framerate_factor = "1000000";
+						exposure_factor = "1000000";
+						min_gain_val = "0"; /* 1.00x */
+						max_gain_val = "540"; /* 10.66x */
+						step_gain_val = "6";
+						default_gain = "0"; /* 1.00x */
+						min_hdr_ratio = "1";
+						max_hdr_ratio = "1";
+						min_framerate = "15000000"; /* 2.0 fps */
+						max_framerate = "15000000"; /* 30.0 fps */
+						step_framerate = "1";
+						default_framerate = "30000000"; /* 30.0 fps */
+						min_exp_time = "1070"; /* us */
+						max_exp_time = "33245"; /* us */
+						step_exp_time = "55";
+						default_exp_time = "2495"; /* us */
+						embedded_metadata_height = "0";
+					};
+					
+					mode2 { /* OV5640_MODE_720P_1280x720 */
+						mclk_khz = "27000";
+						num_lanes = "2";
+						tegra_sinterface = "serial_a";
+						phy_mode = "DPHY";
+						discontinuous_clk = "yes";
+						dpcm_enable = "false";
+						cil_settletime = "0";
+						active_w = "1280";
+						active_h = "720";
+						//pixel_t = "uyvy";
+						pixel_phase = "uyvy";
+						mode_type = "yuv";
+						csi_pixel_bit_depth = "16";
+						readout_orientation = "0";
+						line_length = "2200";
+						inherent_gain = "1";
+						mclk_multiplier = "9.33";
+						pix_clk_hz = "207000000";
+						gain_factor = "100";
+						framerate_factor = "1000000";
+						exposure_factor = "1000000";
+						min_gain_val = "0"; /* 1.00x */
+						max_gain_val = "540"; /* 10.66x */
+						step_gain_val = "6";
+						default_gain = "0"; /* 1.00x */
+						min_hdr_ratio = "1";
+						max_hdr_ratio = "1";
+						min_framerate = "15000000"; /* 2.0 fps */
+						max_framerate = "15000000"; /* 30.0 fps */
+						step_framerate = "1";
+						default_framerate = "30000000"; /* 30.0 fps */
+						min_exp_time = "1070"; /* us */
+						max_exp_time = "33245"; /* us */
+						step_exp_time = "55";
+						default_exp_time = "2495"; /* us */
+						embedded_metadata_height = "0";
+					};
 
 					ports {
 						#address-cells = <1>;
@@ -608,7 +843,7 @@
 			};
 			i2c@4 {
 				rbpcv2_ov5640_a@3c {
-					compatible = "tevi,ov5640";
+					compatible = "nvidia,tevi-ov5640";
 					/* I2C device address */
 					reg = <0x3c>;
 
@@ -619,9 +854,9 @@
 					physical_w = "3.680";
 					physical_h = "2.760";
 
-					sensor_model = "tevi-ov540";
+					sensor_model = "tevi-ov5640";
 
-					use_sensor_mode_id = "true";
+					use_sensor_mode_id = "false";
 
 					/**
 					* ==== Modes ====
@@ -714,6 +949,84 @@
 						cil_settletime = "0";
 						active_w = "1920";
 						active_h = "1080";
+						//pixel_t = "uyvy";
+						pixel_phase = "uyvy";
+						mode_type = "yuv";
+						csi_pixel_bit_depth = "16";
+						readout_orientation = "0";
+						line_length = "2200";
+						inherent_gain = "1";
+						mclk_multiplier = "9.33";
+						pix_clk_hz = "207000000";
+						gain_factor = "100";
+						framerate_factor = "1000000";
+						exposure_factor = "1000000";
+						min_gain_val = "0"; /* 1.00x */
+						max_gain_val = "540"; /* 10.66x */
+						step_gain_val = "6";
+						default_gain = "0"; /* 1.00x */
+						min_hdr_ratio = "1";
+						max_hdr_ratio = "1";
+						min_framerate = "15000000"; /* 2.0 fps */
+						max_framerate = "15000000"; /* 30.0 fps */
+						step_framerate = "1";
+						default_framerate = "30000000"; /* 30.0 fps */
+						min_exp_time = "1070"; /* us */
+						max_exp_time = "33245"; /* us */
+						step_exp_time = "55";
+						default_exp_time = "2495"; /* us */
+						embedded_metadata_height = "0";
+					};
+					
+					mode1 { /* OV5640_MODE_1920x1080_30FPS */
+						mclk_khz = "27000";
+						num_lanes = "2";
+						tegra_sinterface = "serial_a";
+						phy_mode = "DPHY";
+						discontinuous_clk = "yes";
+						dpcm_enable = "false";
+						cil_settletime = "0";
+						active_w = "1920";
+						active_h = "1080";
+						//pixel_t = "uyvy";
+						pixel_phase = "uyvy";
+						mode_type = "yuv";
+						csi_pixel_bit_depth = "16";
+						readout_orientation = "0";
+						line_length = "2200";
+						inherent_gain = "1";
+						mclk_multiplier = "9.33";
+						pix_clk_hz = "207000000";
+						gain_factor = "100";
+						framerate_factor = "1000000";
+						exposure_factor = "1000000";
+						min_gain_val = "0"; /* 1.00x */
+						max_gain_val = "540"; /* 10.66x */
+						step_gain_val = "6";
+						default_gain = "0"; /* 1.00x */
+						min_hdr_ratio = "1";
+						max_hdr_ratio = "1";
+						min_framerate = "15000000"; /* 2.0 fps */
+						max_framerate = "15000000"; /* 30.0 fps */
+						step_framerate = "1";
+						default_framerate = "30000000"; /* 30.0 fps */
+						min_exp_time = "1070"; /* us */
+						max_exp_time = "33245"; /* us */
+						step_exp_time = "55";
+						default_exp_time = "2495"; /* us */
+						embedded_metadata_height = "0";
+					};
+					
+					mode2 { /* OV5640_MODE_720P_1280x720 */
+						mclk_khz = "27000";
+						num_lanes = "2";
+						tegra_sinterface = "serial_a";
+						phy_mode = "DPHY";
+						discontinuous_clk = "yes";
+						dpcm_enable = "false";
+						cil_settletime = "0";
+						active_w = "1280";
+						active_h = "720";
 						//pixel_t = "uyvy";
 						pixel_phase = "uyvy";
 						mode_type = "yuv";
