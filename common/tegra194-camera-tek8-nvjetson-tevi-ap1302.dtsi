@@ -1,0 +1,172 @@
+/*
+ * Copyright (c) 2021, NVIDIA CORPORATION.  All rights reserved.
+ *
+ * This program is free software; you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation; either version 2 of the License, or
+ * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful, but WITHOUT
+ * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or
+ * FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License for
+ * more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ */
+
+#include "tegra194-camera-tek8-tevi-ap1302.dtsi"
+
+//Define GPIO number for axonfabric
+#define CSI0_RST_N	80
+#define CSI0_PWDN	81
+#define CSI1_RST_N	84
+#define CSI1_PWDN	85
+#define CSI2_RST_N	88
+#define CSI2_PWDN	89
+#define CSI3_RST_N	92
+#define CSI3_PWDN	93
+#define CSI4_RST_N	96
+#define CSI4_PWDN	97
+#define CSI5_RST_N	100
+#define CSI5_PWDN	101
+#define CAMERA_I2C_MUX_BUS(x) (0x1E + x)
+
+/ {
+	i2c@3180000 { /* cam_i2c */
+		tca9548@70 {
+			clock-frequency = <100000>;
+			compatible = "nxp,pca9548";
+			reg = <0x70>;
+			#address-cells = <1>;
+			#size-cells = <0>;
+			reset-gpios = <&tegra_aon_gpio TEGRA194_AON_GPIO(CC, 3) GPIO_ACTIVE_LOW>;
+			skip_mux_detect = "yes";
+			vcc-supply = <&p3509_vdd_1v8_cvb>;
+			vcc_lp = "vcc";
+			force_bus_start = <CAMERA_I2C_MUX_BUS(0)>;
+
+			i2c@0 {
+				reg = <0>;
+				i2c-mux,deselect-on-exit;
+				#address-cells = <1>;
+				#size-cells = <0>;
+
+				tevi_ap1302_a@3d {
+					reset-gpios = <&axonfabric CSI0_RST_N GPIO_ACTIVE_HIGH>;
+					power-gpios = <&axonfabric CSI0_PWDN GPIO_ACTIVE_HIGH>;
+					nvmem = <&tevi_ap1302_otp_0>;
+					nvmem-names = "calib-data";
+					data-lanes = <2>;
+					//status = "disabled";
+				};
+
+				tevi_ap1302_otp_0: tevi_ap1302_otp@54 {
+					compatible = "at24,24c1024";
+					pagesize = <128>;
+					reg = <0x54>;
+				};
+			};
+			i2c@1 {
+				reg = <1>;
+				i2c-mux,deselect-on-exit;
+				#address-cells = <1>;
+				#size-cells = <0>;
+				tevi_ap1302_b@3d {
+					reset-gpios = <&axonfabric CSI1_RST_N GPIO_ACTIVE_HIGH>;
+					power-gpios = <&axonfabric CSI1_PWDN GPIO_ACTIVE_HIGH>;
+					nvmem = <&tevi_ap1302_otp_1>;
+					nvmem-names = "calib-data";
+					data-lanes = <2>;
+					//status = "disabled";
+				};
+
+				tevi_ap1302_otp_1: tevi_ap1302_otp@54 {
+					compatible = "at24,24c1024";
+					pagesize = <128>;
+					reg = <0x54>;
+				};
+			};
+			i2c@2 {
+				reg = <2>;
+				i2c-mux,deselect-on-exit;
+				#address-cells = <1>;
+				#size-cells = <0>;
+				tevi_ap1302_c@3d {
+					reset-gpios = <&axonfabric CSI2_RST_N GPIO_ACTIVE_HIGH>;
+					power-gpios = <&axonfabric CSI2_PWDN GPIO_ACTIVE_HIGH>;
+					nvmem = <&tevi_ap1302_otp_2>;
+					nvmem-names = "calib-data";
+					data-lanes = <2>;
+					//status = "disabled";
+				};
+
+				tevi_ap1302_otp_2: tevi_ap1302_otp@54 {
+					compatible = "at24,24c1024";
+					pagesize = <128>;
+					reg = <0x54>;
+				};
+			};
+			i2c@3 {
+				reg = <3>;
+				i2c-mux,deselect-on-exit;
+				#address-cells = <1>;
+				#size-cells = <0>;
+				tevi_ap1302_d@3d {
+					reset-gpios = <&axonfabric CSI3_RST_N GPIO_ACTIVE_HIGH>;
+					power-gpios = <&axonfabric CSI3_PWDN GPIO_ACTIVE_HIGH>;
+					nvmem = <&tevi_ap1302_otp_3>;
+					nvmem-names = "calib-data";
+					data-lanes = <2>;
+					//status = "disabled";
+									};
+
+				tevi_ap1302_otp_3: tevi_ap1302_otp@54 {
+					compatible = "at24,24c1024";
+					pagesize = <128>;
+					reg = <0x54>;
+				};
+			};
+			i2c@4{
+				reg = <4>;
+				i2c-mux,deselect-on-exit;
+				#address-cells = <1>;
+				#size-cells = <0>;
+				tevi_ap1302_e@3d {
+					reset-gpios = <&axonfabric CSI4_RST_N GPIO_ACTIVE_HIGH>;
+					power-gpios = <&axonfabric CSI4_PWDN GPIO_ACTIVE_HIGH>;
+					nvmem = <&tevi_ap1302_otp_4>;
+					nvmem-names = "calib-data";
+					data-lanes = <2>;
+					//status = "disabled";
+				};
+
+				tevi_ap1302_otp_4: tevi_ap1302_otp@54 {
+					compatible = "at24,24c1024";
+					pagesize = <128>;
+					reg = <0x54>;
+				};
+			};
+			i2c@5{
+				reg = <5>;
+				i2c-mux,deselect-on-exit;
+				#address-cells = <1>;
+				#size-cells = <0>;
+				tevi_ap1302_f@3d {
+					reset-gpios = <&axonfabric CSI5_RST_N GPIO_ACTIVE_HIGH>;
+					power-gpios = <&axonfabric CSI5_PWDN GPIO_ACTIVE_HIGH>;
+					nvmem = <&tevi_ap1302_otp_5>;
+					nvmem-names = "calib-data";
+					data-lanes = <2>;
+					//status = "disabled";
+				};
+
+				tevi_ap1302_otp_5: tevi_ap1302_otp@54 {
+					compatible = "at24,24c1024";
+					pagesize = <128>;
+					reg = <0x54>;
+				};
+			};
+		};
+	};
+};
