@@ -2455,7 +2455,7 @@
 		 */
 		modules {
 			cam_module0: module0 {
-				badge = "tek8-nvjetson_front_RBP194";
+				badge = "tek8-nx210v_front_RBP194";
 				position = "front";
 				orientation = "1";
 				cam_module0_drivernode0: drivernode0 {
@@ -2469,7 +2469,7 @@
 				};
 			};
 			cam_module1: module1 {
-				badge = "tek8-nvjetson_front_RBP194";
+				badge = "tek8-nx210v_front_RBP194";
 				position = "front";
 				orientation = "1";
 				cam_module1_drivernode0: drivernode0 {
@@ -2483,7 +2483,7 @@
 				};
 			};
 			cam_module2: module2 {
-				badge = "tek8-nvjetson_front_RBP194";
+				badge = "tek8-nx210v_front_RBP194";
 				position = "front";
 				orientation = "1";
 				cam_module2_drivernode0: drivernode0 {
@@ -2497,7 +2497,7 @@
 				};
 			};
 			cam_module3: module3 {
-				badge = "tek8-nvjetson_front_RBP194";
+				badge = "tek8-nx210v_front_RBP194";
 				position = "front";
 				orientation = "1";
 				cam_module3_drivernode0: drivernode0 {
@@ -2511,7 +2511,7 @@
 				};
 			};
 			cam_module4: module4 {
-				badge = "tek8-nvjetson_front_RBP194";
+				badge = "tek8-nx210v_front_RBP194";
 				position = "front";
 				orientation = "1";
 				cam_module4_drivernode0: drivernode0 {
@@ -2525,7 +2525,7 @@
 				};
 			};
 			cam_module5: module5 {
-				badge = "tek8-nvjetson_front_RBP194";
+				badge = "tek8-nx210v_front_RBP194";
 				position = "front";
 				orientation = "1";
 				cam_module5_drivernode0: drivernode0 {
