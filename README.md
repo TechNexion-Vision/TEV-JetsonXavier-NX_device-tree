@@ -22,7 +22,7 @@ $ ./compile_kernel.sh
 
 (\<device-tree>.dtb for **TEK3-NVJETSON**: tegra194-p3668-tek3-nvjetson-a1.dtb)
 
-(\<device-tree>.dtb for **TEK8-NVJETSON**: tegra194-p3668-tek8-nvjetson-a1.dtb)
+(\<device-tree>.dtb for **TEK8-NX210V**: tegra194-p3668-tek8-nx210v-a1.dtb)
 
 Copy **Linux_for_Tegra/sources/kernel/kernel-4.9/arch/arm64/boot/dts/\<device-tree>.dtb**
 
