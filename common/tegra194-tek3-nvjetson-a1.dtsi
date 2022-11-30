@@ -256,7 +256,7 @@
 	status = "disabled";
 };
 
-&sor1_hdmi_display {
+&sor1_dp_display {
 	status = "disabled";
 };
 
