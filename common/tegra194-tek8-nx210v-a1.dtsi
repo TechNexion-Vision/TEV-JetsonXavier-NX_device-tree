@@ -295,28 +295,3 @@
 		"",     "",     "",     "",     "",     "",     "",     "",     "",     "",     "GPIO12";
 	};
 };
-
-&head0 {
-	/delete-property/ avdd_hdmi-supply;
-	/delete-property/ avdd_hdmi_pll-supply;
-	/delete-property/ vdd_hdmi_5v0-supply;
-	vdd-dp-pwr-supply = <&p3668_spmic_sd0>;
-	avdd-dp-pll-supply = <&p3668_spmic_sd1>;
-	vdd-edp-sec-mode-supply = <&battery_reg>;
-	vdd-dp-pad-supply = <&battery_reg>;
-	vdd_hdmi_5v0-supply = <&p3509_vdd_hdmi_5v0>;
-};
-
-&sor1 {
-	status = "okay";
-	nvidia,active-panel = <&sor1_dp_display>;
-};
-
-&sor1_hdmi_display {
-	status = "disabled";
-};
-
-&sor1_dp_display {
-	status = "okay";
-	nvidia,is_ext_dp_panel = <1>;
-};
