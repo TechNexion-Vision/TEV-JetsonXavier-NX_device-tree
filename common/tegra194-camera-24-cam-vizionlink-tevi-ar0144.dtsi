@@ -1,0 +1,4675 @@
+/*
+ * Copyright (c) 2018-2020, NVIDIA CORPORATION.  All rights reserved.
+ *
+ * This program is free software; you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation; either version 2 of the License, or
+ * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful, but WITHOUT
+ * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or
+ * FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License for
+ * more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ */
+#include <dt-bindings/media/camera.h>
+
+/ {
+	host1x {
+		vi@15c10000  {
+			num-channels = <VIZIONLINK_CAMERA_NUM>;
+			ports {
+				#address-cells = <1>;
+				#size-cells = <0>;
+#ifdef VIZIONLINK_CSI0_CAMERA0
+				vi_port0: port@0 {
+					reg = <0>;
+					rbpcv2_ar0144_vi_in0: endpoint {
+						vc-id = <0>;
+						port-index = <0>;
+						bus-width = <2>;
+						remote-endpoint = <&rbpcv2_ar0144_csi_out0>;
+					};
+				};
+#endif
+#ifdef VIZIONLINK_CSI0_CAMERA1
+				vi_port1: port@1 {
+					reg = <1>;
+					rbpcv2_ar0144_vi_in1: endpoint {
+						vc-id = <1>;
+						port-index = <0>;
+						bus-width = <2>;
+						remote-endpoint = <&rbpcv2_ar0144_csi_out1>;
+					};
+				};
+#endif
+#ifdef VIZIONLINK_CSI0_CAMERA2
+				vi_port2: port@2 {
+					reg = <2>;
+					rbpcv2_ar0144_vi_in2: endpoint {
+						vc-id = <2>;
+						port-index = <0>;
+						bus-width = <2>;
+						remote-endpoint = <&rbpcv2_ar0144_csi_out2>;
+					};
+				};
+#endif
+#ifdef VIZIONLINK_CSI0_CAMERA3
+				vi_port3: port@3 {
+					reg = <3>;
+					rbpcv2_ar0144_vi_in3: endpoint {
+						vc-id = <3>;
+						port-index = <0>;
+						bus-width = <2>;
+						remote-endpoint = <&rbpcv2_ar0144_csi_out3>;
+					};
+				};
+#endif
+#ifdef VIZIONLINK_CSI2_CAMERA0
+				vi_port4: port@4 {
+					reg = <4>;
+					rbpcv2_ar0144_vi_in4: endpoint {
+						vc-id = <0>;
+						port-index = <2>;
+						bus-width = <2>;
+						remote-endpoint = <&rbpcv2_ar0144_csi_out4>;
+					};
+				};
+#endif
+#ifdef VIZIONLINK_CSI2_CAMERA1
+				vi_port5: port@5 {
+					reg = <5>;
+					rbpcv2_ar0144_vi_in5: endpoint {
+						vc-id = <1>;
+						port-index = <2>;
+						bus-width = <2>;
+						remote-endpoint = <&rbpcv2_ar0144_csi_out5>;
+					};
+				};
+#endif
+#ifdef VIZIONLINK_CSI2_CAMERA2
+				vi_port6: port@6 {
+					reg = <6>;
+					rbpcv2_ar0144_vi_in6: endpoint {
+						vc-id = <2>;
+						port-index = <2>;
+						bus-width = <2>;
+						remote-endpoint = <&rbpcv2_ar0144_csi_out6>;
+					};
+				};
+#endif
+#ifdef VIZIONLINK_CSI2_CAMERA3
+				vi_port7: port@7 {
+					reg = <7>;
+					rbpcv2_ar0144_vi_in7: endpoint {
+						vc-id = <3>;
+						port-index = <2>;
+						bus-width = <2>;
+						remote-endpoint = <&rbpcv2_ar0144_csi_out7>;
+					};
+				};
+#endif
+#ifdef VIZIONLINK_CSI4_CAMERA0
+				vi_port8: port@8 {
+					reg = <8>;
+					rbpcv2_ar0144_vi_in8: endpoint {
+						vc-id = <0>;
+						port-index = <4>;
+						bus-width = <2>;
+						remote-endpoint = <&rbpcv2_ar0144_csi_out8>;
+					};
+				};
+#endif
+#ifdef VIZIONLINK_CSI4_CAMERA1
+				vi_port9: port@9 {
+					reg = <9>;
+					rbpcv2_ar0144_vi_in9: endpoint {
+						vc-id = <1>;
+						port-index = <4>;
+						bus-width = <2>;
+						remote-endpoint = <&rbpcv2_ar0144_csi_out9>;
+					};
+				};
+#endif
+#ifdef VIZIONLINK_CSI4_CAMERA2
+				vi_port10: port@10 {
+					reg = <10>;
+					rbpcv2_ar0144_vi_in10: endpoint {
+						vc-id = <2>;
+						port-index = <4>;
+						bus-width = <2>;
+						remote-endpoint = <&rbpcv2_ar0144_csi_out10>;
+					};
+				};
+#endif
+#ifdef VIZIONLINK_CSI4_CAMERA3
+				vi_port11: port@11 {
+					reg = <11>;
+					rbpcv2_ar0144_vi_in11: endpoint {
+						vc-id = <3>;
+						port-index = <4>;
+						bus-width = <2>;
+						remote-endpoint = <&rbpcv2_ar0144_csi_out11>;
+					};
+				};
+#endif
+#ifdef VIZIONLINK_CSI1_CAMERA0
+				vi_port12: port@12 {
+					reg = <12>;
+					rbpcv2_ar0144_vi_in12: endpoint {
+						vc-id = <0>;
+						port-index = <1>;
+						bus-width = <2>;
+						remote-endpoint = <&rbpcv2_ar0144_csi_out12>;
+					};
+				};
+#endif
+#ifdef VIZIONLINK_CSI1_CAMERA1
+				vi_port13: port@13 {
+					reg = <13>;
+					rbpcv2_ar0144_vi_in13: endpoint {
+						vc-id = <1>;
+						port-index = <1>;
+						bus-width = <2>;
+						remote-endpoint = <&rbpcv2_ar0144_csi_out13>;
+					};
+				};
+#endif
+#ifdef VIZIONLINK_CSI1_CAMERA2
+				vi_port14: port@14 {
+					reg = <14>;
+					rbpcv2_ar0144_vi_in14: endpoint {
+						vc-id = <2>;
+						port-index = <1>;
+						bus-width = <2>;
+						remote-endpoint = <&rbpcv2_ar0144_csi_out14>;
+					};
+				};
+#endif
+#ifdef VIZIONLINK_CSI1_CAMERA3
+				vi_port15: port@15 {
+					reg = <15>;
+					rbpcv2_ar0144_vi_in15: endpoint {
+						vc-id = <3>;
+						port-index = <1>;
+						bus-width = <2>;
+						remote-endpoint = <&rbpcv2_ar0144_csi_out15>;
+					};
+				};
+#endif
+#ifdef VIZIONLINK_CSI3_CAMERA0
+				vi_port16: port@16 {
+					reg = <16>;
+					rbpcv2_ar0144_vi_in16: endpoint {
+						vc-id = <0>;
+						port-index = <3>;
+						bus-width = <2>;
+						remote-endpoint = <&rbpcv2_ar0144_csi_out16>;
+					};
+				};
+#endif
+#ifdef VIZIONLINK_CSI3_CAMERA1
+				vi_port17: port@17 {
+					reg = <17>;
+					rbpcv2_ar0144_vi_in17: endpoint {
+						vc-id = <1>;
+						port-index = <3>;
+						bus-width = <2>;
+						remote-endpoint = <&rbpcv2_ar0144_csi_out17>;
+					};
+				};
+#endif
+#ifdef VIZIONLINK_CSI3_CAMERA2
+				vi_port18: port@18 {
+					reg = <18>;
+					rbpcv2_ar0144_vi_in18: endpoint {
+						vc-id = <2>;
+						port-index = <3>;
+						bus-width = <2>;
+						remote-endpoint = <&rbpcv2_ar0144_csi_out18>;
+					};
+				};
+#endif
+#ifdef VIZIONLINK_CSI3_CAMERA3
+				vi_port19: port@19 {
+					reg = <19>;
+					rbpcv2_ar0144_vi_in19: endpoint {
+						vc-id = <3>;
+						port-index = <3>;
+						bus-width = <2>;
+						remote-endpoint = <&rbpcv2_ar0144_csi_out19>;
+					};
+				};
+#endif
+#ifdef VIZIONLINK_CSI5_CAMERA0
+				vi_port20: port@20 {
+					reg = <20>;
+					rbpcv2_ar0144_vi_in20: endpoint {
+						vc-id = <0>;
+						port-index = <5>;
+						bus-width = <2>;
+						remote-endpoint = <&rbpcv2_ar0144_csi_out20>;
+					};
+				};
+#endif
+#ifdef VIZIONLINK_CSI5_CAMERA1
+				vi_port21: port@21 {
+					reg = <21>;
+					rbpcv2_ar0144_vi_in21: endpoint {
+						vc-id = <1>;
+						port-index = <5>;
+						bus-width = <2>;
+						remote-endpoint = <&rbpcv2_ar0144_csi_out21>;
+					};
+				};
+#endif
+#ifdef VIZIONLINK_CSI5_CAMERA2
+				vi_port22: port@22 {
+					reg = <22>;
+					rbpcv2_ar0144_vi_in22: endpoint {
+						vc-id = <2>;
+						port-index = <5>;
+						bus-width = <2>;
+						remote-endpoint = <&rbpcv2_ar0144_csi_out22>;
+					};
+				};
+#endif
+#ifdef VIZIONLINK_CSI5_CAMERA3
+				vi_port23: port@23 {
+					reg = <23>;
+					rbpcv2_ar0144_vi_in23: endpoint {
+						vc-id = <3>;
+						port-index = <5>;
+						bus-width = <2>;
+						remote-endpoint = <&rbpcv2_ar0144_csi_out23>;
+					};
+				};
+#endif
+			};
+		};
+
+		nvcsi@15a00000 {
+			num-channels = <VIZIONLINK_CAMERA_NUM>;
+			#address-cells = <1>;
+			#size-cells = <0>;
+#ifdef VIZIONLINK_CSI0_CAMERA0
+			csi_chan0: channel@0 {
+				reg = <0>;
+				ports {
+					#address-cells = <1>;
+					#size-cells = <0>;
+					csi_chan0_port0: port@0 {
+						reg = <0>;
+						rbpcv2_ar0144_csi_in0: endpoint@0 {
+							port-index = <0>;
+							bus-width = <2>;
+							remote-endpoint = <&rbpcv2_ar0144_out0>;
+						};
+					};
+					csi_chan0_port1: port@1 {
+						reg = <1>;
+						rbpcv2_ar0144_csi_out0: endpoint@1 {
+							remote-endpoint = <&rbpcv2_ar0144_vi_in0>;
+						};
+					};
+				};
+			};
+#endif
+#ifdef VIZIONLINK_CSI0_CAMERA1
+			csi_chan1: channel@1 {
+				reg = <1>;
+				ports {
+					#address-cells = <1>;
+					#size-cells = <0>;
+					csi_chan1_port0: port@0 {
+						reg = <0>;
+						rbpcv2_ar0144_csi_in1: endpoint@2 {
+							port-index = <0>;
+							bus-width = <2>;
+							remote-endpoint = <&rbpcv2_ar0144_out1>;
+						};
+					};
+					csi_chan1_port1: port@1 {
+						reg = <1>;
+						rbpcv2_ar0144_csi_out1: endpoint@3 {
+							remote-endpoint = <&rbpcv2_ar0144_vi_in1>;
+						};
+					};
+				};
+			};
+#endif
+#ifdef VIZIONLINK_CSI0_CAMERA2
+			csi_chan2: channel@2 {
+				reg = <2>;
+				ports {
+					#address-cells = <1>;
+					#size-cells = <0>;
+					csi_chan2_port0: port@0 {
+						reg = <0>;
+						rbpcv2_ar0144_csi_in2: endpoint@4 {
+							port-index = <0>;
+							bus-width = <2>;
+							remote-endpoint = <&rbpcv2_ar0144_out2>;
+						};
+					};
+					csi_chan2_port1: port@1 {
+						reg = <1>;
+						rbpcv2_ar0144_csi_out2: endpoint@5 {
+							remote-endpoint = <&rbpcv2_ar0144_vi_in2>;
+						};
+					};
+				};
+			};
+#endif
+#ifdef VIZIONLINK_CSI0_CAMERA3
+			csi_chan3: channel@3 {
+				reg = <3>;
+				ports {
+					#address-cells = <1>;
+					#size-cells = <0>;
+					csi_chan3_port0: port@0 {
+						reg = <0>;
+						rbpcv2_ar0144_csi_in3: endpoint@6 {
+							port-index = <0>;
+							bus-width = <2>;
+							remote-endpoint = <&rbpcv2_ar0144_out3>;
+						};
+					};
+					csi_chan3_port1: port@1 {
+						reg = <1>;
+						rbpcv2_ar0144_csi_out3: endpoint@7 {
+							remote-endpoint = <&rbpcv2_ar0144_vi_in3>;
+						};
+					};
+				};
+			};
+#endif
+#ifdef VIZIONLINK_CSI2_CAMERA0
+			csi_chan4: channel@4 {
+				reg = <4>;
+				ports {
+					#address-cells = <1>;
+					#size-cells = <0>;
+					csi_chan4_port0: port@0 {
+						reg = <0>;
+						rbpcv2_ar0144_csi_in4: endpoint@8 {
+							port-index = <2>;
+							bus-width = <2>;
+							remote-endpoint = <&rbpcv2_ar0144_out4>;
+						};
+					};
+					csi_chan4_port1: port@1 {
+						reg = <1>;
+						rbpcv2_ar0144_csi_out4: endpoint@9 {
+							remote-endpoint = <&rbpcv2_ar0144_vi_in4>;
+						};
+					};
+				};
+			};
+#endif
+#ifdef VIZIONLINK_CSI2_CAMERA1
+			csi_chan5: channel@5 {
+				reg = <5>;
+				ports {
+					#address-cells = <1>;
+					#size-cells = <0>;
+					csi_chan5_port0: port@0 {
+						reg = <0>;
+						rbpcv2_ar0144_csi_in5: endpoint@10 {
+							port-index = <2>;
+							bus-width = <2>;
+							remote-endpoint = <&rbpcv2_ar0144_out5>;
+						};
+					};
+					csi_chan5_port1: port@1 {
+						reg = <1>;
+						rbpcv2_ar0144_csi_out5: endpoint@11 {
+							remote-endpoint = <&rbpcv2_ar0144_vi_in5>;
+						};
+					};
+				};
+			};
+#endif
+#ifdef VIZIONLINK_CSI2_CAMERA2
+			csi_chan6: channel@6 {
+				reg = <6>;
+				ports {
+					#address-cells = <1>;
+					#size-cells = <0>;
+					csi_chan6_port0: port@0 {
+						reg = <0>;
+						rbpcv2_ar0144_csi_in6: endpoint@12 {
+							port-index = <2>;
+							bus-width = <2>;
+							remote-endpoint = <&rbpcv2_ar0144_out6>;
+						};
+					};
+					csi_chan6_port1: port@1 {
+						reg = <1>;
+						rbpcv2_ar0144_csi_out6: endpoint@13 {
+							remote-endpoint = <&rbpcv2_ar0144_vi_in6>;
+						};
+					};
+				};
+			};
+#endif
+#ifdef VIZIONLINK_CSI2_CAMERA3
+			csi_chan7: channel@7 {
+				reg = <7>;
+				ports {
+					#address-cells = <1>;
+					#size-cells = <0>;
+					csi_chan7_port0: port@0 {
+						reg = <0>;
+						rbpcv2_ar0144_csi_in7: endpoint@14 {
+							port-index = <2>;
+							bus-width = <2>;
+							remote-endpoint = <&rbpcv2_ar0144_out7>;
+						};
+					};
+					csi_chan7_port1: port@1 {
+						reg = <1>;
+						rbpcv2_ar0144_csi_out7: endpoint@15 {
+							remote-endpoint = <&rbpcv2_ar0144_vi_in7>;
+						};
+					};
+				};
+			};
+#endif
+#ifdef VIZIONLINK_CSI4_CAMERA0
+			csi_chan8: channel@8 {
+				reg = <8>;
+				ports {
+					#address-cells = <1>;
+					#size-cells = <0>;
+					csi_chan8_port0: port@0 {
+						reg = <0>;
+						rbpcv2_ar0144_csi_in8: endpoint@16 {
+							port-index = <4>;
+							bus-width = <2>;
+							remote-endpoint = <&rbpcv2_ar0144_out8>;
+						};
+					};
+					csi_chan8_port1: port@1 {
+						reg = <1>;
+						rbpcv2_ar0144_csi_out8: endpoint@17 {
+							remote-endpoint = <&rbpcv2_ar0144_vi_in8>;
+						};
+					};
+				};
+			};
+#endif
+#ifdef VIZIONLINK_CSI4_CAMERA1
+			csi_chan9: channel@9 {
+				reg = <9>;
+				ports {
+					#address-cells = <1>;
+					#size-cells = <0>;
+					csi_chan9_port0: port@0 {
+						reg = <0>;
+						rbpcv2_ar0144_csi_in9: endpoint@18 {
+							port-index = <4>;
+							bus-width = <2>;
+							remote-endpoint = <&rbpcv2_ar0144_out9>;
+						};
+					};
+					csi_chan9_port1: port@1 {
+						reg = <1>;
+						rbpcv2_ar0144_csi_out9: endpoint@19 {
+							remote-endpoint = <&rbpcv2_ar0144_vi_in9>;
+						};
+					};
+				};
+			};
+#endif
+#ifdef VIZIONLINK_CSI4_CAMERA2
+			csi_chan10: channel@10 {
+				reg = <10>;
+				ports {
+					#address-cells = <1>;
+					#size-cells = <0>;
+					csi_chan10_port0: port@0 {
+						reg = <0>;
+						rbpcv2_ar0144_csi_in10: endpoint@20 {
+							port-index = <4>;
+							bus-width = <2>;
+							remote-endpoint = <&rbpcv2_ar0144_out10>;
+						};
+					};
+					csi_chan10_port1: port@1 {
+						reg = <1>;
+						rbpcv2_ar0144_csi_out10: endpoint@21 {
+							remote-endpoint = <&rbpcv2_ar0144_vi_in10>;
+						};
+					};
+				};
+			};
+#endif
+#ifdef VIZIONLINK_CSI4_CAMERA3
+			csi_chan11: channel@11 {
+				reg = <11>;
+				ports {
+					#address-cells = <1>;
+					#size-cells = <0>;
+					csi_chan11_port0: port@0 {
+						reg = <0>;
+						rbpcv2_ar0144_csi_in11: endpoint@22 {
+							port-index = <4>;
+							bus-width = <2>;
+							remote-endpoint = <&rbpcv2_ar0144_out11>;
+						};
+					};
+					csi_chan11_port1: port@1 {
+						reg = <1>;
+						rbpcv2_ar0144_csi_out11: endpoint@23 {
+							remote-endpoint = <&rbpcv2_ar0144_vi_in11>;
+						};
+					};
+				};
+			};
+#endif
+#ifdef VIZIONLINK_CSI1_CAMERA0
+			csi_chan12: channel@12 {
+				reg = <12>;
+				ports {
+					#address-cells = <1>;
+					#size-cells = <0>;
+					csi_chan12_port0: port@0 {
+						reg = <0>;
+						rbpcv2_ar0144_csi_in12: endpoint@24 {
+							port-index = <1>;
+							bus-width = <2>;
+							remote-endpoint = <&rbpcv2_ar0144_out12>;
+						};
+					};
+					csi_chan12_port1: port@1 {
+						reg = <1>;
+						rbpcv2_ar0144_csi_out12: endpoint@25 {
+							remote-endpoint = <&rbpcv2_ar0144_vi_in12>;
+						};
+					};
+				};
+			};
+#endif
+#ifdef VIZIONLINK_CSI1_CAMERA1
+			csi_chan13: channel@13 {
+				reg = <13>;
+				ports {
+					#address-cells = <1>;
+					#size-cells = <0>;
+					csi_chan13_port0: port@0 {
+						reg = <0>;
+						rbpcv2_ar0144_csi_in13: endpoint@26 {
+							port-index = <1>;
+							bus-width = <2>;
+							remote-endpoint = <&rbpcv2_ar0144_out13>;
+						};
+					};
+					csi_chan13_port1: port@1 {
+						reg = <1>;
+						rbpcv2_ar0144_csi_out13: endpoint@27 {
+							remote-endpoint = <&rbpcv2_ar0144_vi_in13>;
+						};
+					};
+				};
+			};
+#endif
+#ifdef VIZIONLINK_CSI1_CAMERA2
+			csi_chan14: channel@14 {
+				reg = <14>;
+				ports {
+					#address-cells = <1>;
+					#size-cells = <0>;
+					csi_chan14_port0: port@0 {
+						reg = <0>;
+						rbpcv2_ar0144_csi_in14: endpoint@28 {
+							port-index = <1>;
+							bus-width = <2>;
+							remote-endpoint = <&rbpcv2_ar0144_out14>;
+						};
+					};
+					csi_chan14_port1: port@1 {
+						reg = <1>;
+						rbpcv2_ar0144_csi_out14: endpoint@29 {
+							remote-endpoint = <&rbpcv2_ar0144_vi_in14>;
+						};
+					};
+				};
+			};
+#endif
+#ifdef VIZIONLINK_CSI1_CAMERA3
+			csi_chan15: channel@15 {
+				reg = <15>;
+				ports {
+					#address-cells = <1>;
+					#size-cells = <0>;
+					csi_chan15_port0: port@0 {
+						reg = <0>;
+						rbpcv2_ar0144_csi_in15: endpoint@30 {
+							port-index = <1>;
+							bus-width = <2>;
+							remote-endpoint = <&rbpcv2_ar0144_out15>;
+						};
+					};
+					csi_chan15_port1: port@1 {
+						reg = <1>;
+						rbpcv2_ar0144_csi_out15: endpoint@31 {
+							remote-endpoint = <&rbpcv2_ar0144_vi_in15>;
+						};
+					};
+				};
+			};
+#endif
+#ifdef VIZIONLINK_CSI3_CAMERA0
+			csi_chan16: channel@16 {
+				reg = <16>;
+				ports {
+					#address-cells = <1>;
+					#size-cells = <0>;
+					csi_chan16_port0: port@0 {
+						reg = <0>;
+						rbpcv2_ar0144_csi_in16: endpoint@32 {
+							port-index = <1>;
+							bus-width = <2>;
+							remote-endpoint = <&rbpcv2_ar0144_out16>;
+						};
+					};
+					csi_chan16_port1: port@1 {
+						reg = <1>;
+						rbpcv2_ar0144_csi_out16: endpoint@33 {
+							remote-endpoint = <&rbpcv2_ar0144_vi_in16>;
+						};
+					};
+				};
+			};
+#endif
+#ifdef VIZIONLINK_CSI3_CAMERA1
+			csi_chan17: channel@17 {
+				reg = <17>;
+				ports {
+					#address-cells = <1>;
+					#size-cells = <0>;
+					csi_chan17_port0: port@0 {
+						reg = <0>;
+						rbpcv2_ar0144_csi_in17: endpoint@34 {
+							port-index = <3>;
+							bus-width = <2>;
+							remote-endpoint = <&rbpcv2_ar0144_out17>;
+						};
+					};
+					csi_chan17_port1: port@1 {
+						reg = <1>;
+						rbpcv2_ar0144_csi_out17: endpoint@35 {
+							remote-endpoint = <&rbpcv2_ar0144_vi_in17>;
+						};
+					};
+				};
+			};
+#endif
+#ifdef VIZIONLINK_CSI3_CAMERA2
+			csi_chan18: channel@18 {
+				reg = <18>;
+				ports {
+					#address-cells = <1>;
+					#size-cells = <0>;
+					csi_chan18_port0: port@0 {
+						reg = <0>;
+						rbpcv2_ar0144_csi_in18: endpoint@36 {
+							port-index = <3>;
+							bus-width = <2>;
+							remote-endpoint = <&rbpcv2_ar0144_out18>;
+						};
+					};
+					csi_chan18_port1: port@1 {
+						reg = <1>;
+						rbpcv2_ar0144_csi_out18: endpoint@37 {
+							remote-endpoint = <&rbpcv2_ar0144_vi_in18>;
+						};
+					};
+				};
+			};
+#endif
+#ifdef VIZIONLINK_CSI3_CAMERA3
+			csi_chan19: channel@19 {
+				reg = <19>;
+				ports {
+					#address-cells = <1>;
+					#size-cells = <0>;
+					csi_chan19_port0: port@0 {
+						reg = <0>;
+						rbpcv2_ar0144_csi_in19: endpoint@38 {
+							port-index = <3>;
+							bus-width = <2>;
+							remote-endpoint = <&rbpcv2_ar0144_out19>;
+						};
+					};
+					csi_chan19_port1: port@1 {
+						reg = <1>;
+						rbpcv2_ar0144_csi_out19: endpoint@39 {
+							remote-endpoint = <&rbpcv2_ar0144_vi_in19>;
+						};
+					};
+				};
+			};
+#endif
+#ifdef VIZIONLINK_CSI5_CAMERA0
+			csi_chan20: channel@20 {
+				reg = <20>;
+				ports {
+					#address-cells = <1>;
+					#size-cells = <0>;
+					csi_chan20_port0: port@0 {
+						reg = <0>;
+						rbpcv2_ar0144_csi_in20: endpoint@40 {
+							port-index = <6>;
+							bus-width = <2>;
+							remote-endpoint = <&rbpcv2_ar0144_out20>;
+						};
+					};
+					csi_chan20_port1: port@1 {
+						reg = <1>;
+						rbpcv2_ar0144_csi_out20: endpoint@41 {
+							remote-endpoint = <&rbpcv2_ar0144_vi_in20>;
+						};
+					};
+				};
+			};
+#endif
+#ifdef VIZIONLINK_CSI5_CAMERA1
+			csi_chan21: channel@21 {
+				reg = <21>;
+				ports {
+					#address-cells = <1>;
+					#size-cells = <0>;
+					csi_chan21_port0: port@0 {
+						reg = <0>;
+						rbpcv2_ar0144_csi_in21: endpoint@42 {
+							port-index = <6>;
+							bus-width = <2>;
+							remote-endpoint = <&rbpcv2_ar0144_out21>;
+						};
+					};
+					csi_chan21_port1: port@1 {
+						reg = <1>;
+						rbpcv2_ar0144_csi_out21: endpoint@43 {
+							remote-endpoint = <&rbpcv2_ar0144_vi_in21>;
+						};
+					};
+				};
+			};
+#endif
+#ifdef VIZIONLINK_CSI5_CAMERA2
+			csi_chan22: channel@22 {
+				reg = <22>;
+				ports {
+					#address-cells = <1>;
+					#size-cells = <0>;
+					csi_chan22_port0: port@0 {
+						reg = <0>;
+						rbpcv2_ar0144_csi_in22: endpoint@44 {
+							port-index = <6>;
+							bus-width = <2>;
+							remote-endpoint = <&rbpcv2_ar0144_out22>;
+						};
+					};
+					csi_chan22_port1: port@1 {
+						reg = <1>;
+						rbpcv2_ar0144_csi_out22: endpoint@45 {
+							remote-endpoint = <&rbpcv2_ar0144_vi_in22>;
+						};
+					};
+				};
+			};
+#endif
+#ifdef VIZIONLINK_CSI5_CAMERA3
+			csi_chan23: channel@23 {
+				reg = <23>;
+				ports {
+					#address-cells = <1>;
+					#size-cells = <0>;
+					csi_chan23_port0: port@0 {
+						reg = <0>;
+						rbpcv2_ar0144_csi_in23: endpoint@46 {
+							port-index = <6>;
+							bus-width = <2>;
+							remote-endpoint = <&rbpcv2_ar0144_out23>;
+						};
+					};
+					csi_chan23_port1: port@1 {
+						reg = <1>;
+						rbpcv2_ar0144_csi_out23: endpoint@47 {
+							remote-endpoint = <&rbpcv2_ar0144_vi_in23>;
+						};
+					};
+				};
+			};
+#endif
+		};
+	};
+
+	i2c@3180000 { /* cam_i2c */
+		tca9548@70 {
+			i2c@0 {
+#ifdef VIZIONLINK_CSI0_CAMERA0
+				rbpcv2_ar0144_a@3c {
+					compatible = "tn,tevi-ar0144";
+					/* I2C device address */
+					reg = <0x3c>;
+
+					/* V4L2 device node location */
+					devnode = "video0";
+
+					/* Physical dimensions of sensor */
+					physical_w = "3.680";
+					physical_h = "2.760";
+
+					sensor_model = "tevi-ar0144";
+
+					use_sensor_mode_id = "false";
+
+					/**
+					* ==== Modes ====
+					* A modeX node is required to support v4l2 driver
+					* implementation with NVIDIA camera software stack
+					*
+					* == Signal properties ==
+					*
+					* phy_mode = "";
+					* PHY mode used by the MIPI lanes for this device
+					*
+					* tegra_sinterface = "";
+					* CSI Serial interface connected to tegra
+					* Incase of virtual HW devices, use virtual
+					* For SW emulated devices, use host
+					*
+					* pix_clk_hz = "";
+					* Sensor pixel clock used for calculations like exposure and framerate
+					*
+					* readout_orientation = "0";
+					* Based on camera module orientation.
+					* Only change readout_orientation if you specifically
+					* Program a different readout order for this mode
+					*
+					* == Image format Properties ==
+					*
+					* active_w = "";
+					* Pixel active region width
+					*
+					* active_h = "";
+					* Pixel active region height
+					*
+					* pixel_t = "";
+					* The sensor readout pixel pattern
+					*
+					* line_length = "";
+					* Pixel line length (width) for sensor mode.
+					*
+					* == Source Control Settings ==
+					*
+					* Gain factor used to convert fixed point integer to float
+					* Gain range [min_gain/gain_factor, max_gain/gain_factor]
+					* Gain step [step_gain/gain_factor is the smallest step that can be configured]
+					* Default gain [Default gain to be initialized for the control.
+					*     use min_gain_val as default for optimal results]
+					* Framerate factor used to convert fixed point integer to float
+					* Framerate range [min_framerate/framerate_factor, max_framerate/framerate_factor]
+					* Framerate step [step_framerate/framerate_factor is the smallest step that can be configured]
+					* Default Framerate [Default framerate to be initialized for the control.
+					*     use max_framerate to get required performance]
+					* Exposure factor used to convert fixed point integer to float
+					* For convenience use 1 sec = 1000000us as conversion factor
+					* Exposure range [min_exp_time/exposure_factor, max_exp_time/exposure_factor]
+					* Exposure step [step_exp_time/exposure_factor is the smallest step that can be configured]
+					* Default Exposure Time [Default exposure to be initialized for the control.
+					*     Set default exposure based on the default_framerate for optimal exposure settings]
+					*
+					* gain_factor = ""; (integer factor used for floating to fixed point conversion)
+					* min_gain_val = ""; (ceil to integer)
+					* max_gain_val = ""; (ceil to integer)
+					* step_gain_val = ""; (ceil to integer)
+					* default_gain = ""; (ceil to integer)
+					* Gain limits for mode
+					*
+					* exposure_factor = ""; (integer factor used for floating to fixed point conversion)
+					* min_exp_time = ""; (ceil to integer)
+					* max_exp_time = ""; (ceil to integer)
+					* step_exp_time = ""; (ceil to integer)
+					* default_exp_time = ""; (ceil to integer)
+					* Exposure Time limits for mode (sec)
+					*
+					* framerate_factor = ""; (integer factor used for floating to fixed point conversion)
+					* min_framerate = ""; (ceil to integer)
+					* max_framerate = ""; (ceil to integer)
+					* step_framerate = ""; (ceil to integer)
+					* default_framerate = ""; (ceil to integer)
+					* Framerate limits for mode (fps)
+					*
+					* embedded_metadata_height = "";
+					* Sensor embedded metadata height in units of rows.
+					* If sensor does not support embedded metadata value should be 0.
+					*/
+					mode0 { /* AR0144_MODE_1280x800_30FPS */
+							mclk_khz = "25000";
+							num_lanes = "2";
+							tegra_sinterface = "serial_a";
+							vc_id = "0";
+							phy_mode = "DPHY";
+							discontinuous_clk = "yes";
+							dpcm_enable = "false";
+							cil_settletime = "0";
+
+							active_w = "1280";
+							active_h = "800";
+							pixel_t = "yuv_uyvy16";
+							readout_orientation = "0";
+							line_length = "1280";
+							inherent_gain = "1";
+							mclk_multiplier = "9.33";
+							// pix_clk_hz = "182400000";
+							pix_clk_hz = "200000000";
+							serdes_pix_clk_hz = "4000000000";
+
+							gain_factor = "16";
+							framerate_factor = "1000000";
+							exposure_factor = "1000000";
+							min_gain_val = "16"; /* 1.00x */
+							max_gain_val = "170"; /* 10.66x */
+							step_gain_val = "1";
+							default_gain = "16"; /* 1.00x */
+							min_hdr_ratio = "1";
+							max_hdr_ratio = "1";
+							min_framerate = "2000000"; /* 2.0 fps */
+							max_framerate = "15000000"; /* 21.0 fps */
+							step_framerate = "1";
+							default_framerate = "15000000"; /* 21.0 fps */
+							min_exp_time = "13"; /* us */
+							max_exp_time = "683709"; /* us */
+							step_exp_time = "1";
+							default_exp_time = "2495"; /* us */
+
+							embedded_metadata_height = "0";
+					};
+
+					ports {
+						#address-cells = <1>;
+						#size-cells = <0>;
+						port@0 {
+							reg = <0>;
+							rbpcv2_ar0144_out0: endpoint {
+								vc-id = <0>;
+								port-index = <0>;
+								bus-width = <2>;
+								remote-endpoint = <&rbpcv2_ar0144_csi_in0>;
+							};
+						};
+					};
+				};
+#endif
+#ifdef VIZIONLINK_CSI0_CAMERA1
+				rbpcv2_ar0144_b@3d {
+					compatible = "tn,tevi-ar0144";
+					/* I2C device address */
+					reg = <0x3d>;
+
+					/* V4L2 device node location */
+					devnode = "video1";
+
+					/* Physical dimensions of sensor */
+					physical_w = "3.680";
+					physical_h = "2.760";
+
+					sensor_model = "tevi-ar0144";
+
+					use_sensor_mode_id = "false";
+
+					/**
+					* ==== Modes ====
+					* A modeX node is required to support v4l2 driver
+					* implementation with NVIDIA camera software stack
+					*
+					* == Signal properties ==
+					*
+					* phy_mode = "";
+					* PHY mode used by the MIPI lanes for this device
+					*
+					* tegra_sinterface = "";
+					* CSI Serial interface connected to tegra
+					* Incase of virtual HW devices, use virtual
+					* For SW emulated devices, use host
+					*
+					* pix_clk_hz = "";
+					* Sensor pixel clock used for calculations like exposure and framerate
+					*
+					* readout_orientation = "0";
+					* Based on camera module orientation.
+					* Only change readout_orientation if you specifically
+					* Program a different readout order for this mode
+					*
+					* == Image format Properties ==
+					*
+					* active_w = "";
+					* Pixel active region width
+					*
+					* active_h = "";
+					* Pixel active region height
+					*
+					* pixel_t = "";
+					* The sensor readout pixel pattern
+					*
+					* line_length = "";
+					* Pixel line length (width) for sensor mode.
+					*
+					* == Source Control Settings ==
+					*
+					* Gain factor used to convert fixed point integer to float
+					* Gain range [min_gain/gain_factor, max_gain/gain_factor]
+					* Gain step [step_gain/gain_factor is the smallest step that can be configured]
+					* Default gain [Default gain to be initialized for the control.
+					*     use min_gain_val as default for optimal results]
+					* Framerate factor used to convert fixed point integer to float
+					* Framerate range [min_framerate/framerate_factor, max_framerate/framerate_factor]
+					* Framerate step [step_framerate/framerate_factor is the smallest step that can be configured]
+					* Default Framerate [Default framerate to be initialized for the control.
+					*     use max_framerate to get required performance]
+					* Exposure factor used to convert fixed point integer to float
+					* For convenience use 1 sec = 1000000us as conversion factor
+					* Exposure range [min_exp_time/exposure_factor, max_exp_time/exposure_factor]
+					* Exposure step [step_exp_time/exposure_factor is the smallest step that can be configured]
+					* Default Exposure Time [Default exposure to be initialized for the control.
+					*     Set default exposure based on the default_framerate for optimal exposure settings]
+					*
+					* gain_factor = ""; (integer factor used for floating to fixed point conversion)
+					* min_gain_val = ""; (ceil to integer)
+					* max_gain_val = ""; (ceil to integer)
+					* step_gain_val = ""; (ceil to integer)
+					* default_gain = ""; (ceil to integer)
+					* Gain limits for mode
+					*
+					* exposure_factor = ""; (integer factor used for floating to fixed point conversion)
+					* min_exp_time = ""; (ceil to integer)
+					* max_exp_time = ""; (ceil to integer)
+					* step_exp_time = ""; (ceil to integer)
+					* default_exp_time = ""; (ceil to integer)
+					* Exposure Time limits for mode (sec)
+					*
+					* framerate_factor = ""; (integer factor used for floating to fixed point conversion)
+					* min_framerate = ""; (ceil to integer)
+					* max_framerate = ""; (ceil to integer)
+					* step_framerate = ""; (ceil to integer)
+					* default_framerate = ""; (ceil to integer)
+					* Framerate limits for mode (fps)
+					*
+					* embedded_metadata_height = "";
+					* Sensor embedded metadata height in units of rows.
+					* If sensor does not support embedded metadata value should be 0.
+					*/
+					mode0 { /* AR0144_MODE_1280x800_30FPS */
+							mclk_khz = "25000";
+							num_lanes = "2";
+							tegra_sinterface = "serial_a";
+							vc_id = "1";
+							phy_mode = "DPHY";
+							discontinuous_clk = "yes";
+							dpcm_enable = "false";
+							cil_settletime = "0";
+
+							active_w = "1280";
+							active_h = "800";
+							pixel_t = "yuv_uyvy16";
+							readout_orientation = "0";
+							line_length = "1280";
+							inherent_gain = "1";
+							mclk_multiplier = "9.33";
+							// pix_clk_hz = "182400000";
+							pix_clk_hz = "200000000";
+							serdes_pix_clk_hz = "4000000000";
+
+							gain_factor = "16";
+							framerate_factor = "1000000";
+							exposure_factor = "1000000";
+							min_gain_val = "16"; /* 1.00x */
+							max_gain_val = "170"; /* 10.66x */
+							step_gain_val = "1";
+							default_gain = "16"; /* 1.00x */
+							min_hdr_ratio = "1";
+							max_hdr_ratio = "1";
+							min_framerate = "2000000"; /* 2.0 fps */
+							max_framerate = "15000000"; /* 21.0 fps */
+							step_framerate = "1";
+							default_framerate = "15000000"; /* 21.0 fps */
+							min_exp_time = "13"; /* us */
+							max_exp_time = "683709"; /* us */
+							step_exp_time = "1";
+							default_exp_time = "2495"; /* us */
+
+							embedded_metadata_height = "0";
+					};
+
+					ports {
+						#address-cells = <1>;
+						#size-cells = <0>;
+						port@0 {
+							reg = <0>;
+							rbpcv2_ar0144_out1: endpoint {
+								vc-id = <1>;
+								port-index = <0>;
+								bus-width = <2>;
+								remote-endpoint = <&rbpcv2_ar0144_csi_in1>;
+							};
+						};
+					};
+				};
+#endif
+#ifdef VIZIONLINK_CSI0_CAMERA2
+				rbpcv2_ar0144_c@3e {
+					compatible = "tn,tevi-ar0144";
+					/* I2C device address */
+					reg = <0x3e>;
+
+					/* V4L2 device node location */
+					devnode = "video2";
+
+					/* Physical dimensions of sensor */
+					physical_w = "3.680";
+					physical_h = "2.760";
+
+					sensor_model = "tevi-ar0144";
+
+					use_sensor_mode_id = "false";
+
+					/**
+					* ==== Modes ====
+					* A modeX node is required to support v4l2 driver
+					* implementation with NVIDIA camera software stack
+					*
+					* == Signal properties ==
+					*
+					* phy_mode = "";
+					* PHY mode used by the MIPI lanes for this device
+					*
+					* tegra_sinterface = "";
+					* CSI Serial interface connected to tegra
+					* Incase of virtual HW devices, use virtual
+					* For SW emulated devices, use host
+					*
+					* pix_clk_hz = "";
+					* Sensor pixel clock used for calculations like exposure and framerate
+					*
+					* readout_orientation = "0";
+					* Based on camera module orientation.
+					* Only change readout_orientation if you specifically
+					* Program a different readout order for this mode
+					*
+					* == Image format Properties ==
+					*
+					* active_w = "";
+					* Pixel active region width
+					*
+					* active_h = "";
+					* Pixel active region height
+					*
+					* pixel_t = "";
+					* The sensor readout pixel pattern
+					*
+					* line_length = "";
+					* Pixel line length (width) for sensor mode.
+					*
+					* == Source Control Settings ==
+					*
+					* Gain factor used to convert fixed point integer to float
+					* Gain range [min_gain/gain_factor, max_gain/gain_factor]
+					* Gain step [step_gain/gain_factor is the smallest step that can be configured]
+					* Default gain [Default gain to be initialized for the control.
+					*     use min_gain_val as default for optimal results]
+					* Framerate factor used to convert fixed point integer to float
+					* Framerate range [min_framerate/framerate_factor, max_framerate/framerate_factor]
+					* Framerate step [step_framerate/framerate_factor is the smallest step that can be configured]
+					* Default Framerate [Default framerate to be initialized for the control.
+					*     use max_framerate to get required performance]
+					* Exposure factor used to convert fixed point integer to float
+					* For convenience use 1 sec = 1000000us as conversion factor
+					* Exposure range [min_exp_time/exposure_factor, max_exp_time/exposure_factor]
+					* Exposure step [step_exp_time/exposure_factor is the smallest step that can be configured]
+					* Default Exposure Time [Default exposure to be initialized for the control.
+					*     Set default exposure based on the default_framerate for optimal exposure settings]
+					*
+					* gain_factor = ""; (integer factor used for floating to fixed point conversion)
+					* min_gain_val = ""; (ceil to integer)
+					* max_gain_val = ""; (ceil to integer)
+					* step_gain_val = ""; (ceil to integer)
+					* default_gain = ""; (ceil to integer)
+					* Gain limits for mode
+					*
+					* exposure_factor = ""; (integer factor used for floating to fixed point conversion)
+					* min_exp_time = ""; (ceil to integer)
+					* max_exp_time = ""; (ceil to integer)
+					* step_exp_time = ""; (ceil to integer)
+					* default_exp_time = ""; (ceil to integer)
+					* Exposure Time limits for mode (sec)
+					*
+					* framerate_factor = ""; (integer factor used for floating to fixed point conversion)
+					* min_framerate = ""; (ceil to integer)
+					* max_framerate = ""; (ceil to integer)
+					* step_framerate = ""; (ceil to integer)
+					* default_framerate = ""; (ceil to integer)
+					* Framerate limits for mode (fps)
+					*
+					* embedded_metadata_height = "";
+					* Sensor embedded metadata height in units of rows.
+					* If sensor does not support embedded metadata value should be 0.
+					*/
+					mode0 { /* AR0144_MODE_1280x800_30FPS */
+							mclk_khz = "25000";
+							num_lanes = "2";
+							tegra_sinterface = "serial_a";
+							vc_id = "2";
+							phy_mode = "DPHY";
+							discontinuous_clk = "yes";
+							dpcm_enable = "false";
+							cil_settletime = "0";
+
+							active_w = "1280";
+							active_h = "800";
+							pixel_t = "yuv_uyvy16";
+							readout_orientation = "0";
+							line_length = "1280";
+							inherent_gain = "1";
+							mclk_multiplier = "9.33";
+							// pix_clk_hz = "182400000";
+							pix_clk_hz = "200000000";
+							serdes_pix_clk_hz = "4000000000";
+
+							gain_factor = "16";
+							framerate_factor = "1000000";
+							exposure_factor = "1000000";
+							min_gain_val = "16"; /* 1.00x */
+							max_gain_val = "170"; /* 10.66x */
+							step_gain_val = "1";
+							default_gain = "16"; /* 1.00x */
+							min_hdr_ratio = "1";
+							max_hdr_ratio = "1";
+							min_framerate = "2000000"; /* 2.0 fps */
+							max_framerate = "15000000"; /* 21.0 fps */
+							step_framerate = "1";
+							default_framerate = "15000000"; /* 21.0 fps */
+							min_exp_time = "13"; /* us */
+							max_exp_time = "683709"; /* us */
+							step_exp_time = "1";
+							default_exp_time = "2495"; /* us */
+
+							embedded_metadata_height = "0";
+					};
+
+					ports {
+						#address-cells = <1>;
+						#size-cells = <0>;
+						port@0 {
+							reg = <0>;
+							rbpcv2_ar0144_out2: endpoint {
+								vc-id = <2>;
+								port-index = <0>;
+								bus-width = <2>;
+								remote-endpoint = <&rbpcv2_ar0144_csi_in2>;
+							};
+						};
+					};
+				};
+#endif
+#ifdef VIZIONLINK_CSI0_CAMERA3
+				rbpcv2_ar0144_d@3f {
+					compatible = "tn,tevi-ar0144";
+					/* I2C device address */
+					reg = <0x3f>;
+
+					/* V4L2 device node location */
+					devnode = "video3";
+
+					/* Physical dimensions of sensor */
+					physical_w = "3.680";
+					physical_h = "2.760";
+
+					sensor_model = "tevi-ar0144";
+
+					use_sensor_mode_id = "false";
+
+					/**
+					* ==== Modes ====
+					* A modeX node is required to support v4l2 driver
+					* implementation with NVIDIA camera software stack
+					*
+					* == Signal properties ==
+					*
+					* phy_mode = "";
+					* PHY mode used by the MIPI lanes for this device
+					*
+					* tegra_sinterface = "";
+					* CSI Serial interface connected to tegra
+					* Incase of virtual HW devices, use virtual
+					* For SW emulated devices, use host
+					*
+					* pix_clk_hz = "";
+					* Sensor pixel clock used for calculations like exposure and framerate
+					*
+					* readout_orientation = "0";
+					* Based on camera module orientation.
+					* Only change readout_orientation if you specifically
+					* Program a different readout order for this mode
+					*
+					* == Image format Properties ==
+					*
+					* active_w = "";
+					* Pixel active region width
+					*
+					* active_h = "";
+					* Pixel active region height
+					*
+					* pixel_t = "";
+					* The sensor readout pixel pattern
+					*
+					* line_length = "";
+					* Pixel line length (width) for sensor mode.
+					*
+					* == Source Control Settings ==
+					*
+					* Gain factor used to convert fixed point integer to float
+					* Gain range [min_gain/gain_factor, max_gain/gain_factor]
+					* Gain step [step_gain/gain_factor is the smallest step that can be configured]
+					* Default gain [Default gain to be initialized for the control.
+					*     use min_gain_val as default for optimal results]
+					* Framerate factor used to convert fixed point integer to float
+					* Framerate range [min_framerate/framerate_factor, max_framerate/framerate_factor]
+					* Framerate step [step_framerate/framerate_factor is the smallest step that can be configured]
+					* Default Framerate [Default framerate to be initialized for the control.
+					*     use max_framerate to get required performance]
+					* Exposure factor used to convert fixed point integer to float
+					* For convenience use 1 sec = 1000000us as conversion factor
+					* Exposure range [min_exp_time/exposure_factor, max_exp_time/exposure_factor]
+					* Exposure step [step_exp_time/exposure_factor is the smallest step that can be configured]
+					* Default Exposure Time [Default exposure to be initialized for the control.
+					*     Set default exposure based on the default_framerate for optimal exposure settings]
+					*
+					* gain_factor = ""; (integer factor used for floating to fixed point conversion)
+					* min_gain_val = ""; (ceil to integer)
+					* max_gain_val = ""; (ceil to integer)
+					* step_gain_val = ""; (ceil to integer)
+					* default_gain = ""; (ceil to integer)
+					* Gain limits for mode
+					*
+					* exposure_factor = ""; (integer factor used for floating to fixed point conversion)
+					* min_exp_time = ""; (ceil to integer)
+					* max_exp_time = ""; (ceil to integer)
+					* step_exp_time = ""; (ceil to integer)
+					* default_exp_time = ""; (ceil to integer)
+					* Exposure Time limits for mode (sec)
+					*
+					* framerate_factor = ""; (integer factor used for floating to fixed point conversion)
+					* min_framerate = ""; (ceil to integer)
+					* max_framerate = ""; (ceil to integer)
+					* step_framerate = ""; (ceil to integer)
+					* default_framerate = ""; (ceil to integer)
+					* Framerate limits for mode (fps)
+					*
+					* embedded_metadata_height = "";
+					* Sensor embedded metadata height in units of rows.
+					* If sensor does not support embedded metadata value should be 0.
+					*/
+					mode0 { /* AR0144_MODE_1280x800_30FPS */
+							mclk_khz = "25000";
+							num_lanes = "2";
+							tegra_sinterface = "serial_a";
+							vc_id = "3";
+							phy_mode = "DPHY";
+							discontinuous_clk = "yes";
+							dpcm_enable = "false";
+							cil_settletime = "0";
+
+							active_w = "1280";
+							active_h = "800";
+							pixel_t = "yuv_uyvy16";
+							readout_orientation = "0";
+							line_length = "1280";
+							inherent_gain = "1";
+							mclk_multiplier = "9.33";
+							// pix_clk_hz = "182400000";
+							pix_clk_hz = "200000000";
+							serdes_pix_clk_hz = "4000000000";
+
+							gain_factor = "16";
+							framerate_factor = "1000000";
+							exposure_factor = "1000000";
+							min_gain_val = "16"; /* 1.00x */
+							max_gain_val = "170"; /* 10.66x */
+							step_gain_val = "1";
+							default_gain = "16"; /* 1.00x */
+							min_hdr_ratio = "1";
+							max_hdr_ratio = "1";
+							min_framerate = "2000000"; /* 2.0 fps */
+							max_framerate = "15000000"; /* 21.0 fps */
+							step_framerate = "1";
+							default_framerate = "15000000"; /* 21.0 fps */
+							min_exp_time = "13"; /* us */
+							max_exp_time = "683709"; /* us */
+							step_exp_time = "1";
+							default_exp_time = "2495"; /* us */
+
+							embedded_metadata_height = "0";
+					};
+
+					ports {
+						#address-cells = <1>;
+						#size-cells = <0>;
+						port@0 {
+							reg = <0>;
+							rbpcv2_ar0144_out3: endpoint {
+								vc-id = <3>;
+								port-index = <0>;
+								bus-width = <2>;
+								remote-endpoint = <&rbpcv2_ar0144_csi_in3>;
+							};
+						};
+					};
+				};
+#endif
+			};
+			i2c@1 {
+#ifdef VIZIONLINK_CSI1_CAMERA0
+				rbpcv2_ar0144_a@3c {
+					compatible = "tn,tevi-ar0144";
+					/* I2C device address */
+					reg = <0x3c>;
+
+					/* V4L2 device node location */
+					devnode = "video12";
+
+					/* Physical dimensions of sensor */
+					physical_w = "3.680";
+					physical_h = "2.760";
+
+					sensor_model = "tevi-ar0144";
+
+					use_sensor_mode_id = "false";
+
+					/**
+					* ==== Modes ====
+					* A modeX node is required to support v4l2 driver
+					* implementation with NVIDIA camera software stack
+					*
+					* == Signal properties ==
+					*
+					* phy_mode = "";
+					* PHY mode used by the MIPI lanes for this device
+					*
+					* tegra_sinterface = "";
+					* CSI Serial interface connected to tegra
+					* Incase of virtual HW devices, use virtual
+					* For SW emulated devices, use host
+					*
+					* pix_clk_hz = "";
+					* Sensor pixel clock used for calculations like exposure and framerate
+					*
+					* readout_orientation = "0";
+					* Based on camera module orientation.
+					* Only change readout_orientation if you specifically
+					* Program a different readout order for this mode
+					*
+					* == Image format Properties ==
+					*
+					* active_w = "";
+					* Pixel active region width
+					*
+					* active_h = "";
+					* Pixel active region height
+					*
+					* pixel_t = "";
+					* The sensor readout pixel pattern
+					*
+					* line_length = "";
+					* Pixel line length (width) for sensor mode.
+					*
+					* == Source Control Settings ==
+					*
+					* Gain factor used to convert fixed point integer to float
+					* Gain range [min_gain/gain_factor, max_gain/gain_factor]
+					* Gain step [step_gain/gain_factor is the smallest step that can be configured]
+					* Default gain [Default gain to be initialized for the control.
+					*     use min_gain_val as default for optimal results]
+					* Framerate factor used to convert fixed point integer to float
+					* Framerate range [min_framerate/framerate_factor, max_framerate/framerate_factor]
+					* Framerate step [step_framerate/framerate_factor is the smallest step that can be configured]
+					* Default Framerate [Default framerate to be initialized for the control.
+					*     use max_framerate to get required performance]
+					* Exposure factor used to convert fixed point integer to float
+					* For convenience use 1 sec = 1000000us as conversion factor
+					* Exposure range [min_exp_time/exposure_factor, max_exp_time/exposure_factor]
+					* Exposure step [step_exp_time/exposure_factor is the smallest step that can be configured]
+					* Default Exposure Time [Default exposure to be initialized for the control.
+					*     Set default exposure based on the default_framerate for optimal exposure settings]
+					*
+					* gain_factor = ""; (integer factor used for floating to fixed point conversion)
+					* min_gain_val = ""; (ceil to integer)
+					* max_gain_val = ""; (ceil to integer)
+					* step_gain_val = ""; (ceil to integer)
+					* default_gain = ""; (ceil to integer)
+					* Gain limits for mode
+					*
+					* exposure_factor = ""; (integer factor used for floating to fixed point conversion)
+					* min_exp_time = ""; (ceil to integer)
+					* max_exp_time = ""; (ceil to integer)
+					* step_exp_time = ""; (ceil to integer)
+					* default_exp_time = ""; (ceil to integer)
+					* Exposure Time limits for mode (sec)
+					*
+					* framerate_factor = ""; (integer factor used for floating to fixed point conversion)
+					* min_framerate = ""; (ceil to integer)
+					* max_framerate = ""; (ceil to integer)
+					* step_framerate = ""; (ceil to integer)
+					* default_framerate = ""; (ceil to integer)
+					* Framerate limits for mode (fps)
+					*
+					* embedded_metadata_height = "";
+					* Sensor embedded metadata height in units of rows.
+					* If sensor does not support embedded metadata value should be 0.
+					*/
+					mode0 { /* AR0144_MODE_1280x800_30FPS */
+							mclk_khz = "25000";
+							num_lanes = "2";
+							tegra_sinterface = "serial_a";
+							vc_id = "0";
+							phy_mode = "DPHY";
+							discontinuous_clk = "yes";
+							dpcm_enable = "false";
+							cil_settletime = "0";
+
+							active_w = "1280";
+							active_h = "800";
+							pixel_t = "yuv_uyvy16";
+							readout_orientation = "0";
+							line_length = "1280";
+							inherent_gain = "1";
+							mclk_multiplier = "9.33";
+							// pix_clk_hz = "182400000";
+							pix_clk_hz = "200000000";
+							serdes_pix_clk_hz = "4000000000";
+
+							gain_factor = "16";
+							framerate_factor = "1000000";
+							exposure_factor = "1000000";
+							min_gain_val = "16"; /* 1.00x */
+							max_gain_val = "170"; /* 10.66x */
+							step_gain_val = "1";
+							default_gain = "16"; /* 1.00x */
+							min_hdr_ratio = "1";
+							max_hdr_ratio = "1";
+							min_framerate = "2000000"; /* 2.0 fps */
+							max_framerate = "15000000"; /* 21.0 fps */
+							step_framerate = "1";
+							default_framerate = "15000000"; /* 21.0 fps */
+							min_exp_time = "13"; /* us */
+							max_exp_time = "683709"; /* us */
+							step_exp_time = "1";
+							default_exp_time = "2495"; /* us */
+
+							embedded_metadata_height = "0";
+					};
+
+					ports {
+						#address-cells = <1>;
+						#size-cells = <0>;
+						port@0 {
+							reg = <0>;
+							rbpcv2_ar0144_out12: endpoint {
+								vc-id = <0>;
+								port-index = <1>;
+								bus-width = <2>;
+								remote-endpoint = <&rbpcv2_ar0144_csi_in12>;
+							};
+						};
+					};
+				};
+#endif
+#ifdef VIZIONLINK_CSI1_CAMERA1
+				rbpcv2_ar0144_b@3d {
+					compatible = "tn,tevi-ar0144";
+					/* I2C device address */
+					reg = <0x3d>;
+
+					/* V4L2 device node location */
+					devnode = "video13";
+
+					/* Physical dimensions of sensor */
+					physical_w = "3.680";
+					physical_h = "2.760";
+
+					sensor_model = "tevi-ar0144";
+
+					use_sensor_mode_id = "false";
+
+					/**
+					* ==== Modes ====
+					* A modeX node is required to support v4l2 driver
+					* implementation with NVIDIA camera software stack
+					*
+					* == Signal properties ==
+					*
+					* phy_mode = "";
+					* PHY mode used by the MIPI lanes for this device
+					*
+					* tegra_sinterface = "";
+					* CSI Serial interface connected to tegra
+					* Incase of virtual HW devices, use virtual
+					* For SW emulated devices, use host
+					*
+					* pix_clk_hz = "";
+					* Sensor pixel clock used for calculations like exposure and framerate
+					*
+					* readout_orientation = "0";
+					* Based on camera module orientation.
+					* Only change readout_orientation if you specifically
+					* Program a different readout order for this mode
+					*
+					* == Image format Properties ==
+					*
+					* active_w = "";
+					* Pixel active region width
+					*
+					* active_h = "";
+					* Pixel active region height
+					*
+					* pixel_t = "";
+					* The sensor readout pixel pattern
+					*
+					* line_length = "";
+					* Pixel line length (width) for sensor mode.
+					*
+					* == Source Control Settings ==
+					*
+					* Gain factor used to convert fixed point integer to float
+					* Gain range [min_gain/gain_factor, max_gain/gain_factor]
+					* Gain step [step_gain/gain_factor is the smallest step that can be configured]
+					* Default gain [Default gain to be initialized for the control.
+					*     use min_gain_val as default for optimal results]
+					* Framerate factor used to convert fixed point integer to float
+					* Framerate range [min_framerate/framerate_factor, max_framerate/framerate_factor]
+					* Framerate step [step_framerate/framerate_factor is the smallest step that can be configured]
+					* Default Framerate [Default framerate to be initialized for the control.
+					*     use max_framerate to get required performance]
+					* Exposure factor used to convert fixed point integer to float
+					* For convenience use 1 sec = 1000000us as conversion factor
+					* Exposure range [min_exp_time/exposure_factor, max_exp_time/exposure_factor]
+					* Exposure step [step_exp_time/exposure_factor is the smallest step that can be configured]
+					* Default Exposure Time [Default exposure to be initialized for the control.
+					*     Set default exposure based on the default_framerate for optimal exposure settings]
+					*
+					* gain_factor = ""; (integer factor used for floating to fixed point conversion)
+					* min_gain_val = ""; (ceil to integer)
+					* max_gain_val = ""; (ceil to integer)
+					* step_gain_val = ""; (ceil to integer)
+					* default_gain = ""; (ceil to integer)
+					* Gain limits for mode
+					*
+					* exposure_factor = ""; (integer factor used for floating to fixed point conversion)
+					* min_exp_time = ""; (ceil to integer)
+					* max_exp_time = ""; (ceil to integer)
+					* step_exp_time = ""; (ceil to integer)
+					* default_exp_time = ""; (ceil to integer)
+					* Exposure Time limits for mode (sec)
+					*
+					* framerate_factor = ""; (integer factor used for floating to fixed point conversion)
+					* min_framerate = ""; (ceil to integer)
+					* max_framerate = ""; (ceil to integer)
+					* step_framerate = ""; (ceil to integer)
+					* default_framerate = ""; (ceil to integer)
+					* Framerate limits for mode (fps)
+					*
+					* embedded_metadata_height = "";
+					* Sensor embedded metadata height in units of rows.
+					* If sensor does not support embedded metadata value should be 0.
+					*/
+					mode0 { /* AR0144_MODE_1280x800_30FPS */
+							mclk_khz = "25000";
+							num_lanes = "2";
+							tegra_sinterface = "serial_a";
+							vc_id = "1";
+							phy_mode = "DPHY";
+							discontinuous_clk = "yes";
+							dpcm_enable = "false";
+							cil_settletime = "0";
+
+							active_w = "1280";
+							active_h = "800";
+							pixel_t = "yuv_uyvy16";
+							readout_orientation = "0";
+							line_length = "1280";
+							inherent_gain = "1";
+							mclk_multiplier = "9.33";
+							// pix_clk_hz = "182400000";
+							pix_clk_hz = "200000000";
+							serdes_pix_clk_hz = "4000000000";
+
+							gain_factor = "16";
+							framerate_factor = "1000000";
+							exposure_factor = "1000000";
+							min_gain_val = "16"; /* 1.00x */
+							max_gain_val = "170"; /* 10.66x */
+							step_gain_val = "1";
+							default_gain = "16"; /* 1.00x */
+							min_hdr_ratio = "1";
+							max_hdr_ratio = "1";
+							min_framerate = "2000000"; /* 2.0 fps */
+							max_framerate = "15000000"; /* 21.0 fps */
+							step_framerate = "1";
+							default_framerate = "15000000"; /* 21.0 fps */
+							min_exp_time = "13"; /* us */
+							max_exp_time = "683709"; /* us */
+							step_exp_time = "1";
+							default_exp_time = "2495"; /* us */
+
+							embedded_metadata_height = "0";
+					};
+
+					ports {
+						#address-cells = <1>;
+						#size-cells = <0>;
+						port@0 {
+							reg = <0>;
+							rbpcv2_ar0144_out13: endpoint {
+								vc-id = <1>;
+								port-index = <1>;
+								bus-width = <2>;
+								remote-endpoint = <&rbpcv2_ar0144_csi_in13>;
+							};
+						};
+					};
+				};
+#endif
+#ifdef VIZIONLINK_CSI1_CAMERA2
+				rbpcv2_ar0144_c@3e {
+					compatible = "tn,tevi-ar0144";
+					/* I2C device address */
+					reg = <0x3e>;
+
+					/* V4L2 device node location */
+					devnode = "video14";
+
+					/* Physical dimensions of sensor */
+					physical_w = "3.680";
+					physical_h = "2.760";
+
+					sensor_model = "tevi-ar0144";
+
+					use_sensor_mode_id = "false";
+
+					/**
+					* ==== Modes ====
+					* A modeX node is required to support v4l2 driver
+					* implementation with NVIDIA camera software stack
+					*
+					* == Signal properties ==
+					*
+					* phy_mode = "";
+					* PHY mode used by the MIPI lanes for this device
+					*
+					* tegra_sinterface = "";
+					* CSI Serial interface connected to tegra
+					* Incase of virtual HW devices, use virtual
+					* For SW emulated devices, use host
+					*
+					* pix_clk_hz = "";
+					* Sensor pixel clock used for calculations like exposure and framerate
+					*
+					* readout_orientation = "0";
+					* Based on camera module orientation.
+					* Only change readout_orientation if you specifically
+					* Program a different readout order for this mode
+					*
+					* == Image format Properties ==
+					*
+					* active_w = "";
+					* Pixel active region width
+					*
+					* active_h = "";
+					* Pixel active region height
+					*
+					* pixel_t = "";
+					* The sensor readout pixel pattern
+					*
+					* line_length = "";
+					* Pixel line length (width) for sensor mode.
+					*
+					* == Source Control Settings ==
+					*
+					* Gain factor used to convert fixed point integer to float
+					* Gain range [min_gain/gain_factor, max_gain/gain_factor]
+					* Gain step [step_gain/gain_factor is the smallest step that can be configured]
+					* Default gain [Default gain to be initialized for the control.
+					*     use min_gain_val as default for optimal results]
+					* Framerate factor used to convert fixed point integer to float
+					* Framerate range [min_framerate/framerate_factor, max_framerate/framerate_factor]
+					* Framerate step [step_framerate/framerate_factor is the smallest step that can be configured]
+					* Default Framerate [Default framerate to be initialized for the control.
+					*     use max_framerate to get required performance]
+					* Exposure factor used to convert fixed point integer to float
+					* For convenience use 1 sec = 1000000us as conversion factor
+					* Exposure range [min_exp_time/exposure_factor, max_exp_time/exposure_factor]
+					* Exposure step [step_exp_time/exposure_factor is the smallest step that can be configured]
+					* Default Exposure Time [Default exposure to be initialized for the control.
+					*     Set default exposure based on the default_framerate for optimal exposure settings]
+					*
+					* gain_factor = ""; (integer factor used for floating to fixed point conversion)
+					* min_gain_val = ""; (ceil to integer)
+					* max_gain_val = ""; (ceil to integer)
+					* step_gain_val = ""; (ceil to integer)
+					* default_gain = ""; (ceil to integer)
+					* Gain limits for mode
+					*
+					* exposure_factor = ""; (integer factor used for floating to fixed point conversion)
+					* min_exp_time = ""; (ceil to integer)
+					* max_exp_time = ""; (ceil to integer)
+					* step_exp_time = ""; (ceil to integer)
+					* default_exp_time = ""; (ceil to integer)
+					* Exposure Time limits for mode (sec)
+					*
+					* framerate_factor = ""; (integer factor used for floating to fixed point conversion)
+					* min_framerate = ""; (ceil to integer)
+					* max_framerate = ""; (ceil to integer)
+					* step_framerate = ""; (ceil to integer)
+					* default_framerate = ""; (ceil to integer)
+					* Framerate limits for mode (fps)
+					*
+					* embedded_metadata_height = "";
+					* Sensor embedded metadata height in units of rows.
+					* If sensor does not support embedded metadata value should be 0.
+					*/
+					mode0 { /* AR0144_MODE_1280x800_30FPS */
+							mclk_khz = "25000";
+							num_lanes = "2";
+							tegra_sinterface = "serial_a";
+							vc_id = "2";
+							phy_mode = "DPHY";
+							discontinuous_clk = "yes";
+							dpcm_enable = "false";
+							cil_settletime = "0";
+
+							active_w = "1280";
+							active_h = "800";
+							pixel_t = "yuv_uyvy16";
+							readout_orientation = "0";
+							line_length = "1280";
+							inherent_gain = "1";
+							mclk_multiplier = "9.33";
+							// pix_clk_hz = "182400000";
+							pix_clk_hz = "200000000";
+							serdes_pix_clk_hz = "4000000000";
+
+							gain_factor = "16";
+							framerate_factor = "1000000";
+							exposure_factor = "1000000";
+							min_gain_val = "16"; /* 1.00x */
+							max_gain_val = "170"; /* 10.66x */
+							step_gain_val = "1";
+							default_gain = "16"; /* 1.00x */
+							min_hdr_ratio = "1";
+							max_hdr_ratio = "1";
+							min_framerate = "2000000"; /* 2.0 fps */
+							max_framerate = "15000000"; /* 21.0 fps */
+							step_framerate = "1";
+							default_framerate = "15000000"; /* 21.0 fps */
+							min_exp_time = "13"; /* us */
+							max_exp_time = "683709"; /* us */
+							step_exp_time = "1";
+							default_exp_time = "2495"; /* us */
+
+							embedded_metadata_height = "0";
+					};
+
+					ports {
+						#address-cells = <1>;
+						#size-cells = <0>;
+						port@0 {
+							reg = <0>;
+							rbpcv2_ar0144_out14: endpoint {
+								vc-id = <2>;
+								port-index = <1>;
+								bus-width = <2>;
+								remote-endpoint = <&rbpcv2_ar0144_csi_in14>;
+							};
+						};
+					};
+				};
+#endif
+#ifdef VIZIONLINK_CSI1_CAMERA3
+				rbpcv2_ar0144_d@3f {
+					compatible = "tn,tevi-ar0144";
+					/* I2C device address */
+					reg = <0x3f>;
+
+					/* V4L2 device node location */
+					devnode = "video15";
+
+					/* Physical dimensions of sensor */
+					physical_w = "3.680";
+					physical_h = "2.760";
+
+					sensor_model = "tevi-ar0144";
+
+					use_sensor_mode_id = "false";
+
+					/**
+					* ==== Modes ====
+					* A modeX node is required to support v4l2 driver
+					* implementation with NVIDIA camera software stack
+					*
+					* == Signal properties ==
+					*
+					* phy_mode = "";
+					* PHY mode used by the MIPI lanes for this device
+					*
+					* tegra_sinterface = "";
+					* CSI Serial interface connected to tegra
+					* Incase of virtual HW devices, use virtual
+					* For SW emulated devices, use host
+					*
+					* pix_clk_hz = "";
+					* Sensor pixel clock used for calculations like exposure and framerate
+					*
+					* readout_orientation = "0";
+					* Based on camera module orientation.
+					* Only change readout_orientation if you specifically
+					* Program a different readout order for this mode
+					*
+					* == Image format Properties ==
+					*
+					* active_w = "";
+					* Pixel active region width
+					*
+					* active_h = "";
+					* Pixel active region height
+					*
+					* pixel_t = "";
+					* The sensor readout pixel pattern
+					*
+					* line_length = "";
+					* Pixel line length (width) for sensor mode.
+					*
+					* == Source Control Settings ==
+					*
+					* Gain factor used to convert fixed point integer to float
+					* Gain range [min_gain/gain_factor, max_gain/gain_factor]
+					* Gain step [step_gain/gain_factor is the smallest step that can be configured]
+					* Default gain [Default gain to be initialized for the control.
+					*     use min_gain_val as default for optimal results]
+					* Framerate factor used to convert fixed point integer to float
+					* Framerate range [min_framerate/framerate_factor, max_framerate/framerate_factor]
+					* Framerate step [step_framerate/framerate_factor is the smallest step that can be configured]
+					* Default Framerate [Default framerate to be initialized for the control.
+					*     use max_framerate to get required performance]
+					* Exposure factor used to convert fixed point integer to float
+					* For convenience use 1 sec = 1000000us as conversion factor
+					* Exposure range [min_exp_time/exposure_factor, max_exp_time/exposure_factor]
+					* Exposure step [step_exp_time/exposure_factor is the smallest step that can be configured]
+					* Default Exposure Time [Default exposure to be initialized for the control.
+					*     Set default exposure based on the default_framerate for optimal exposure settings]
+					*
+					* gain_factor = ""; (integer factor used for floating to fixed point conversion)
+					* min_gain_val = ""; (ceil to integer)
+					* max_gain_val = ""; (ceil to integer)
+					* step_gain_val = ""; (ceil to integer)
+					* default_gain = ""; (ceil to integer)
+					* Gain limits for mode
+					*
+					* exposure_factor = ""; (integer factor used for floating to fixed point conversion)
+					* min_exp_time = ""; (ceil to integer)
+					* max_exp_time = ""; (ceil to integer)
+					* step_exp_time = ""; (ceil to integer)
+					* default_exp_time = ""; (ceil to integer)
+					* Exposure Time limits for mode (sec)
+					*
+					* framerate_factor = ""; (integer factor used for floating to fixed point conversion)
+					* min_framerate = ""; (ceil to integer)
+					* max_framerate = ""; (ceil to integer)
+					* step_framerate = ""; (ceil to integer)
+					* default_framerate = ""; (ceil to integer)
+					* Framerate limits for mode (fps)
+					*
+					* embedded_metadata_height = "";
+					* Sensor embedded metadata height in units of rows.
+					* If sensor does not support embedded metadata value should be 0.
+					*/
+					mode0 { /* AR0144_MODE_1280x800_30FPS */
+							mclk_khz = "25000";
+							num_lanes = "2";
+							tegra_sinterface = "serial_a";
+							vc_id = "3";
+							phy_mode = "DPHY";
+							discontinuous_clk = "yes";
+							dpcm_enable = "false";
+							cil_settletime = "0";
+
+							active_w = "1280";
+							active_h = "800";
+							pixel_t = "yuv_uyvy16";
+							readout_orientation = "0";
+							line_length = "1280";
+							inherent_gain = "1";
+							mclk_multiplier = "9.33";
+							// pix_clk_hz = "182400000";
+							pix_clk_hz = "200000000";
+							serdes_pix_clk_hz = "4000000000";
+
+							gain_factor = "16";
+							framerate_factor = "1000000";
+							exposure_factor = "1000000";
+							min_gain_val = "16"; /* 1.00x */
+							max_gain_val = "170"; /* 10.66x */
+							step_gain_val = "1";
+							default_gain = "16"; /* 1.00x */
+							min_hdr_ratio = "1";
+							max_hdr_ratio = "1";
+							min_framerate = "2000000"; /* 2.0 fps */
+							max_framerate = "15000000"; /* 21.0 fps */
+							step_framerate = "1";
+							default_framerate = "15000000"; /* 21.0 fps */
+							min_exp_time = "13"; /* us */
+							max_exp_time = "683709"; /* us */
+							step_exp_time = "1";
+							default_exp_time = "2495"; /* us */
+
+							embedded_metadata_height = "0";
+					};
+
+					ports {
+						#address-cells = <1>;
+						#size-cells = <0>;
+						port@0 {
+							reg = <0>;
+							rbpcv2_ar0144_out15: endpoint {
+								vc-id = <3>;
+								port-index = <1>;
+								bus-width = <2>;
+								remote-endpoint = <&rbpcv2_ar0144_csi_in15>;
+							};
+						};
+					};
+				};
+#endif
+			};
+			i2c@2 {
+#ifdef VIZIONLINK_CSI2_CAMERA0
+				rbpcv2_ar0144_a@3c {
+					compatible = "tn,tevi-ar0144";
+					/* I2C device address */
+					reg = <0x3c>;
+
+					/* V4L2 device node location */
+					devnode = "video4";
+
+					/* Physical dimensions of sensor */
+					physical_w = "3.680";
+					physical_h = "2.760";
+
+					sensor_model = "tevi-ar0144";
+
+					use_sensor_mode_id = "false";
+
+					/**
+					* ==== Modes ====
+					* A modeX node is required to support v4l2 driver
+					* implementation with NVIDIA camera software stack
+					*
+					* == Signal properties ==
+					*
+					* phy_mode = "";
+					* PHY mode used by the MIPI lanes for this device
+					*
+					* tegra_sinterface = "";
+					* CSI Serial interface connected to tegra
+					* Incase of virtual HW devices, use virtual
+					* For SW emulated devices, use host
+					*
+					* pix_clk_hz = "";
+					* Sensor pixel clock used for calculations like exposure and framerate
+					*
+					* readout_orientation = "0";
+					* Based on camera module orientation.
+					* Only change readout_orientation if you specifically
+					* Program a different readout order for this mode
+					*
+					* == Image format Properties ==
+					*
+					* active_w = "";
+					* Pixel active region width
+					*
+					* active_h = "";
+					* Pixel active region height
+					*
+					* pixel_t = "";
+					* The sensor readout pixel pattern
+					*
+					* line_length = "";
+					* Pixel line length (width) for sensor mode.
+					*
+					* == Source Control Settings ==
+					*
+					* Gain factor used to convert fixed point integer to float
+					* Gain range [min_gain/gain_factor, max_gain/gain_factor]
+					* Gain step [step_gain/gain_factor is the smallest step that can be configured]
+					* Default gain [Default gain to be initialized for the control.
+					*     use min_gain_val as default for optimal results]
+					* Framerate factor used to convert fixed point integer to float
+					* Framerate range [min_framerate/framerate_factor, max_framerate/framerate_factor]
+					* Framerate step [step_framerate/framerate_factor is the smallest step that can be configured]
+					* Default Framerate [Default framerate to be initialized for the control.
+					*     use max_framerate to get required performance]
+					* Exposure factor used to convert fixed point integer to float
+					* For convenience use 1 sec = 1000000us as conversion factor
+					* Exposure range [min_exp_time/exposure_factor, max_exp_time/exposure_factor]
+					* Exposure step [step_exp_time/exposure_factor is the smallest step that can be configured]
+					* Default Exposure Time [Default exposure to be initialized for the control.
+					*     Set default exposure based on the default_framerate for optimal exposure settings]
+					*
+					* gain_factor = ""; (integer factor used for floating to fixed point conversion)
+					* min_gain_val = ""; (ceil to integer)
+					* max_gain_val = ""; (ceil to integer)
+					* step_gain_val = ""; (ceil to integer)
+					* default_gain = ""; (ceil to integer)
+					* Gain limits for mode
+					*
+					* exposure_factor = ""; (integer factor used for floating to fixed point conversion)
+					* min_exp_time = ""; (ceil to integer)
+					* max_exp_time = ""; (ceil to integer)
+					* step_exp_time = ""; (ceil to integer)
+					* default_exp_time = ""; (ceil to integer)
+					* Exposure Time limits for mode (sec)
+					*
+					* framerate_factor = ""; (integer factor used for floating to fixed point conversion)
+					* min_framerate = ""; (ceil to integer)
+					* max_framerate = ""; (ceil to integer)
+					* step_framerate = ""; (ceil to integer)
+					* default_framerate = ""; (ceil to integer)
+					* Framerate limits for mode (fps)
+					*
+					* embedded_metadata_height = "";
+					* Sensor embedded metadata height in units of rows.
+					* If sensor does not support embedded metadata value should be 0.
+					*/
+					mode0 { /* AR0144_MODE_1280x800_30FPS */
+							mclk_khz = "25000";
+							num_lanes = "2";
+							tegra_sinterface = "serial_c";
+							vc_id = "0";
+							phy_mode = "DPHY";
+							discontinuous_clk = "yes";
+							dpcm_enable = "false";
+							cil_settletime = "0";
+
+							active_w = "1280";
+							active_h = "800";
+							pixel_t = "yuv_uyvy16";
+							readout_orientation = "0";
+							line_length = "1280";
+							inherent_gain = "1";
+							mclk_multiplier = "9.33";
+							// pix_clk_hz = "182400000";
+							pix_clk_hz = "200000000";
+							serdes_pix_clk_hz = "4000000000";
+
+							gain_factor = "16";
+							framerate_factor = "1000000";
+							exposure_factor = "1000000";
+							min_gain_val = "16"; /* 1.00x */
+							max_gain_val = "170"; /* 10.66x */
+							step_gain_val = "1";
+							default_gain = "16"; /* 1.00x */
+							min_hdr_ratio = "1";
+							max_hdr_ratio = "1";
+							min_framerate = "2000000"; /* 2.0 fps */
+							max_framerate = "15000000"; /* 21.0 fps */
+							step_framerate = "1";
+							default_framerate = "15000000"; /* 21.0 fps */
+							min_exp_time = "13"; /* us */
+							max_exp_time = "683709"; /* us */
+							step_exp_time = "1";
+							default_exp_time = "2495"; /* us */
+
+							embedded_metadata_height = "0";
+					};
+
+					ports {
+						#address-cells = <1>;
+						#size-cells = <0>;
+						port@0 {
+							reg = <0>;
+							rbpcv2_ar0144_out4: endpoint {
+								vc-id = <0>;
+								port-index = <2>;
+								bus-width = <2>;
+								remote-endpoint = <&rbpcv2_ar0144_csi_in4>;
+							};
+						};
+					};
+				};
+#endif
+#ifdef VIZIONLINK_CSI2_CAMERA1
+				rbpcv2_ar0144_b@3d {
+					compatible = "tn,tevi-ar0144";
+					/* I2C device address */
+					reg = <0x3d>;
+
+					/* V4L2 device node location */
+					devnode = "video5";
+
+					/* Physical dimensions of sensor */
+					physical_w = "3.680";
+					physical_h = "2.760";
+
+					sensor_model = "tevi-ar0144";
+
+					use_sensor_mode_id = "false";
+
+					/**
+					* ==== Modes ====
+					* A modeX node is required to support v4l2 driver
+					* implementation with NVIDIA camera software stack
+					*
+					* == Signal properties ==
+					*
+					* phy_mode = "";
+					* PHY mode used by the MIPI lanes for this device
+					*
+					* tegra_sinterface = "";
+					* CSI Serial interface connected to tegra
+					* Incase of virtual HW devices, use virtual
+					* For SW emulated devices, use host
+					*
+					* pix_clk_hz = "";
+					* Sensor pixel clock used for calculations like exposure and framerate
+					*
+					* readout_orientation = "0";
+					* Based on camera module orientation.
+					* Only change readout_orientation if you specifically
+					* Program a different readout order for this mode
+					*
+					* == Image format Properties ==
+					*
+					* active_w = "";
+					* Pixel active region width
+					*
+					* active_h = "";
+					* Pixel active region height
+					*
+					* pixel_t = "";
+					* The sensor readout pixel pattern
+					*
+					* line_length = "";
+					* Pixel line length (width) for sensor mode.
+					*
+					* == Source Control Settings ==
+					*
+					* Gain factor used to convert fixed point integer to float
+					* Gain range [min_gain/gain_factor, max_gain/gain_factor]
+					* Gain step [step_gain/gain_factor is the smallest step that can be configured]
+					* Default gain [Default gain to be initialized for the control.
+					*     use min_gain_val as default for optimal results]
+					* Framerate factor used to convert fixed point integer to float
+					* Framerate range [min_framerate/framerate_factor, max_framerate/framerate_factor]
+					* Framerate step [step_framerate/framerate_factor is the smallest step that can be configured]
+					* Default Framerate [Default framerate to be initialized for the control.
+					*     use max_framerate to get required performance]
+					* Exposure factor used to convert fixed point integer to float
+					* For convenience use 1 sec = 1000000us as conversion factor
+					* Exposure range [min_exp_time/exposure_factor, max_exp_time/exposure_factor]
+					* Exposure step [step_exp_time/exposure_factor is the smallest step that can be configured]
+					* Default Exposure Time [Default exposure to be initialized for the control.
+					*     Set default exposure based on the default_framerate for optimal exposure settings]
+					*
+					* gain_factor = ""; (integer factor used for floating to fixed point conversion)
+					* min_gain_val = ""; (ceil to integer)
+					* max_gain_val = ""; (ceil to integer)
+					* step_gain_val = ""; (ceil to integer)
+					* default_gain = ""; (ceil to integer)
+					* Gain limits for mode
+					*
+					* exposure_factor = ""; (integer factor used for floating to fixed point conversion)
+					* min_exp_time = ""; (ceil to integer)
+					* max_exp_time = ""; (ceil to integer)
+					* step_exp_time = ""; (ceil to integer)
+					* default_exp_time = ""; (ceil to integer)
+					* Exposure Time limits for mode (sec)
+					*
+					* framerate_factor = ""; (integer factor used for floating to fixed point conversion)
+					* min_framerate = ""; (ceil to integer)
+					* max_framerate = ""; (ceil to integer)
+					* step_framerate = ""; (ceil to integer)
+					* default_framerate = ""; (ceil to integer)
+					* Framerate limits for mode (fps)
+					*
+					* embedded_metadata_height = "";
+					* Sensor embedded metadata height in units of rows.
+					* If sensor does not support embedded metadata value should be 0.
+					*/
+					mode0 { /* AR0144_MODE_1280x800_30FPS */
+							mclk_khz = "25000";
+							num_lanes = "2";
+							tegra_sinterface = "serial_c";
+							vc_id = "1";
+							phy_mode = "DPHY";
+							discontinuous_clk = "yes";
+							dpcm_enable = "false";
+							cil_settletime = "0";
+
+							active_w = "1280";
+							active_h = "800";
+							pixel_t = "yuv_uyvy16";
+							readout_orientation = "0";
+							line_length = "1280";
+							inherent_gain = "1";
+							mclk_multiplier = "9.33";
+							// pix_clk_hz = "182400000";
+							pix_clk_hz = "200000000";
+							serdes_pix_clk_hz = "4000000000";
+
+							gain_factor = "16";
+							framerate_factor = "1000000";
+							exposure_factor = "1000000";
+							min_gain_val = "16"; /* 1.00x */
+							max_gain_val = "170"; /* 10.66x */
+							step_gain_val = "1";
+							default_gain = "16"; /* 1.00x */
+							min_hdr_ratio = "1";
+							max_hdr_ratio = "1";
+							min_framerate = "2000000"; /* 2.0 fps */
+							max_framerate = "15000000"; /* 21.0 fps */
+							step_framerate = "1";
+							default_framerate = "15000000"; /* 21.0 fps */
+							min_exp_time = "13"; /* us */
+							max_exp_time = "683709"; /* us */
+							step_exp_time = "1";
+							default_exp_time = "2495"; /* us */
+
+							embedded_metadata_height = "0";
+					};
+
+					ports {
+						#address-cells = <1>;
+						#size-cells = <0>;
+						port@0 {
+							reg = <0>;
+							rbpcv2_ar0144_out5: endpoint {
+								vc-id = <1>;
+								port-index = <2>;
+								bus-width = <2>;
+								remote-endpoint = <&rbpcv2_ar0144_csi_in5>;
+							};
+						};
+					};
+				};
+#endif
+#ifdef VIZIONLINK_CSI2_CAMERA2
+				rbpcv2_ar0144_c@3e {
+					compatible = "tn,tevi-ar0144";
+					/* I2C device address */
+					reg = <0x3e>;
+
+					/* V4L2 device node location */
+					devnode = "video6";
+
+					/* Physical dimensions of sensor */
+					physical_w = "3.680";
+					physical_h = "2.760";
+
+					sensor_model = "tevi-ar0144";
+
+					use_sensor_mode_id = "flase";
+
+					/**
+					* ==== Modes ====
+					* A modeX node is required to support v4l2 driver
+					* implementation with NVIDIA camera software stack
+					*
+					* == Signal properties ==
+					*
+					* phy_mode = "";
+					* PHY mode used by the MIPI lanes for this device
+					*
+					* tegra_sinterface = "";
+					* CSI Serial interface connected to tegra
+					* Incase of virtual HW devices, use virtual
+					* For SW emulated devices, use host
+					*
+					* pix_clk_hz = "";
+					* Sensor pixel clock used for calculations like exposure and framerate
+					*
+					* readout_orientation = "0";
+					* Based on camera module orientation.
+					* Only change readout_orientation if you specifically
+					* Program a different readout order for this mode
+					*
+					* == Image format Properties ==
+					*
+					* active_w = "";
+					* Pixel active region width
+					*
+					* active_h = "";
+					* Pixel active region height
+					*
+					* pixel_t = "";
+					* The sensor readout pixel pattern
+					*
+					* line_length = "";
+					* Pixel line length (width) for sensor mode.
+					*
+					* == Source Control Settings ==
+					*
+					* Gain factor used to convert fixed point integer to float
+					* Gain range [min_gain/gain_factor, max_gain/gain_factor]
+					* Gain step [step_gain/gain_factor is the smallest step that can be configured]
+					* Default gain [Default gain to be initialized for the control.
+					*     use min_gain_val as default for optimal results]
+					* Framerate factor used to convert fixed point integer to float
+					* Framerate range [min_framerate/framerate_factor, max_framerate/framerate_factor]
+					* Framerate step [step_framerate/framerate_factor is the smallest step that can be configured]
+					* Default Framerate [Default framerate to be initialized for the control.
+					*     use max_framerate to get required performance]
+					* Exposure factor used to convert fixed point integer to float
+					* For convenience use 1 sec = 1000000us as conversion factor
+					* Exposure range [min_exp_time/exposure_factor, max_exp_time/exposure_factor]
+					* Exposure step [step_exp_time/exposure_factor is the smallest step that can be configured]
+					* Default Exposure Time [Default exposure to be initialized for the control.
+					*     Set default exposure based on the default_framerate for optimal exposure settings]
+					*
+					* gain_factor = ""; (integer factor used for floating to fixed point conversion)
+					* min_gain_val = ""; (ceil to integer)
+					* max_gain_val = ""; (ceil to integer)
+					* step_gain_val = ""; (ceil to integer)
+					* default_gain = ""; (ceil to integer)
+					* Gain limits for mode
+					*
+					* exposure_factor = ""; (integer factor used for floating to fixed point conversion)
+					* min_exp_time = ""; (ceil to integer)
+					* max_exp_time = ""; (ceil to integer)
+					* step_exp_time = ""; (ceil to integer)
+					* default_exp_time = ""; (ceil to integer)
+					* Exposure Time limits for mode (sec)
+					*
+					* framerate_factor = ""; (integer factor used for floating to fixed point conversion)
+					* min_framerate = ""; (ceil to integer)
+					* max_framerate = ""; (ceil to integer)
+					* step_framerate = ""; (ceil to integer)
+					* default_framerate = ""; (ceil to integer)
+					* Framerate limits for mode (fps)
+					*
+					* embedded_metadata_height = "";
+					* Sensor embedded metadata height in units of rows.
+					* If sensor does not support embedded metadata value should be 0.
+					*/
+					mode0 { /* AR0144_MODE_1280x800_30FPS */
+							mclk_khz = "25000";
+							num_lanes = "2";
+							tegra_sinterface = "serial_c";
+							vc_id = "2";
+							phy_mode = "DPHY";
+							discontinuous_clk = "yes";
+							dpcm_enable = "false";
+							cil_settletime = "0";
+
+							active_w = "1280";
+							active_h = "800";
+							pixel_t = "yuv_uyvy16";
+							readout_orientation = "0";
+							line_length = "1280";
+							inherent_gain = "1";
+							mclk_multiplier = "9.33";
+							// pix_clk_hz = "182400000";
+							pix_clk_hz = "200000000";
+							serdes_pix_clk_hz = "4000000000";
+
+							gain_factor = "16";
+							framerate_factor = "1000000";
+							exposure_factor = "1000000";
+							min_gain_val = "16"; /* 1.00x */
+							max_gain_val = "170"; /* 10.66x */
+							step_gain_val = "1";
+							default_gain = "16"; /* 1.00x */
+							min_hdr_ratio = "1";
+							max_hdr_ratio = "1";
+							min_framerate = "2000000"; /* 2.0 fps */
+							max_framerate = "15000000"; /* 21.0 fps */
+							step_framerate = "1";
+							default_framerate = "15000000"; /* 21.0 fps */
+							min_exp_time = "13"; /* us */
+							max_exp_time = "683709"; /* us */
+							step_exp_time = "1";
+							default_exp_time = "2495"; /* us */
+
+							embedded_metadata_height = "0";
+					};
+
+					ports {
+						#address-cells = <1>;
+						#size-cells = <0>;
+						port@0 {
+							reg = <0>;
+							rbpcv2_ar0144_out6: endpoint {
+								vc-id = <2>;
+								port-index = <2>;
+								bus-width = <2>;
+								remote-endpoint = <&rbpcv2_ar0144_csi_in6>;
+							};
+						};
+					};
+				};
+#endif
+#ifdef VIZIONLINK_CSI2_CAMERA3
+				rbpcv2_ar0144_d@3f {
+					compatible = "tn,tevi-ar0144";
+					/* I2C device address */
+					reg = <0x3f>;
+
+					/* V4L2 device node location */
+					devnode = "video7";
+
+					/* Physical dimensions of sensor */
+					physical_w = "3.680";
+					physical_h = "2.760";
+
+					sensor_model = "tevi-ar0144";
+
+					use_sensor_mode_id = "false";
+
+					/**
+					* ==== Modes ====
+					* A modeX node is required to support v4l2 driver
+					* implementation with NVIDIA camera software stack
+					*
+					* == Signal properties ==
+					*
+					* phy_mode = "";
+					* PHY mode used by the MIPI lanes for this device
+					*
+					* tegra_sinterface = "";
+					* CSI Serial interface connected to tegra
+					* Incase of virtual HW devices, use virtual
+					* For SW emulated devices, use host
+					*
+					* pix_clk_hz = "";
+					* Sensor pixel clock used for calculations like exposure and framerate
+					*
+					* readout_orientation = "0";
+					* Based on camera module orientation.
+					* Only change readout_orientation if you specifically
+					* Program a different readout order for this mode
+					*
+					* == Image format Properties ==
+					*
+					* active_w = "";
+					* Pixel active region width
+					*
+					* active_h = "";
+					* Pixel active region height
+					*
+					* pixel_t = "";
+					* The sensor readout pixel pattern
+					*
+					* line_length = "";
+					* Pixel line length (width) for sensor mode.
+					*
+					* == Source Control Settings ==
+					*
+					* Gain factor used to convert fixed point integer to float
+					* Gain range [min_gain/gain_factor, max_gain/gain_factor]
+					* Gain step [step_gain/gain_factor is the smallest step that can be configured]
+					* Default gain [Default gain to be initialized for the control.
+					*     use min_gain_val as default for optimal results]
+					* Framerate factor used to convert fixed point integer to float
+					* Framerate range [min_framerate/framerate_factor, max_framerate/framerate_factor]
+					* Framerate step [step_framerate/framerate_factor is the smallest step that can be configured]
+					* Default Framerate [Default framerate to be initialized for the control.
+					*     use max_framerate to get required performance]
+					* Exposure factor used to convert fixed point integer to float
+					* For convenience use 1 sec = 1000000us as conversion factor
+					* Exposure range [min_exp_time/exposure_factor, max_exp_time/exposure_factor]
+					* Exposure step [step_exp_time/exposure_factor is the smallest step that can be configured]
+					* Default Exposure Time [Default exposure to be initialized for the control.
+					*     Set default exposure based on the default_framerate for optimal exposure settings]
+					*
+					* gain_factor = ""; (integer factor used for floating to fixed point conversion)
+					* min_gain_val = ""; (ceil to integer)
+					* max_gain_val = ""; (ceil to integer)
+					* step_gain_val = ""; (ceil to integer)
+					* default_gain = ""; (ceil to integer)
+					* Gain limits for mode
+					*
+					* exposure_factor = ""; (integer factor used for floating to fixed point conversion)
+					* min_exp_time = ""; (ceil to integer)
+					* max_exp_time = ""; (ceil to integer)
+					* step_exp_time = ""; (ceil to integer)
+					* default_exp_time = ""; (ceil to integer)
+					* Exposure Time limits for mode (sec)
+					*
+					* framerate_factor = ""; (integer factor used for floating to fixed point conversion)
+					* min_framerate = ""; (ceil to integer)
+					* max_framerate = ""; (ceil to integer)
+					* step_framerate = ""; (ceil to integer)
+					* default_framerate = ""; (ceil to integer)
+					* Framerate limits for mode (fps)
+					*
+					* embedded_metadata_height = "";
+					* Sensor embedded metadata height in units of rows.
+					* If sensor does not support embedded metadata value should be 0.
+					*/
+					mode0 { /* AR0144_MODE_1280x800_30FPS */
+							mclk_khz = "25000";
+							num_lanes = "2";
+							tegra_sinterface = "serial_c";
+							vc_id = "3";
+							phy_mode = "DPHY";
+							discontinuous_clk = "yes";
+							dpcm_enable = "false";
+							cil_settletime = "0";
+
+							active_w = "1280";
+							active_h = "800";
+							pixel_t = "yuv_uyvy16";
+							readout_orientation = "0";
+							line_length = "1280";
+							inherent_gain = "1";
+							mclk_multiplier = "9.33";
+							// pix_clk_hz = "182400000";
+							pix_clk_hz = "200000000";
+							serdes_pix_clk_hz = "4000000000";
+
+							gain_factor = "16";
+							framerate_factor = "1000000";
+							exposure_factor = "1000000";
+							min_gain_val = "16"; /* 1.00x */
+							max_gain_val = "170"; /* 10.66x */
+							step_gain_val = "1";
+							default_gain = "16"; /* 1.00x */
+							min_hdr_ratio = "1";
+							max_hdr_ratio = "1";
+							min_framerate = "2000000"; /* 2.0 fps */
+							max_framerate = "15000000"; /* 21.0 fps */
+							step_framerate = "1";
+							default_framerate = "15000000"; /* 21.0 fps */
+							min_exp_time = "13"; /* us */
+							max_exp_time = "683709"; /* us */
+							step_exp_time = "1";
+							default_exp_time = "2495"; /* us */
+
+							embedded_metadata_height = "0";
+					};
+
+					ports {
+						#address-cells = <1>;
+						#size-cells = <0>;
+						port@0 {
+							reg = <0>;
+							rbpcv2_ar0144_out7: endpoint {
+								vc-id = <3>;
+								port-index = <2>;
+								bus-width = <2>;
+								remote-endpoint = <&rbpcv2_ar0144_csi_in7>;
+							};
+						};
+					};
+				};
+#endif
+			};
+			i2c@3 {
+#ifdef VIZIONLINK_CSI3_CAMERA0
+				rbpcv2_ar0144_a@3c {
+					compatible = "tn,tevi-ar0144";
+					/* I2C device address */
+					reg = <0x3c>;
+
+					/* V4L2 device node location */
+					devnode = "video16";
+
+					/* Physical dimensions of sensor */
+					physical_w = "3.680";
+					physical_h = "2.760";
+
+					sensor_model = "tevi-ar0144";
+
+					use_sensor_mode_id = "false";
+
+					/**
+					* ==== Modes ====
+					* A modeX node is required to support v4l2 driver
+					* implementation with NVIDIA camera software stack
+					*
+					* == Signal properties ==
+					*
+					* phy_mode = "";
+					* PHY mode used by the MIPI lanes for this device
+					*
+					* tegra_sinterface = "";
+					* CSI Serial interface connected to tegra
+					* Incase of virtual HW devices, use virtual
+					* For SW emulated devices, use host
+					*
+					* pix_clk_hz = "";
+					* Sensor pixel clock used for calculations like exposure and framerate
+					*
+					* readout_orientation = "0";
+					* Based on camera module orientation.
+					* Only change readout_orientation if you specifically
+					* Program a different readout order for this mode
+					*
+					* == Image format Properties ==
+					*
+					* active_w = "";
+					* Pixel active region width
+					*
+					* active_h = "";
+					* Pixel active region height
+					*
+					* pixel_t = "";
+					* The sensor readout pixel pattern
+					*
+					* line_length = "";
+					* Pixel line length (width) for sensor mode.
+					*
+					* == Source Control Settings ==
+					*
+					* Gain factor used to convert fixed point integer to float
+					* Gain range [min_gain/gain_factor, max_gain/gain_factor]
+					* Gain step [step_gain/gain_factor is the smallest step that can be configured]
+					* Default gain [Default gain to be initialized for the control.
+					*     use min_gain_val as default for optimal results]
+					* Framerate factor used to convert fixed point integer to float
+					* Framerate range [min_framerate/framerate_factor, max_framerate/framerate_factor]
+					* Framerate step [step_framerate/framerate_factor is the smallest step that can be configured]
+					* Default Framerate [Default framerate to be initialized for the control.
+					*     use max_framerate to get required performance]
+					* Exposure factor used to convert fixed point integer to float
+					* For convenience use 1 sec = 1000000us as conversion factor
+					* Exposure range [min_exp_time/exposure_factor, max_exp_time/exposure_factor]
+					* Exposure step [step_exp_time/exposure_factor is the smallest step that can be configured]
+					* Default Exposure Time [Default exposure to be initialized for the control.
+					*     Set default exposure based on the default_framerate for optimal exposure settings]
+					*
+					* gain_factor = ""; (integer factor used for floating to fixed point conversion)
+					* min_gain_val = ""; (ceil to integer)
+					* max_gain_val = ""; (ceil to integer)
+					* step_gain_val = ""; (ceil to integer)
+					* default_gain = ""; (ceil to integer)
+					* Gain limits for mode
+					*
+					* exposure_factor = ""; (integer factor used for floating to fixed point conversion)
+					* min_exp_time = ""; (ceil to integer)
+					* max_exp_time = ""; (ceil to integer)
+					* step_exp_time = ""; (ceil to integer)
+					* default_exp_time = ""; (ceil to integer)
+					* Exposure Time limits for mode (sec)
+					*
+					* framerate_factor = ""; (integer factor used for floating to fixed point conversion)
+					* min_framerate = ""; (ceil to integer)
+					* max_framerate = ""; (ceil to integer)
+					* step_framerate = ""; (ceil to integer)
+					* default_framerate = ""; (ceil to integer)
+					* Framerate limits for mode (fps)
+					*
+					* embedded_metadata_height = "";
+					* Sensor embedded metadata height in units of rows.
+					* If sensor does not support embedded metadata value should be 0.
+					*/
+					mode0 { /* AR0144_MODE_1280x800_30FPS */
+							mclk_khz = "25000";
+							num_lanes = "2";
+							tegra_sinterface = "serial_c";
+							vc_id = "0";
+							phy_mode = "DPHY";
+							discontinuous_clk = "yes";
+							dpcm_enable = "false";
+							cil_settletime = "0";
+
+							active_w = "1280";
+							active_h = "800";
+							pixel_t = "yuv_uyvy16";
+							readout_orientation = "0";
+							line_length = "1280";
+							inherent_gain = "1";
+							mclk_multiplier = "9.33";
+							// pix_clk_hz = "182400000";
+							pix_clk_hz = "200000000";
+							serdes_pix_clk_hz = "4000000000";
+
+							gain_factor = "16";
+							framerate_factor = "1000000";
+							exposure_factor = "1000000";
+							min_gain_val = "16"; /* 1.00x */
+							max_gain_val = "170"; /* 10.66x */
+							step_gain_val = "1";
+							default_gain = "16"; /* 1.00x */
+							min_hdr_ratio = "1";
+							max_hdr_ratio = "1";
+							min_framerate = "2000000"; /* 2.0 fps */
+							max_framerate = "15000000"; /* 21.0 fps */
+							step_framerate = "1";
+							default_framerate = "15000000"; /* 21.0 fps */
+							min_exp_time = "13"; /* us */
+							max_exp_time = "683709"; /* us */
+							step_exp_time = "1";
+							default_exp_time = "2495"; /* us */
+
+							embedded_metadata_height = "0";
+					};
+
+					ports {
+						#address-cells = <1>;
+						#size-cells = <0>;
+						port@0 {
+							reg = <0>;
+							rbpcv2_ar0144_out16: endpoint {
+								vc-id = <0>;
+								port-index = <3>;
+								bus-width = <2>;
+								remote-endpoint = <&rbpcv2_ar0144_csi_in16>;
+							};
+						};
+					};
+				};
+#endif
+#ifdef VIZIONLINK_CSI3_CAMERA1
+				rbpcv2_ar0144_b@3d {
+					compatible = "tn,tevi-ar0144";
+					/* I2C device address */
+					reg = <0x3d>;
+
+					/* V4L2 device node location */
+					devnode = "video17";
+
+					/* Physical dimensions of sensor */
+					physical_w = "3.680";
+					physical_h = "2.760";
+
+					sensor_model = "tevi-ar0144";
+
+					use_sensor_mode_id = "false";
+
+					/**
+					* ==== Modes ====
+					* A modeX node is required to support v4l2 driver
+					* implementation with NVIDIA camera software stack
+					*
+					* == Signal properties ==
+					*
+					* phy_mode = "";
+					* PHY mode used by the MIPI lanes for this device
+					*
+					* tegra_sinterface = "";
+					* CSI Serial interface connected to tegra
+					* Incase of virtual HW devices, use virtual
+					* For SW emulated devices, use host
+					*
+					* pix_clk_hz = "";
+					* Sensor pixel clock used for calculations like exposure and framerate
+					*
+					* readout_orientation = "0";
+					* Based on camera module orientation.
+					* Only change readout_orientation if you specifically
+					* Program a different readout order for this mode
+					*
+					* == Image format Properties ==
+					*
+					* active_w = "";
+					* Pixel active region width
+					*
+					* active_h = "";
+					* Pixel active region height
+					*
+					* pixel_t = "";
+					* The sensor readout pixel pattern
+					*
+					* line_length = "";
+					* Pixel line length (width) for sensor mode.
+					*
+					* == Source Control Settings ==
+					*
+					* Gain factor used to convert fixed point integer to float
+					* Gain range [min_gain/gain_factor, max_gain/gain_factor]
+					* Gain step [step_gain/gain_factor is the smallest step that can be configured]
+					* Default gain [Default gain to be initialized for the control.
+					*     use min_gain_val as default for optimal results]
+					* Framerate factor used to convert fixed point integer to float
+					* Framerate range [min_framerate/framerate_factor, max_framerate/framerate_factor]
+					* Framerate step [step_framerate/framerate_factor is the smallest step that can be configured]
+					* Default Framerate [Default framerate to be initialized for the control.
+					*     use max_framerate to get required performance]
+					* Exposure factor used to convert fixed point integer to float
+					* For convenience use 1 sec = 1000000us as conversion factor
+					* Exposure range [min_exp_time/exposure_factor, max_exp_time/exposure_factor]
+					* Exposure step [step_exp_time/exposure_factor is the smallest step that can be configured]
+					* Default Exposure Time [Default exposure to be initialized for the control.
+					*     Set default exposure based on the default_framerate for optimal exposure settings]
+					*
+					* gain_factor = ""; (integer factor used for floating to fixed point conversion)
+					* min_gain_val = ""; (ceil to integer)
+					* max_gain_val = ""; (ceil to integer)
+					* step_gain_val = ""; (ceil to integer)
+					* default_gain = ""; (ceil to integer)
+					* Gain limits for mode
+					*
+					* exposure_factor = ""; (integer factor used for floating to fixed point conversion)
+					* min_exp_time = ""; (ceil to integer)
+					* max_exp_time = ""; (ceil to integer)
+					* step_exp_time = ""; (ceil to integer)
+					* default_exp_time = ""; (ceil to integer)
+					* Exposure Time limits for mode (sec)
+					*
+					* framerate_factor = ""; (integer factor used for floating to fixed point conversion)
+					* min_framerate = ""; (ceil to integer)
+					* max_framerate = ""; (ceil to integer)
+					* step_framerate = ""; (ceil to integer)
+					* default_framerate = ""; (ceil to integer)
+					* Framerate limits for mode (fps)
+					*
+					* embedded_metadata_height = "";
+					* Sensor embedded metadata height in units of rows.
+					* If sensor does not support embedded metadata value should be 0.
+					*/
+					mode0 { /* AR0144_MODE_1280x800_30FPS */
+							mclk_khz = "25000";
+							num_lanes = "2";
+							tegra_sinterface = "serial_c";
+							vc_id = "1";
+							phy_mode = "DPHY";
+							discontinuous_clk = "yes";
+							dpcm_enable = "false";
+							cil_settletime = "0";
+
+							active_w = "1280";
+							active_h = "800";
+							pixel_t = "yuv_uyvy16";
+							readout_orientation = "0";
+							line_length = "1280";
+							inherent_gain = "1";
+							mclk_multiplier = "9.33";
+							// pix_clk_hz = "182400000";
+							pix_clk_hz = "200000000";
+							serdes_pix_clk_hz = "4000000000";
+
+							gain_factor = "16";
+							framerate_factor = "1000000";
+							exposure_factor = "1000000";
+							min_gain_val = "16"; /* 1.00x */
+							max_gain_val = "170"; /* 10.66x */
+							step_gain_val = "1";
+							default_gain = "16"; /* 1.00x */
+							min_hdr_ratio = "1";
+							max_hdr_ratio = "1";
+							min_framerate = "2000000"; /* 2.0 fps */
+							max_framerate = "15000000"; /* 21.0 fps */
+							step_framerate = "1";
+							default_framerate = "15000000"; /* 21.0 fps */
+							min_exp_time = "13"; /* us */
+							max_exp_time = "683709"; /* us */
+							step_exp_time = "1";
+							default_exp_time = "2495"; /* us */
+
+							embedded_metadata_height = "0";
+					};
+
+					ports {
+						#address-cells = <1>;
+						#size-cells = <0>;
+						port@0 {
+							reg = <0>;
+							rbpcv2_ar0144_out17: endpoint {
+								vc-id = <1>;
+								port-index = <3>;
+								bus-width = <2>;
+								remote-endpoint = <&rbpcv2_ar0144_csi_in17>;
+							};
+						};
+					};
+				};
+#endif
+#ifdef VIZIONLINK_CSI3_CAMERA2
+				rbpcv2_ar0144_c@3e {
+					compatible = "tn,tevi-ar0144";
+					/* I2C device address */
+					reg = <0x3e>;
+
+					/* V4L2 device node location */
+					devnode = "video18";
+
+					/* Physical dimensions of sensor */
+					physical_w = "3.680";
+					physical_h = "2.760";
+
+					sensor_model = "tevi-ar0144";
+
+					use_sensor_mode_id = "flase";
+
+					/**
+					* ==== Modes ====
+					* A modeX node is required to support v4l2 driver
+					* implementation with NVIDIA camera software stack
+					*
+					* == Signal properties ==
+					*
+					* phy_mode = "";
+					* PHY mode used by the MIPI lanes for this device
+					*
+					* tegra_sinterface = "";
+					* CSI Serial interface connected to tegra
+					* Incase of virtual HW devices, use virtual
+					* For SW emulated devices, use host
+					*
+					* pix_clk_hz = "";
+					* Sensor pixel clock used for calculations like exposure and framerate
+					*
+					* readout_orientation = "0";
+					* Based on camera module orientation.
+					* Only change readout_orientation if you specifically
+					* Program a different readout order for this mode
+					*
+					* == Image format Properties ==
+					*
+					* active_w = "";
+					* Pixel active region width
+					*
+					* active_h = "";
+					* Pixel active region height
+					*
+					* pixel_t = "";
+					* The sensor readout pixel pattern
+					*
+					* line_length = "";
+					* Pixel line length (width) for sensor mode.
+					*
+					* == Source Control Settings ==
+					*
+					* Gain factor used to convert fixed point integer to float
+					* Gain range [min_gain/gain_factor, max_gain/gain_factor]
+					* Gain step [step_gain/gain_factor is the smallest step that can be configured]
+					* Default gain [Default gain to be initialized for the control.
+					*     use min_gain_val as default for optimal results]
+					* Framerate factor used to convert fixed point integer to float
+					* Framerate range [min_framerate/framerate_factor, max_framerate/framerate_factor]
+					* Framerate step [step_framerate/framerate_factor is the smallest step that can be configured]
+					* Default Framerate [Default framerate to be initialized for the control.
+					*     use max_framerate to get required performance]
+					* Exposure factor used to convert fixed point integer to float
+					* For convenience use 1 sec = 1000000us as conversion factor
+					* Exposure range [min_exp_time/exposure_factor, max_exp_time/exposure_factor]
+					* Exposure step [step_exp_time/exposure_factor is the smallest step that can be configured]
+					* Default Exposure Time [Default exposure to be initialized for the control.
+					*     Set default exposure based on the default_framerate for optimal exposure settings]
+					*
+					* gain_factor = ""; (integer factor used for floating to fixed point conversion)
+					* min_gain_val = ""; (ceil to integer)
+					* max_gain_val = ""; (ceil to integer)
+					* step_gain_val = ""; (ceil to integer)
+					* default_gain = ""; (ceil to integer)
+					* Gain limits for mode
+					*
+					* exposure_factor = ""; (integer factor used for floating to fixed point conversion)
+					* min_exp_time = ""; (ceil to integer)
+					* max_exp_time = ""; (ceil to integer)
+					* step_exp_time = ""; (ceil to integer)
+					* default_exp_time = ""; (ceil to integer)
+					* Exposure Time limits for mode (sec)
+					*
+					* framerate_factor = ""; (integer factor used for floating to fixed point conversion)
+					* min_framerate = ""; (ceil to integer)
+					* max_framerate = ""; (ceil to integer)
+					* step_framerate = ""; (ceil to integer)
+					* default_framerate = ""; (ceil to integer)
+					* Framerate limits for mode (fps)
+					*
+					* embedded_metadata_height = "";
+					* Sensor embedded metadata height in units of rows.
+					* If sensor does not support embedded metadata value should be 0.
+					*/
+					mode0 { /* AR0144_MODE_1280x800_30FPS */
+							mclk_khz = "25000";
+							num_lanes = "2";
+							tegra_sinterface = "serial_c";
+							vc_id = "2";
+							phy_mode = "DPHY";
+							discontinuous_clk = "yes";
+							dpcm_enable = "false";
+							cil_settletime = "0";
+
+							active_w = "1280";
+							active_h = "800";
+							pixel_t = "yuv_uyvy16";
+							readout_orientation = "0";
+							line_length = "1280";
+							inherent_gain = "1";
+							mclk_multiplier = "9.33";
+							// pix_clk_hz = "182400000";
+							pix_clk_hz = "200000000";
+							serdes_pix_clk_hz = "4000000000";
+
+							gain_factor = "16";
+							framerate_factor = "1000000";
+							exposure_factor = "1000000";
+							min_gain_val = "16"; /* 1.00x */
+							max_gain_val = "170"; /* 10.66x */
+							step_gain_val = "1";
+							default_gain = "16"; /* 1.00x */
+							min_hdr_ratio = "1";
+							max_hdr_ratio = "1";
+							min_framerate = "2000000"; /* 2.0 fps */
+							max_framerate = "15000000"; /* 21.0 fps */
+							step_framerate = "1";
+							default_framerate = "15000000"; /* 21.0 fps */
+							min_exp_time = "13"; /* us */
+							max_exp_time = "683709"; /* us */
+							step_exp_time = "1";
+							default_exp_time = "2495"; /* us */
+
+							embedded_metadata_height = "0";
+					};
+
+					ports {
+						#address-cells = <1>;
+						#size-cells = <0>;
+						port@0 {
+							reg = <0>;
+							rbpcv2_ar0144_out18: endpoint {
+								vc-id = <2>;
+								port-index = <3>;
+								bus-width = <2>;
+								remote-endpoint = <&rbpcv2_ar0144_csi_in18>;
+							};
+						};
+					};
+				};
+#endif
+#ifdef VIZIONLINK_CSI3_CAMERA3
+				rbpcv2_ar0144_d@3f {
+					compatible = "tn,tevi-ar0144";
+					/* I2C device address */
+					reg = <0x3f>;
+
+					/* V4L2 device node location */
+					devnode = "video19";
+
+					/* Physical dimensions of sensor */
+					physical_w = "3.680";
+					physical_h = "2.760";
+
+					sensor_model = "tevi-ar0144";
+
+					use_sensor_mode_id = "false";
+
+					/**
+					* ==== Modes ====
+					* A modeX node is required to support v4l2 driver
+					* implementation with NVIDIA camera software stack
+					*
+					* == Signal properties ==
+					*
+					* phy_mode = "";
+					* PHY mode used by the MIPI lanes for this device
+					*
+					* tegra_sinterface = "";
+					* CSI Serial interface connected to tegra
+					* Incase of virtual HW devices, use virtual
+					* For SW emulated devices, use host
+					*
+					* pix_clk_hz = "";
+					* Sensor pixel clock used for calculations like exposure and framerate
+					*
+					* readout_orientation = "0";
+					* Based on camera module orientation.
+					* Only change readout_orientation if you specifically
+					* Program a different readout order for this mode
+					*
+					* == Image format Properties ==
+					*
+					* active_w = "";
+					* Pixel active region width
+					*
+					* active_h = "";
+					* Pixel active region height
+					*
+					* pixel_t = "";
+					* The sensor readout pixel pattern
+					*
+					* line_length = "";
+					* Pixel line length (width) for sensor mode.
+					*
+					* == Source Control Settings ==
+					*
+					* Gain factor used to convert fixed point integer to float
+					* Gain range [min_gain/gain_factor, max_gain/gain_factor]
+					* Gain step [step_gain/gain_factor is the smallest step that can be configured]
+					* Default gain [Default gain to be initialized for the control.
+					*     use min_gain_val as default for optimal results]
+					* Framerate factor used to convert fixed point integer to float
+					* Framerate range [min_framerate/framerate_factor, max_framerate/framerate_factor]
+					* Framerate step [step_framerate/framerate_factor is the smallest step that can be configured]
+					* Default Framerate [Default framerate to be initialized for the control.
+					*     use max_framerate to get required performance]
+					* Exposure factor used to convert fixed point integer to float
+					* For convenience use 1 sec = 1000000us as conversion factor
+					* Exposure range [min_exp_time/exposure_factor, max_exp_time/exposure_factor]
+					* Exposure step [step_exp_time/exposure_factor is the smallest step that can be configured]
+					* Default Exposure Time [Default exposure to be initialized for the control.
+					*     Set default exposure based on the default_framerate for optimal exposure settings]
+					*
+					* gain_factor = ""; (integer factor used for floating to fixed point conversion)
+					* min_gain_val = ""; (ceil to integer)
+					* max_gain_val = ""; (ceil to integer)
+					* step_gain_val = ""; (ceil to integer)
+					* default_gain = ""; (ceil to integer)
+					* Gain limits for mode
+					*
+					* exposure_factor = ""; (integer factor used for floating to fixed point conversion)
+					* min_exp_time = ""; (ceil to integer)
+					* max_exp_time = ""; (ceil to integer)
+					* step_exp_time = ""; (ceil to integer)
+					* default_exp_time = ""; (ceil to integer)
+					* Exposure Time limits for mode (sec)
+					*
+					* framerate_factor = ""; (integer factor used for floating to fixed point conversion)
+					* min_framerate = ""; (ceil to integer)
+					* max_framerate = ""; (ceil to integer)
+					* step_framerate = ""; (ceil to integer)
+					* default_framerate = ""; (ceil to integer)
+					* Framerate limits for mode (fps)
+					*
+					* embedded_metadata_height = "";
+					* Sensor embedded metadata height in units of rows.
+					* If sensor does not support embedded metadata value should be 0.
+					*/
+					mode0 { /* AR0144_MODE_1280x800_30FPS */
+							mclk_khz = "25000";
+							num_lanes = "2";
+							tegra_sinterface = "serial_c";
+							vc_id = "3";
+							phy_mode = "DPHY";
+							discontinuous_clk = "yes";
+							dpcm_enable = "false";
+							cil_settletime = "0";
+
+							active_w = "1280";
+							active_h = "800";
+							pixel_t = "yuv_uyvy16";
+							readout_orientation = "0";
+							line_length = "1280";
+							inherent_gain = "1";
+							mclk_multiplier = "9.33";
+							// pix_clk_hz = "182400000";
+							pix_clk_hz = "200000000";
+							serdes_pix_clk_hz = "4000000000";
+
+							gain_factor = "16";
+							framerate_factor = "1000000";
+							exposure_factor = "1000000";
+							min_gain_val = "16"; /* 1.00x */
+							max_gain_val = "170"; /* 10.66x */
+							step_gain_val = "1";
+							default_gain = "16"; /* 1.00x */
+							min_hdr_ratio = "1";
+							max_hdr_ratio = "1";
+							min_framerate = "2000000"; /* 2.0 fps */
+							max_framerate = "15000000"; /* 21.0 fps */
+							step_framerate = "1";
+							default_framerate = "15000000"; /* 21.0 fps */
+							min_exp_time = "13"; /* us */
+							max_exp_time = "683709"; /* us */
+							step_exp_time = "1";
+							default_exp_time = "2495"; /* us */
+
+							embedded_metadata_height = "0";
+					};
+
+					ports {
+						#address-cells = <1>;
+						#size-cells = <0>;
+						port@0 {
+							reg = <0>;
+							rbpcv2_ar0144_out19: endpoint {
+								vc-id = <3>;
+								port-index = <3>;
+								bus-width = <2>;
+								remote-endpoint = <&rbpcv2_ar0144_csi_in19>;
+							};
+						};
+					};
+				};
+#endif
+			};
+			i2c@4 {
+#ifdef VIZIONLINK_CSI4_CAMERA0
+				rbpcv2_ar0144_a@3c {
+					compatible = "tn,tevi-ar0144";
+					/* I2C device address */
+					reg = <0x3c>;
+
+					/* V4L2 device node location */
+					devnode = "video8";
+
+					/* Physical dimensions of sensor */
+					physical_w = "3.680";
+					physical_h = "2.760";
+
+					sensor_model = "tevi-ar0144";
+
+					use_sensor_mode_id = "false";
+
+					/**
+					* ==== Modes ====
+					* A modeX node is required to support v4l2 driver
+					* implementation with NVIDIA camera software stack
+					*
+					* == Signal properties ==
+					*
+					* phy_mode = "";
+					* PHY mode used by the MIPI lanes for this device
+					*
+					* tegra_sinterface = "";
+					* CSI Serial interface connected to tegra
+					* Incase of virtual HW devices, use virtual
+					* For SW emulated devices, use host
+					*
+					* pix_clk_hz = "";
+					* Sensor pixel clock used for calculations like exposure and framerate
+					*
+					* readout_orientation = "0";
+					* Based on camera module orientation.
+					* Only change readout_orientation if you specifically
+					* Program a different readout order for this mode
+					*
+					* == Image format Properties ==
+					*
+					* active_w = "";
+					* Pixel active region width
+					*
+					* active_h = "";
+					* Pixel active region height
+					*
+					* pixel_t = "";
+					* The sensor readout pixel pattern
+					*
+					* line_length = "";
+					* Pixel line length (width) for sensor mode.
+					*
+					* == Source Control Settings ==
+					*
+					* Gain factor used to convert fixed point integer to float
+					* Gain range [min_gain/gain_factor, max_gain/gain_factor]
+					* Gain step [step_gain/gain_factor is the smallest step that can be configured]
+					* Default gain [Default gain to be initialized for the control.
+					*     use min_gain_val as default for optimal results]
+					* Framerate factor used to convert fixed point integer to float
+					* Framerate range [min_framerate/framerate_factor, max_framerate/framerate_factor]
+					* Framerate step [step_framerate/framerate_factor is the smallest step that can be configured]
+					* Default Framerate [Default framerate to be initialized for the control.
+					*     use max_framerate to get required performance]
+					* Exposure factor used to convert fixed point integer to float
+					* For convenience use 1 sec = 1000000us as conversion factor
+					* Exposure range [min_exp_time/exposure_factor, max_exp_time/exposure_factor]
+					* Exposure step [step_exp_time/exposure_factor is the smallest step that can be configured]
+					* Default Exposure Time [Default exposure to be initialized for the control.
+					*     Set default exposure based on the default_framerate for optimal exposure settings]
+					*
+					* gain_factor = ""; (integer factor used for floating to fixed point conversion)
+					* min_gain_val = ""; (ceil to integer)
+					* max_gain_val = ""; (ceil to integer)
+					* step_gain_val = ""; (ceil to integer)
+					* default_gain = ""; (ceil to integer)
+					* Gain limits for mode
+					*
+					* exposure_factor = ""; (integer factor used for floating to fixed point conversion)
+					* min_exp_time = ""; (ceil to integer)
+					* max_exp_time = ""; (ceil to integer)
+					* step_exp_time = ""; (ceil to integer)
+					* default_exp_time = ""; (ceil to integer)
+					* Exposure Time limits for mode (sec)
+					*
+					* framerate_factor = ""; (integer factor used for floating to fixed point conversion)
+					* min_framerate = ""; (ceil to integer)
+					* max_framerate = ""; (ceil to integer)
+					* step_framerate = ""; (ceil to integer)
+					* default_framerate = ""; (ceil to integer)
+					* Framerate limits for mode (fps)
+					*
+					* embedded_metadata_height = "";
+					* Sensor embedded metadata height in units of rows.
+					* If sensor does not support embedded metadata value should be 0.
+					*/
+					mode0 { /* AR0144_MODE_1280x800_30FPS */
+							mclk_khz = "25000";
+							num_lanes = "2";
+							tegra_sinterface = "serial_e";
+							vc_id = "0";
+							phy_mode = "DPHY";
+							discontinuous_clk = "yes";
+							dpcm_enable = "false";
+							cil_settletime = "0";
+
+							active_w = "1280";
+							active_h = "800";
+							pixel_t = "yuv_uyvy16";
+							readout_orientation = "0";
+							line_length = "1280";
+							inherent_gain = "1";
+							mclk_multiplier = "9.33";
+							// pix_clk_hz = "182400000";
+							pix_clk_hz = "200000000";
+							serdes_pix_clk_hz = "4000000000";
+
+							gain_factor = "16";
+							framerate_factor = "1000000";
+							exposure_factor = "1000000";
+							min_gain_val = "16"; /* 1.00x */
+							max_gain_val = "170"; /* 10.66x */
+							step_gain_val = "1";
+							default_gain = "16"; /* 1.00x */
+							min_hdr_ratio = "1";
+							max_hdr_ratio = "1";
+							min_framerate = "2000000"; /* 2.0 fps */
+							max_framerate = "15000000"; /* 21.0 fps */
+							step_framerate = "1";
+							default_framerate = "15000000"; /* 21.0 fps */
+							min_exp_time = "13"; /* us */
+							max_exp_time = "683709"; /* us */
+							step_exp_time = "1";
+							default_exp_time = "2495"; /* us */
+
+							embedded_metadata_height = "0";
+					};
+
+					ports {
+						#address-cells = <1>;
+						#size-cells = <0>;
+						port@0 {
+							reg = <0>;
+							rbpcv2_ar0144_out8: endpoint {
+								vc-id = <0>;
+								port-index = <4>;
+								bus-width = <2>;
+								remote-endpoint = <&rbpcv2_ar0144_csi_in8>;
+							};
+						};
+					};
+				};
+#endif
+#ifdef VIZIONLINK_CSI4_CAMERA1
+				rbpcv2_ar0144_b@3d {
+					compatible = "tn,tevi-ar0144";
+					/* I2C device address */
+					reg = <0x3d>;
+
+					/* V4L2 device node location */
+					devnode = "video9";
+
+					/* Physical dimensions of sensor */
+					physical_w = "3.680";
+					physical_h = "2.760";
+
+					sensor_model = "tevi-ar0144";
+
+					use_sensor_mode_id = "false";
+
+					/**
+					* ==== Modes ====
+					* A modeX node is required to support v4l2 driver
+					* implementation with NVIDIA camera software stack
+					*
+					* == Signal properties ==
+					*
+					* phy_mode = "";
+					* PHY mode used by the MIPI lanes for this device
+					*
+					* tegra_sinterface = "";
+					* CSI Serial interface connected to tegra
+					* Incase of virtual HW devices, use virtual
+					* For SW emulated devices, use host
+					*
+					* pix_clk_hz = "";
+					* Sensor pixel clock used for calculations like exposure and framerate
+					*
+					* readout_orientation = "0";
+					* Based on camera module orientation.
+					* Only change readout_orientation if you specifically
+					* Program a different readout order for this mode
+					*
+					* == Image format Properties ==
+					*
+					* active_w = "";
+					* Pixel active region width
+					*
+					* active_h = "";
+					* Pixel active region height
+					*
+					* pixel_t = "";
+					* The sensor readout pixel pattern
+					*
+					* line_length = "";
+					* Pixel line length (width) for sensor mode.
+					*
+					* == Source Control Settings ==
+					*
+					* Gain factor used to convert fixed point integer to float
+					* Gain range [min_gain/gain_factor, max_gain/gain_factor]
+					* Gain step [step_gain/gain_factor is the smallest step that can be configured]
+					* Default gain [Default gain to be initialized for the control.
+					*     use min_gain_val as default for optimal results]
+					* Framerate factor used to convert fixed point integer to float
+					* Framerate range [min_framerate/framerate_factor, max_framerate/framerate_factor]
+					* Framerate step [step_framerate/framerate_factor is the smallest step that can be configured]
+					* Default Framerate [Default framerate to be initialized for the control.
+					*     use max_framerate to get required performance]
+					* Exposure factor used to convert fixed point integer to float
+					* For convenience use 1 sec = 1000000us as conversion factor
+					* Exposure range [min_exp_time/exposure_factor, max_exp_time/exposure_factor]
+					* Exposure step [step_exp_time/exposure_factor is the smallest step that can be configured]
+					* Default Exposure Time [Default exposure to be initialized for the control.
+					*     Set default exposure based on the default_framerate for optimal exposure settings]
+					*
+					* gain_factor = ""; (integer factor used for floating to fixed point conversion)
+					* min_gain_val = ""; (ceil to integer)
+					* max_gain_val = ""; (ceil to integer)
+					* step_gain_val = ""; (ceil to integer)
+					* default_gain = ""; (ceil to integer)
+					* Gain limits for mode
+					*
+					* exposure_factor = ""; (integer factor used for floating to fixed point conversion)
+					* min_exp_time = ""; (ceil to integer)
+					* max_exp_time = ""; (ceil to integer)
+					* step_exp_time = ""; (ceil to integer)
+					* default_exp_time = ""; (ceil to integer)
+					* Exposure Time limits for mode (sec)
+					*
+					* framerate_factor = ""; (integer factor used for floating to fixed point conversion)
+					* min_framerate = ""; (ceil to integer)
+					* max_framerate = ""; (ceil to integer)
+					* step_framerate = ""; (ceil to integer)
+					* default_framerate = ""; (ceil to integer)
+					* Framerate limits for mode (fps)
+					*
+					* embedded_metadata_height = "";
+					* Sensor embedded metadata height in units of rows.
+					* If sensor does not support embedded metadata value should be 0.
+					*/
+					mode0 { /* AR0144_MODE_1280x800_30FPS */
+							mclk_khz = "25000";
+							num_lanes = "2";
+							tegra_sinterface = "serial_e";
+							vc_id = "1";
+							phy_mode = "DPHY";
+							discontinuous_clk = "yes";
+							dpcm_enable = "false";
+							cil_settletime = "0";
+
+							active_w = "1280";
+							active_h = "800";
+							pixel_t = "yuv_uyvy16";
+							readout_orientation = "0";
+							line_length = "1280";
+							inherent_gain = "1";
+							mclk_multiplier = "9.33";
+							// pix_clk_hz = "182400000";
+							pix_clk_hz = "200000000";
+							serdes_pix_clk_hz = "4000000000";
+
+							gain_factor = "16";
+							framerate_factor = "1000000";
+							exposure_factor = "1000000";
+							min_gain_val = "16"; /* 1.00x */
+							max_gain_val = "170"; /* 10.66x */
+							step_gain_val = "1";
+							default_gain = "16"; /* 1.00x */
+							min_hdr_ratio = "1";
+							max_hdr_ratio = "1";
+							min_framerate = "2000000"; /* 2.0 fps */
+							max_framerate = "15000000"; /* 21.0 fps */
+							step_framerate = "1";
+							default_framerate = "15000000"; /* 21.0 fps */
+							min_exp_time = "13"; /* us */
+							max_exp_time = "683709"; /* us */
+							step_exp_time = "1";
+							default_exp_time = "2495"; /* us */
+
+							embedded_metadata_height = "0";
+					};
+
+					ports {
+						#address-cells = <1>;
+						#size-cells = <0>;
+						port@0 {
+							reg = <0>;
+							rbpcv2_ar0144_out9: endpoint {
+								vc-id = <1>;
+								port-index = <4>;
+								bus-width = <2>;
+								remote-endpoint = <&rbpcv2_ar0144_csi_in9>;
+							};
+						};
+					};
+				};
+#endif
+#ifdef VIZIONLINK_CSI4_CAMERA2
+				rbpcv2_ar0144_c@3e {
+					compatible = "tn,tevi-ar0144";
+					/* I2C device address */
+					reg = <0x3e>;
+
+					/* V4L2 device node location */
+					devnode = "video10";
+
+					/* Physical dimensions of sensor */
+					physical_w = "3.680";
+					physical_h = "2.760";
+
+					sensor_model = "tevi-ar0144";
+
+					use_sensor_mode_id = "flase";
+
+					/**
+					* ==== Modes ====
+					* A modeX node is required to support v4l2 driver
+					* implementation with NVIDIA camera software stack
+					*
+					* == Signal properties ==
+					*
+					* phy_mode = "";
+					* PHY mode used by the MIPI lanes for this device
+					*
+					* tegra_sinterface = "";
+					* CSI Serial interface connected to tegra
+					* Incase of virtual HW devices, use virtual
+					* For SW emulated devices, use host
+					*
+					* pix_clk_hz = "";
+					* Sensor pixel clock used for calculations like exposure and framerate
+					*
+					* readout_orientation = "0";
+					* Based on camera module orientation.
+					* Only change readout_orientation if you specifically
+					* Program a different readout order for this mode
+					*
+					* == Image format Properties ==
+					*
+					* active_w = "";
+					* Pixel active region width
+					*
+					* active_h = "";
+					* Pixel active region height
+					*
+					* pixel_t = "";
+					* The sensor readout pixel pattern
+					*
+					* line_length = "";
+					* Pixel line length (width) for sensor mode.
+					*
+					* == Source Control Settings ==
+					*
+					* Gain factor used to convert fixed point integer to float
+					* Gain range [min_gain/gain_factor, max_gain/gain_factor]
+					* Gain step [step_gain/gain_factor is the smallest step that can be configured]
+					* Default gain [Default gain to be initialized for the control.
+					*     use min_gain_val as default for optimal results]
+					* Framerate factor used to convert fixed point integer to float
+					* Framerate range [min_framerate/framerate_factor, max_framerate/framerate_factor]
+					* Framerate step [step_framerate/framerate_factor is the smallest step that can be configured]
+					* Default Framerate [Default framerate to be initialized for the control.
+					*     use max_framerate to get required performance]
+					* Exposure factor used to convert fixed point integer to float
+					* For convenience use 1 sec = 1000000us as conversion factor
+					* Exposure range [min_exp_time/exposure_factor, max_exp_time/exposure_factor]
+					* Exposure step [step_exp_time/exposure_factor is the smallest step that can be configured]
+					* Default Exposure Time [Default exposure to be initialized for the control.
+					*     Set default exposure based on the default_framerate for optimal exposure settings]
+					*
+					* gain_factor = ""; (integer factor used for floating to fixed point conversion)
+					* min_gain_val = ""; (ceil to integer)
+					* max_gain_val = ""; (ceil to integer)
+					* step_gain_val = ""; (ceil to integer)
+					* default_gain = ""; (ceil to integer)
+					* Gain limits for mode
+					*
+					* exposure_factor = ""; (integer factor used for floating to fixed point conversion)
+					* min_exp_time = ""; (ceil to integer)
+					* max_exp_time = ""; (ceil to integer)
+					* step_exp_time = ""; (ceil to integer)
+					* default_exp_time = ""; (ceil to integer)
+					* Exposure Time limits for mode (sec)
+					*
+					* framerate_factor = ""; (integer factor used for floating to fixed point conversion)
+					* min_framerate = ""; (ceil to integer)
+					* max_framerate = ""; (ceil to integer)
+					* step_framerate = ""; (ceil to integer)
+					* default_framerate = ""; (ceil to integer)
+					* Framerate limits for mode (fps)
+					*
+					* embedded_metadata_height = "";
+					* Sensor embedded metadata height in units of rows.
+					* If sensor does not support embedded metadata value should be 0.
+					*/
+					mode0 { /* AR0144_MODE_1280x800_30FPS */
+							mclk_khz = "25000";
+							num_lanes = "2";
+							tegra_sinterface = "serial_e";
+							vc_id = "2";
+							phy_mode = "DPHY";
+							discontinuous_clk = "yes";
+							dpcm_enable = "false";
+							cil_settletime = "0";
+
+							active_w = "1280";
+							active_h = "800";
+							pixel_t = "yuv_uyvy16";
+							readout_orientation = "0";
+							line_length = "1280";
+							inherent_gain = "1";
+							mclk_multiplier = "9.33";
+							// pix_clk_hz = "182400000";
+							pix_clk_hz = "200000000";
+							serdes_pix_clk_hz = "4000000000";
+
+							gain_factor = "16";
+							framerate_factor = "1000000";
+							exposure_factor = "1000000";
+							min_gain_val = "16"; /* 1.00x */
+							max_gain_val = "170"; /* 10.66x */
+							step_gain_val = "1";
+							default_gain = "16"; /* 1.00x */
+							min_hdr_ratio = "1";
+							max_hdr_ratio = "1";
+							min_framerate = "2000000"; /* 2.0 fps */
+							max_framerate = "15000000"; /* 21.0 fps */
+							step_framerate = "1";
+							default_framerate = "15000000"; /* 21.0 fps */
+							min_exp_time = "13"; /* us */
+							max_exp_time = "683709"; /* us */
+							step_exp_time = "1";
+							default_exp_time = "2495"; /* us */
+
+							embedded_metadata_height = "0";
+					};
+
+					ports {
+						#address-cells = <1>;
+						#size-cells = <0>;
+						port@0 {
+							reg = <0>;
+							rbpcv2_ar0144_out10: endpoint {
+								vc-id = <2>;
+								port-index = <4>;
+								bus-width = <2>;
+								remote-endpoint = <&rbpcv2_ar0144_csi_in10>;
+							};
+						};
+					};
+				};
+#endif
+#ifdef VIZIONLINK_CSI4_CAMERA3
+				rbpcv2_ar0144_d@3f {
+					compatible = "tn,tevi-ar0144";
+					/* I2C device address */
+					reg = <0x3f>;
+
+					/* V4L2 device node location */
+					devnode = "video11";
+
+					/* Physical dimensions of sensor */
+					physical_w = "3.680";
+					physical_h = "2.760";
+
+					sensor_model = "tevi-ar0144";
+
+					use_sensor_mode_id = "false";
+
+					/**
+					* ==== Modes ====
+					* A modeX node is required to support v4l2 driver
+					* implementation with NVIDIA camera software stack
+					*
+					* == Signal properties ==
+					*
+					* phy_mode = "";
+					* PHY mode used by the MIPI lanes for this device
+					*
+					* tegra_sinterface = "";
+					* CSI Serial interface connected to tegra
+					* Incase of virtual HW devices, use virtual
+					* For SW emulated devices, use host
+					*
+					* pix_clk_hz = "";
+					* Sensor pixel clock used for calculations like exposure and framerate
+					*
+					* readout_orientation = "0";
+					* Based on camera module orientation.
+					* Only change readout_orientation if you specifically
+					* Program a different readout order for this mode
+					*
+					* == Image format Properties ==
+					*
+					* active_w = "";
+					* Pixel active region width
+					*
+					* active_h = "";
+					* Pixel active region height
+					*
+					* pixel_t = "";
+					* The sensor readout pixel pattern
+					*
+					* line_length = "";
+					* Pixel line length (width) for sensor mode.
+					*
+					* == Source Control Settings ==
+					*
+					* Gain factor used to convert fixed point integer to float
+					* Gain range [min_gain/gain_factor, max_gain/gain_factor]
+					* Gain step [step_gain/gain_factor is the smallest step that can be configured]
+					* Default gain [Default gain to be initialized for the control.
+					*     use min_gain_val as default for optimal results]
+					* Framerate factor used to convert fixed point integer to float
+					* Framerate range [min_framerate/framerate_factor, max_framerate/framerate_factor]
+					* Framerate step [step_framerate/framerate_factor is the smallest step that can be configured]
+					* Default Framerate [Default framerate to be initialized for the control.
+					*     use max_framerate to get required performance]
+					* Exposure factor used to convert fixed point integer to float
+					* For convenience use 1 sec = 1000000us as conversion factor
+					* Exposure range [min_exp_time/exposure_factor, max_exp_time/exposure_factor]
+					* Exposure step [step_exp_time/exposure_factor is the smallest step that can be configured]
+					* Default Exposure Time [Default exposure to be initialized for the control.
+					*     Set default exposure based on the default_framerate for optimal exposure settings]
+					*
+					* gain_factor = ""; (integer factor used for floating to fixed point conversion)
+					* min_gain_val = ""; (ceil to integer)
+					* max_gain_val = ""; (ceil to integer)
+					* step_gain_val = ""; (ceil to integer)
+					* default_gain = ""; (ceil to integer)
+					* Gain limits for mode
+					*
+					* exposure_factor = ""; (integer factor used for floating to fixed point conversion)
+					* min_exp_time = ""; (ceil to integer)
+					* max_exp_time = ""; (ceil to integer)
+					* step_exp_time = ""; (ceil to integer)
+					* default_exp_time = ""; (ceil to integer)
+					* Exposure Time limits for mode (sec)
+					*
+					* framerate_factor = ""; (integer factor used for floating to fixed point conversion)
+					* min_framerate = ""; (ceil to integer)
+					* max_framerate = ""; (ceil to integer)
+					* step_framerate = ""; (ceil to integer)
+					* default_framerate = ""; (ceil to integer)
+					* Framerate limits for mode (fps)
+					*
+					* embedded_metadata_height = "";
+					* Sensor embedded metadata height in units of rows.
+					* If sensor does not support embedded metadata value should be 0.
+					*/
+					mode0 { /* AR0144_MODE_1280x800_30FPS */
+							mclk_khz = "25000";
+							num_lanes = "2";
+							tegra_sinterface = "serial_e";
+							vc_id = "3";
+							phy_mode = "DPHY";
+							discontinuous_clk = "yes";
+							dpcm_enable = "false";
+							cil_settletime = "0";
+
+							active_w = "1280";
+							active_h = "800";
+							pixel_t = "yuv_uyvy16";
+							readout_orientation = "0";
+							line_length = "1280";
+							inherent_gain = "1";
+							mclk_multiplier = "9.33";
+							// pix_clk_hz = "182400000";
+							pix_clk_hz = "200000000";
+							serdes_pix_clk_hz = "4000000000";
+
+							gain_factor = "16";
+							framerate_factor = "1000000";
+							exposure_factor = "1000000";
+							min_gain_val = "16"; /* 1.00x */
+							max_gain_val = "170"; /* 10.66x */
+							step_gain_val = "1";
+							default_gain = "16"; /* 1.00x */
+							min_hdr_ratio = "1";
+							max_hdr_ratio = "1";
+							min_framerate = "2000000"; /* 2.0 fps */
+							max_framerate = "15000000"; /* 21.0 fps */
+							step_framerate = "1";
+							default_framerate = "15000000"; /* 21.0 fps */
+							min_exp_time = "13"; /* us */
+							max_exp_time = "683709"; /* us */
+							step_exp_time = "1";
+							default_exp_time = "2495"; /* us */
+
+							embedded_metadata_height = "0";
+					};
+
+					ports {
+						#address-cells = <1>;
+						#size-cells = <0>;
+						port@0 {
+							reg = <0>;
+							rbpcv2_ar0144_out11: endpoint {
+								vc-id = <3>;
+								port-index = <4>;
+								bus-width = <2>;
+								remote-endpoint = <&rbpcv2_ar0144_csi_in11>;
+							};
+						};
+					};
+				};
+#endif
+			};
+			i2c@5 {
+#ifdef VIZIONLINK_CSI5_CAMERA0
+				rbpcv2_ar0144_a@3c {
+					compatible = "tn,tevi-ar0144";
+					/* I2C device address */
+					reg = <0x3c>;
+
+					/* V4L2 device node location */
+					devnode = "video20";
+
+					/* Physical dimensions of sensor */
+					physical_w = "3.680";
+					physical_h = "2.760";
+
+					sensor_model = "tevi-ar0144";
+
+					use_sensor_mode_id = "false";
+
+					/**
+					* ==== Modes ====
+					* A modeX node is required to support v4l2 driver
+					* implementation with NVIDIA camera software stack
+					*
+					* == Signal properties ==
+					*
+					* phy_mode = "";
+					* PHY mode used by the MIPI lanes for this device
+					*
+					* tegra_sinterface = "";
+					* CSI Serial interface connected to tegra
+					* Incase of virtual HW devices, use virtual
+					* For SW emulated devices, use host
+					*
+					* pix_clk_hz = "";
+					* Sensor pixel clock used for calculations like exposure and framerate
+					*
+					* readout_orientation = "0";
+					* Based on camera module orientation.
+					* Only change readout_orientation if you specifically
+					* Program a different readout order for this mode
+					*
+					* == Image format Properties ==
+					*
+					* active_w = "";
+					* Pixel active region width
+					*
+					* active_h = "";
+					* Pixel active region height
+					*
+					* pixel_t = "";
+					* The sensor readout pixel pattern
+					*
+					* line_length = "";
+					* Pixel line length (width) for sensor mode.
+					*
+					* == Source Control Settings ==
+					*
+					* Gain factor used to convert fixed point integer to float
+					* Gain range [min_gain/gain_factor, max_gain/gain_factor]
+					* Gain step [step_gain/gain_factor is the smallest step that can be configured]
+					* Default gain [Default gain to be initialized for the control.
+					*     use min_gain_val as default for optimal results]
+					* Framerate factor used to convert fixed point integer to float
+					* Framerate range [min_framerate/framerate_factor, max_framerate/framerate_factor]
+					* Framerate step [step_framerate/framerate_factor is the smallest step that can be configured]
+					* Default Framerate [Default framerate to be initialized for the control.
+					*     use max_framerate to get required performance]
+					* Exposure factor used to convert fixed point integer to float
+					* For convenience use 1 sec = 1000000us as conversion factor
+					* Exposure range [min_exp_time/exposure_factor, max_exp_time/exposure_factor]
+					* Exposure step [step_exp_time/exposure_factor is the smallest step that can be configured]
+					* Default Exposure Time [Default exposure to be initialized for the control.
+					*     Set default exposure based on the default_framerate for optimal exposure settings]
+					*
+					* gain_factor = ""; (integer factor used for floating to fixed point conversion)
+					* min_gain_val = ""; (ceil to integer)
+					* max_gain_val = ""; (ceil to integer)
+					* step_gain_val = ""; (ceil to integer)
+					* default_gain = ""; (ceil to integer)
+					* Gain limits for mode
+					*
+					* exposure_factor = ""; (integer factor used for floating to fixed point conversion)
+					* min_exp_time = ""; (ceil to integer)
+					* max_exp_time = ""; (ceil to integer)
+					* step_exp_time = ""; (ceil to integer)
+					* default_exp_time = ""; (ceil to integer)
+					* Exposure Time limits for mode (sec)
+					*
+					* framerate_factor = ""; (integer factor used for floating to fixed point conversion)
+					* min_framerate = ""; (ceil to integer)
+					* max_framerate = ""; (ceil to integer)
+					* step_framerate = ""; (ceil to integer)
+					* default_framerate = ""; (ceil to integer)
+					* Framerate limits for mode (fps)
+					*
+					* embedded_metadata_height = "";
+					* Sensor embedded metadata height in units of rows.
+					* If sensor does not support embedded metadata value should be 0.
+					*/
+					mode0 { /* AR0144_MODE_1280x800_30FPS */
+							mclk_khz = "25000";
+							num_lanes = "2";
+							tegra_sinterface = "serial_e";
+							vc_id = "0";
+							phy_mode = "DPHY";
+							discontinuous_clk = "yes";
+							dpcm_enable = "false";
+							cil_settletime = "0";
+
+							active_w = "1280";
+							active_h = "800";
+							pixel_t = "yuv_uyvy16";
+							readout_orientation = "0";
+							line_length = "1280";
+							inherent_gain = "1";
+							mclk_multiplier = "9.33";
+							// pix_clk_hz = "182400000";
+							pix_clk_hz = "200000000";
+							serdes_pix_clk_hz = "4000000000";
+
+							gain_factor = "16";
+							framerate_factor = "1000000";
+							exposure_factor = "1000000";
+							min_gain_val = "16"; /* 1.00x */
+							max_gain_val = "170"; /* 10.66x */
+							step_gain_val = "1";
+							default_gain = "16"; /* 1.00x */
+							min_hdr_ratio = "1";
+							max_hdr_ratio = "1";
+							min_framerate = "2000000"; /* 2.0 fps */
+							max_framerate = "15000000"; /* 21.0 fps */
+							step_framerate = "1";
+							default_framerate = "15000000"; /* 21.0 fps */
+							min_exp_time = "13"; /* us */
+							max_exp_time = "683709"; /* us */
+							step_exp_time = "1";
+							default_exp_time = "2495"; /* us */
+
+							embedded_metadata_height = "0";
+					};
+
+					ports {
+						#address-cells = <1>;
+						#size-cells = <0>;
+						port@0 {
+							reg = <0>;
+							rbpcv2_ar0144_out20: endpoint {
+								vc-id = <0>;
+								port-index = <5>;
+								bus-width = <2>;
+								remote-endpoint = <&rbpcv2_ar0144_csi_in20>;
+							};
+						};
+					};
+				};
+#endif
+#ifdef VIZIONLINK_CSI5_CAMERA1
+				rbpcv2_ar0144_b@3d {
+					compatible = "tn,tevi-ar0144";
+					/* I2C device address */
+					reg = <0x3d>;
+
+					/* V4L2 device node location */
+					devnode = "video21";
+
+					/* Physical dimensions of sensor */
+					physical_w = "3.680";
+					physical_h = "2.760";
+
+					sensor_model = "tevi-ar0144";
+
+					use_sensor_mode_id = "false";
+
+					/**
+					* ==== Modes ====
+					* A modeX node is required to support v4l2 driver
+					* implementation with NVIDIA camera software stack
+					*
+					* == Signal properties ==
+					*
+					* phy_mode = "";
+					* PHY mode used by the MIPI lanes for this device
+					*
+					* tegra_sinterface = "";
+					* CSI Serial interface connected to tegra
+					* Incase of virtual HW devices, use virtual
+					* For SW emulated devices, use host
+					*
+					* pix_clk_hz = "";
+					* Sensor pixel clock used for calculations like exposure and framerate
+					*
+					* readout_orientation = "0";
+					* Based on camera module orientation.
+					* Only change readout_orientation if you specifically
+					* Program a different readout order for this mode
+					*
+					* == Image format Properties ==
+					*
+					* active_w = "";
+					* Pixel active region width
+					*
+					* active_h = "";
+					* Pixel active region height
+					*
+					* pixel_t = "";
+					* The sensor readout pixel pattern
+					*
+					* line_length = "";
+					* Pixel line length (width) for sensor mode.
+					*
+					* == Source Control Settings ==
+					*
+					* Gain factor used to convert fixed point integer to float
+					* Gain range [min_gain/gain_factor, max_gain/gain_factor]
+					* Gain step [step_gain/gain_factor is the smallest step that can be configured]
+					* Default gain [Default gain to be initialized for the control.
+					*     use min_gain_val as default for optimal results]
+					* Framerate factor used to convert fixed point integer to float
+					* Framerate range [min_framerate/framerate_factor, max_framerate/framerate_factor]
+					* Framerate step [step_framerate/framerate_factor is the smallest step that can be configured]
+					* Default Framerate [Default framerate to be initialized for the control.
+					*     use max_framerate to get required performance]
+					* Exposure factor used to convert fixed point integer to float
+					* For convenience use 1 sec = 1000000us as conversion factor
+					* Exposure range [min_exp_time/exposure_factor, max_exp_time/exposure_factor]
+					* Exposure step [step_exp_time/exposure_factor is the smallest step that can be configured]
+					* Default Exposure Time [Default exposure to be initialized for the control.
+					*     Set default exposure based on the default_framerate for optimal exposure settings]
+					*
+					* gain_factor = ""; (integer factor used for floating to fixed point conversion)
+					* min_gain_val = ""; (ceil to integer)
+					* max_gain_val = ""; (ceil to integer)
+					* step_gain_val = ""; (ceil to integer)
+					* default_gain = ""; (ceil to integer)
+					* Gain limits for mode
+					*
+					* exposure_factor = ""; (integer factor used for floating to fixed point conversion)
+					* min_exp_time = ""; (ceil to integer)
+					* max_exp_time = ""; (ceil to integer)
+					* step_exp_time = ""; (ceil to integer)
+					* default_exp_time = ""; (ceil to integer)
+					* Exposure Time limits for mode (sec)
+					*
+					* framerate_factor = ""; (integer factor used for floating to fixed point conversion)
+					* min_framerate = ""; (ceil to integer)
+					* max_framerate = ""; (ceil to integer)
+					* step_framerate = ""; (ceil to integer)
+					* default_framerate = ""; (ceil to integer)
+					* Framerate limits for mode (fps)
+					*
+					* embedded_metadata_height = "";
+					* Sensor embedded metadata height in units of rows.
+					* If sensor does not support embedded metadata value should be 0.
+					*/
+					mode0 { /* AR0144_MODE_1280x800_30FPS */
+							mclk_khz = "25000";
+							num_lanes = "2";
+							tegra_sinterface = "serial_e";
+							vc_id = "1";
+							phy_mode = "DPHY";
+							discontinuous_clk = "yes";
+							dpcm_enable = "false";
+							cil_settletime = "0";
+
+							active_w = "1280";
+							active_h = "800";
+							pixel_t = "yuv_uyvy16";
+							readout_orientation = "0";
+							line_length = "1280";
+							inherent_gain = "1";
+							mclk_multiplier = "9.33";
+							// pix_clk_hz = "182400000";
+							pix_clk_hz = "200000000";
+							serdes_pix_clk_hz = "4000000000";
+
+							gain_factor = "16";
+							framerate_factor = "1000000";
+							exposure_factor = "1000000";
+							min_gain_val = "16"; /* 1.00x */
+							max_gain_val = "170"; /* 10.66x */
+							step_gain_val = "1";
+							default_gain = "16"; /* 1.00x */
+							min_hdr_ratio = "1";
+							max_hdr_ratio = "1";
+							min_framerate = "2000000"; /* 2.0 fps */
+							max_framerate = "15000000"; /* 21.0 fps */
+							step_framerate = "1";
+							default_framerate = "15000000"; /* 21.0 fps */
+							min_exp_time = "13"; /* us */
+							max_exp_time = "683709"; /* us */
+							step_exp_time = "1";
+							default_exp_time = "2495"; /* us */
+
+							embedded_metadata_height = "0";
+					};
+
+					ports {
+						#address-cells = <1>;
+						#size-cells = <0>;
+						port@0 {
+							reg = <0>;
+							rbpcv2_ar0144_out21: endpoint {
+								vc-id = <1>;
+								port-index = <5>;
+								bus-width = <2>;
+								remote-endpoint = <&rbpcv2_ar0144_csi_in21>;
+							};
+						};
+					};
+				};
+#endif
+#ifdef VIZIONLINK_CSI5_CAMERA2
+				rbpcv2_ar0144_c@3e {
+					compatible = "tn,tevi-ar0144";
+					/* I2C device address */
+					reg = <0x3e>;
+
+					/* V4L2 device node location */
+					devnode = "video22";
+
+					/* Physical dimensions of sensor */
+					physical_w = "3.680";
+					physical_h = "2.760";
+
+					sensor_model = "tevi-ar0144";
+
+					use_sensor_mode_id = "flase";
+
+					/**
+					* ==== Modes ====
+					* A modeX node is required to support v4l2 driver
+					* implementation with NVIDIA camera software stack
+					*
+					* == Signal properties ==
+					*
+					* phy_mode = "";
+					* PHY mode used by the MIPI lanes for this device
+					*
+					* tegra_sinterface = "";
+					* CSI Serial interface connected to tegra
+					* Incase of virtual HW devices, use virtual
+					* For SW emulated devices, use host
+					*
+					* pix_clk_hz = "";
+					* Sensor pixel clock used for calculations like exposure and framerate
+					*
+					* readout_orientation = "0";
+					* Based on camera module orientation.
+					* Only change readout_orientation if you specifically
+					* Program a different readout order for this mode
+					*
+					* == Image format Properties ==
+					*
+					* active_w = "";
+					* Pixel active region width
+					*
+					* active_h = "";
+					* Pixel active region height
+					*
+					* pixel_t = "";
+					* The sensor readout pixel pattern
+					*
+					* line_length = "";
+					* Pixel line length (width) for sensor mode.
+					*
+					* == Source Control Settings ==
+					*
+					* Gain factor used to convert fixed point integer to float
+					* Gain range [min_gain/gain_factor, max_gain/gain_factor]
+					* Gain step [step_gain/gain_factor is the smallest step that can be configured]
+					* Default gain [Default gain to be initialized for the control.
+					*     use min_gain_val as default for optimal results]
+					* Framerate factor used to convert fixed point integer to float
+					* Framerate range [min_framerate/framerate_factor, max_framerate/framerate_factor]
+					* Framerate step [step_framerate/framerate_factor is the smallest step that can be configured]
+					* Default Framerate [Default framerate to be initialized for the control.
+					*     use max_framerate to get required performance]
+					* Exposure factor used to convert fixed point integer to float
+					* For convenience use 1 sec = 1000000us as conversion factor
+					* Exposure range [min_exp_time/exposure_factor, max_exp_time/exposure_factor]
+					* Exposure step [step_exp_time/exposure_factor is the smallest step that can be configured]
+					* Default Exposure Time [Default exposure to be initialized for the control.
+					*     Set default exposure based on the default_framerate for optimal exposure settings]
+					*
+					* gain_factor = ""; (integer factor used for floating to fixed point conversion)
+					* min_gain_val = ""; (ceil to integer)
+					* max_gain_val = ""; (ceil to integer)
+					* step_gain_val = ""; (ceil to integer)
+					* default_gain = ""; (ceil to integer)
+					* Gain limits for mode
+					*
+					* exposure_factor = ""; (integer factor used for floating to fixed point conversion)
+					* min_exp_time = ""; (ceil to integer)
+					* max_exp_time = ""; (ceil to integer)
+					* step_exp_time = ""; (ceil to integer)
+					* default_exp_time = ""; (ceil to integer)
+					* Exposure Time limits for mode (sec)
+					*
+					* framerate_factor = ""; (integer factor used for floating to fixed point conversion)
+					* min_framerate = ""; (ceil to integer)
+					* max_framerate = ""; (ceil to integer)
+					* step_framerate = ""; (ceil to integer)
+					* default_framerate = ""; (ceil to integer)
+					* Framerate limits for mode (fps)
+					*
+					* embedded_metadata_height = "";
+					* Sensor embedded metadata height in units of rows.
+					* If sensor does not support embedded metadata value should be 0.
+					*/
+					mode0 { /* AR0144_MODE_1280x800_30FPS */
+							mclk_khz = "25000";
+							num_lanes = "2";
+							tegra_sinterface = "serial_e";
+							vc_id = "2";
+							phy_mode = "DPHY";
+							discontinuous_clk = "yes";
+							dpcm_enable = "false";
+							cil_settletime = "0";
+
+							active_w = "1280";
+							active_h = "800";
+							pixel_t = "yuv_uyvy16";
+							readout_orientation = "0";
+							line_length = "1280";
+							inherent_gain = "1";
+							mclk_multiplier = "9.33";
+							// pix_clk_hz = "182400000";
+							pix_clk_hz = "200000000";
+							serdes_pix_clk_hz = "4000000000";
+
+							gain_factor = "16";
+							framerate_factor = "1000000";
+							exposure_factor = "1000000";
+							min_gain_val = "16"; /* 1.00x */
+							max_gain_val = "170"; /* 10.66x */
+							step_gain_val = "1";
+							default_gain = "16"; /* 1.00x */
+							min_hdr_ratio = "1";
+							max_hdr_ratio = "1";
+							min_framerate = "2000000"; /* 2.0 fps */
+							max_framerate = "15000000"; /* 21.0 fps */
+							step_framerate = "1";
+							default_framerate = "15000000"; /* 21.0 fps */
+							min_exp_time = "13"; /* us */
+							max_exp_time = "683709"; /* us */
+							step_exp_time = "1";
+							default_exp_time = "2495"; /* us */
+
+							embedded_metadata_height = "0";
+					};
+
+					ports {
+						#address-cells = <1>;
+						#size-cells = <0>;
+						port@0 {
+							reg = <0>;
+							rbpcv2_ar0144_out22: endpoint {
+								vc-id = <2>;
+								port-index = <5>;
+								bus-width = <2>;
+								remote-endpoint = <&rbpcv2_ar0144_csi_in22>;
+							};
+						};
+					};
+				};
+#endif
+#ifdef VIZIONLINK_CSI5_CAMERA3
+				rbpcv2_ar0144_d@3f {
+					compatible = "tn,tevi-ar0144";
+					/* I2C device address */
+					reg = <0x3f>;
+
+					/* V4L2 device node location */
+					devnode = "video23";
+
+					/* Physical dimensions of sensor */
+					physical_w = "3.680";
+					physical_h = "2.760";
+
+					sensor_model = "tevi-ar0144";
+
+					use_sensor_mode_id = "false";
+
+					/**
+					* ==== Modes ====
+					* A modeX node is required to support v4l2 driver
+					* implementation with NVIDIA camera software stack
+					*
+					* == Signal properties ==
+					*
+					* phy_mode = "";
+					* PHY mode used by the MIPI lanes for this device
+					*
+					* tegra_sinterface = "";
+					* CSI Serial interface connected to tegra
+					* Incase of virtual HW devices, use virtual
+					* For SW emulated devices, use host
+					*
+					* pix_clk_hz = "";
+					* Sensor pixel clock used for calculations like exposure and framerate
+					*
+					* readout_orientation = "0";
+					* Based on camera module orientation.
+					* Only change readout_orientation if you specifically
+					* Program a different readout order for this mode
+					*
+					* == Image format Properties ==
+					*
+					* active_w = "";
+					* Pixel active region width
+					*
+					* active_h = "";
+					* Pixel active region height
+					*
+					* pixel_t = "";
+					* The sensor readout pixel pattern
+					*
+					* line_length = "";
+					* Pixel line length (width) for sensor mode.
+					*
+					* == Source Control Settings ==
+					*
+					* Gain factor used to convert fixed point integer to float
+					* Gain range [min_gain/gain_factor, max_gain/gain_factor]
+					* Gain step [step_gain/gain_factor is the smallest step that can be configured]
+					* Default gain [Default gain to be initialized for the control.
+					*     use min_gain_val as default for optimal results]
+					* Framerate factor used to convert fixed point integer to float
+					* Framerate range [min_framerate/framerate_factor, max_framerate/framerate_factor]
+					* Framerate step [step_framerate/framerate_factor is the smallest step that can be configured]
+					* Default Framerate [Default framerate to be initialized for the control.
+					*     use max_framerate to get required performance]
+					* Exposure factor used to convert fixed point integer to float
+					* For convenience use 1 sec = 1000000us as conversion factor
+					* Exposure range [min_exp_time/exposure_factor, max_exp_time/exposure_factor]
+					* Exposure step [step_exp_time/exposure_factor is the smallest step that can be configured]
+					* Default Exposure Time [Default exposure to be initialized for the control.
+					*     Set default exposure based on the default_framerate for optimal exposure settings]
+					*
+					* gain_factor = ""; (integer factor used for floating to fixed point conversion)
+					* min_gain_val = ""; (ceil to integer)
+					* max_gain_val = ""; (ceil to integer)
+					* step_gain_val = ""; (ceil to integer)
+					* default_gain = ""; (ceil to integer)
+					* Gain limits for mode
+					*
+					* exposure_factor = ""; (integer factor used for floating to fixed point conversion)
+					* min_exp_time = ""; (ceil to integer)
+					* max_exp_time = ""; (ceil to integer)
+					* step_exp_time = ""; (ceil to integer)
+					* default_exp_time = ""; (ceil to integer)
+					* Exposure Time limits for mode (sec)
+					*
+					* framerate_factor = ""; (integer factor used for floating to fixed point conversion)
+					* min_framerate = ""; (ceil to integer)
+					* max_framerate = ""; (ceil to integer)
+					* step_framerate = ""; (ceil to integer)
+					* default_framerate = ""; (ceil to integer)
+					* Framerate limits for mode (fps)
+					*
+					* embedded_metadata_height = "";
+					* Sensor embedded metadata height in units of rows.
+					* If sensor does not support embedded metadata value should be 0.
+					*/
+					mode0 { /* AR0144_MODE_1280x800_30FPS */
+							mclk_khz = "25000";
+							num_lanes = "2";
+							tegra_sinterface = "serial_e";
+							vc_id = "3";
+							phy_mode = "DPHY";
+							discontinuous_clk = "yes";
+							dpcm_enable = "false";
+							cil_settletime = "0";
+
+							active_w = "1280";
+							active_h = "800";
+							pixel_t = "yuv_uyvy16";
+							readout_orientation = "0";
+							line_length = "1280";
+							inherent_gain = "1";
+							mclk_multiplier = "9.33";
+							// pix_clk_hz = "182400000";
+							pix_clk_hz = "200000000";
+							serdes_pix_clk_hz = "4000000000";
+
+							gain_factor = "16";
+							framerate_factor = "1000000";
+							exposure_factor = "1000000";
+							min_gain_val = "16"; /* 1.00x */
+							max_gain_val = "170"; /* 10.66x */
+							step_gain_val = "1";
+							default_gain = "16"; /* 1.00x */
+							min_hdr_ratio = "1";
+							max_hdr_ratio = "1";
+							min_framerate = "2000000"; /* 2.0 fps */
+							max_framerate = "15000000"; /* 21.0 fps */
+							step_framerate = "1";
+							default_framerate = "15000000"; /* 21.0 fps */
+							min_exp_time = "13"; /* us */
+							max_exp_time = "683709"; /* us */
+							step_exp_time = "1";
+							default_exp_time = "2495"; /* us */
+
+							embedded_metadata_height = "0";
+					};
+
+					ports {
+						#address-cells = <1>;
+						#size-cells = <0>;
+						port@0 {
+							reg = <0>;
+							rbpcv2_ar0144_out23: endpoint {
+								vc-id = <3>;
+								port-index = <5>;
+								bus-width = <2>;
+								remote-endpoint = <&rbpcv2_ar0144_csi_in23>;
+							};
+						};
+					};
+				};
+#endif
+			};
+		};
+    };
+        
+	lens_ar0144@RBPCV2 {
+		min_focus_distance = "0.0";
+		hyper_focal = "0.0";
+		focal_length = "3.04";
+		f_number = "2.0";
+		aperture = "0.0";
+	};
+};
+/ {
+	tcp: tegra-camera-platform {
+		compatible = "nvidia, tegra-camera-platform";
+		/**
+		* Physical settings to calculate max ISO BW
+		*
+		* num_csi_lanes = <>;
+		* Total number of CSI lanes when all cameras are active
+		*
+		* max_lane_speed = <>;
+		* Max lane speed in Kbit/s
+		*
+		* min_bits_per_pixel = <>;
+		* Min bits per pixel
+		*
+		* vi_peak_byte_per_pixel = <>;
+		* Max byte per pixel for the VI ISO case
+		*
+		* vi_bw_margin_pct = <>;
+		* Vi bandwidth margin in percentage
+		*
+		* max_pixel_rate = <>;
+		* Max pixel rate in Kpixel/s for the ISP ISO case
+		*
+		* isp_peak_byte_per_pixel = <>;
+		* Max byte per pixel for the ISP ISO case
+		*
+		* isp_bw_margin_pct = <>;
+		* Isp bandwidth margin in percentage
+		*/
+		num_csi_lanes = <2>;
+		max_lane_speed = <4000000>;
+		min_bits_per_pixel = <10>;
+		vi_peak_byte_per_pixel = <2>;
+		vi_bw_margin_pct = <25>;
+		max_pixel_rate = <240000>;
+		isp_peak_byte_per_pixel = <5>;
+		isp_bw_margin_pct = <25>;
+
+		/**
+		 * The general guideline for naming badge_info contains 3 parts, and is as follows,
+		 * The first part is the camera_board_id for the module; if the module is in a FFD
+		 * platform, then use the platform name for this part.
+		 * The second part contains the position of the module, ex. "rear" or "front".
+		 * The third part contains the last 6 characters of a part number which is found
+		 * in the module's specsheet from the vendor.
+		 */
+		modules {
+			cam_module0: module0 {
+				badge = "jakku_front_RBP194";
+				position = "front";
+				orientation = "1";
+				cam_module0_drivernode0: drivernode0 {
+					pcl_id = "v4l2_sensor";
+					devname = "tevi-ar0144 9-003e";
+					proc-device-tree = "/proc/device-tree/i2c@3180000/tca9546@70/i2c@0/rbpcv2_ar0144_a@3e";
+				};
+				cam_module0_drivernode1: drivernode1 {
+					pcl_id = "v4l2_lens";
+					proc-device-tree = "/proc/device-tree/lens_ar0144@RBPCV2/";
+				};
+			};
+			cam_module1: module1 {
+				badge = "jakku_front_RBP194";
+				position = "rear";
+				orientation = "1";
+				cam_module1_drivernode0: drivernode0 {
+					pcl_id = "v4l2_sensor";
+					devname = "tevi-ar0144 9-003f";
+					proc-device-tree = "/proc/device-tree/i2c@3180000/tca9546@70/i2c@0/rbpcv2_ar0144_b@3f";
+				};
+				cam_module1_drivernode1: drivernode1 {
+					pcl_id = "v4l2_lens";
+					proc-device-tree = "/proc/device-tree/lens_ar0144@RBPCV2/";
+				};
+			};
+		};
+	};
+};
