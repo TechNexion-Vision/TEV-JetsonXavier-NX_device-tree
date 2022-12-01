@@ -16,6 +16,9 @@
 /dts-v1/;
 #include "common/tegra194-p3668-common.dtsi"
 #include "common/tegra194-tek3-nvjetson-a1.dtsi"
+//#include "common/tegra194-camera-tek3-nvjetson-tevi-ov5640.dtsi"
+//#include "common/tegra194-camera-tek3-nvjetson-tevi-ap1302.dtsi"
+#include "common/tegra194-camera-tek3-nvjetson-vizionlink-tevi-ap1302.dtsi"
 
 / {
 	nvidia,dtsfilename = __FILE__;
