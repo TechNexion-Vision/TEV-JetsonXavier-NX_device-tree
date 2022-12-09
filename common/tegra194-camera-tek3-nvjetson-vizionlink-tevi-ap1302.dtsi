@@ -68,7 +68,6 @@
 
 				vizionlink@30 {
 					pdb-gpios= <&pca9555_a21 CSI0_PDB GPIO_ACTIVE_HIGH>;
-					port = <0>;
 				};
 
 			};
@@ -88,7 +87,6 @@
 
 				vizionlink@30 {
 					pdb-gpios= <&pca9555_a21 CSI1_PDB GPIO_ACTIVE_HIGH>;
-					port = <0>;
 				};
 			};
 			i2c@2 {
@@ -107,7 +105,6 @@
 
 				vizionlink@30 {
 					pdb-gpios= <&pca9555_a21 CSI2_PDB GPIO_ACTIVE_HIGH>;
-					port = <0>;
 				};
 			};
 			i2c@4{
@@ -126,7 +123,6 @@
 
 				vizionlink@30 {
 					pdb-gpios= <&pca9555_a21 CSI4_PDB GPIO_ACTIVE_HIGH>;
-					port = <0>;
 				};
 			};
 		};
