@@ -58,8 +58,8 @@
 				#size-cells = <0>;
 
 				tevi_ap1302_a@3d {
-					reset-gpios = <&pca9555_a21 CSI0_RST_N GPIO_ACTIVE_HIGH>;
-					power-gpios = <&pca9555_a21 CSI0_PWDN GPIO_ACTIVE_HIGH>;
+					reset-gpios = <&vizionlink_pca9554_a25_0 4 GPIO_ACTIVE_HIGH>;
+					power-gpios = <&vizionlink_pca9554_a25_0 0 GPIO_ACTIVE_HIGH>;
 					nvmem = <&tevi_ap1302_otp_0>;
 					nvmem-names = "calib-data";
 					data-lanes = <2>;
@@ -77,8 +77,8 @@
 				#address-cells = <1>;
 				#size-cells = <0>;
 				tevi_ap1302_b@3d {
-					reset-gpios = <&pca9555_a21 CSI1_RST_N GPIO_ACTIVE_HIGH>;
-					power-gpios = <&pca9555_a21 CSI1_PWDN GPIO_ACTIVE_HIGH>;
+					reset-gpios = <&vizionlink_pca9554_a25_1 4 GPIO_ACTIVE_HIGH>;
+					power-gpios = <&vizionlink_pca9554_a25_1 0 GPIO_ACTIVE_HIGH>;
 					nvmem = <&tevi_ap1302_otp_1>;
 					nvmem-names = "calib-data";
 					data-lanes = <2>;
@@ -95,8 +95,8 @@
 				#address-cells = <1>;
 				#size-cells = <0>;
 				tevi_ap1302_c@3d {
-					reset-gpios = <&pca9555_a21 CSI2_RST_N GPIO_ACTIVE_HIGH>;
-					power-gpios = <&pca9555_a21 CSI2_PWDN GPIO_ACTIVE_HIGH>;
+					reset-gpios = <&vizionlink_pca9554_a25_2 4 GPIO_ACTIVE_HIGH>;
+					power-gpios = <&vizionlink_pca9554_a25_2 0 GPIO_ACTIVE_HIGH>;
 					nvmem = <&tevi_ap1302_otp_2>;
 					nvmem-names = "calib-data";
 					data-lanes = <4>;
@@ -113,8 +113,8 @@
 				#address-cells = <1>;
 				#size-cells = <0>;
 				tevi_ap1302_e@3d {
-					reset-gpios = <&pca9555_a21 CSI4_RST_N GPIO_ACTIVE_HIGH>;
-					power-gpios = <&pca9555_a21 CSI4_PWDN GPIO_ACTIVE_HIGH>;
+					reset-gpios = <&vizionlink_pca9554_a25_4 4 GPIO_ACTIVE_HIGH>;
+					power-gpios = <&vizionlink_pca9554_a25_4 0 GPIO_ACTIVE_HIGH>;
 					nvmem = <&tevi_ap1302_otp_4>;
 					nvmem-names = "calib-data";
 					data-lanes = <4>;
